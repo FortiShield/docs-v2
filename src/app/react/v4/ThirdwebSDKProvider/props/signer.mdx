@@ -1,7 +1,7 @@
 A signer is an abstraction of an Ethereum Account,
 which can be used to sign messages and initiate transactions.
 
-Since the `ThirdwebSDKProvider` is used when you want to provide your own wallet connection logic,
+Since the `EgiftcardSDKProvider` is used when you want to provide your own wallet connection logic,
 you will need to provide a `signer` prop to inform the SDK of the wallet you want to use to sign transactions.
 
 Libraries such as [ethers.js](https://docs.ethers.io/v5/), [web3.js](https://web3js.readthedocs.io/en/v1.5.2/), [wagmi](https://wagmi.sh), etc.
@@ -11,7 +11,7 @@ To use this signer with the SDK, pass it to the `signer` prop. If the signer is 
 to sign transactions for all write operations on the blockchain.
 
 ```jsx
-import { ThirdwebSDKProvider } from "@thirdweb-dev/react";
+import { EgiftcardSDKProvider } from "@egiftcard/react";
 import { ethers } from "ethers";
 
 function MyApp() {
@@ -19,13 +19,13 @@ function MyApp() {
 	const signer = new ethers.providers.Web3Provider(window.ethereum).getSigner();
 
 	return (
-		<ThirdwebSDKProvider
+		<EgiftcardSDKProvider
 			activeChain={"ethereum"}
 			signer={signer}
 			clientId="your-client-id"
 		>
 			<App />
-		</ThirdwebSDKProvider>
+		</EgiftcardSDKProvider>
 	);
 }
 ```

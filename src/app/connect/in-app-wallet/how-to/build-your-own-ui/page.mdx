@@ -32,30 +32,30 @@ View a fully functioning example of an in-app wallet with a custom UI:
 
 <GithubTemplateCard
 	title="In-App Wallets with Custom UI - React"
-	href="https://github.com/thirdweb-example/embedded-wallet-custom-ui"
+	href="https://github.com/egiftcard-example/embedded-wallet-custom-ui"
 	tag="v4 SDK"
 />
 
 <GithubTemplateCard
 	title="In-App Wallets with Custom UI - React Native"
-	href="https://github.com/thirdweb-example/embedded-wallet-custom-ui-react-native"
+	href="https://github.com/egiftcard-example/embedded-wallet-custom-ui-react-native"
 	tag="v4 SDK"
 />
 
 </Stack>
 
-## Setup the ThirdwebProvider
+## Setup the EgiftcardProvider
 
 **Only needed for React and React native platforms**
 
 This will ensure that the wallet is available to all components in your app, handle connection states and auto-connection on page load.
 
 ```jsx
-import { ThirdwebProvider } from "thirdweb/react";
+import { EgiftcardProvider } from "egiftcard/react";
 
-<ThirdwebProvider>
+<EgiftcardProvider>
 	<YourApp />
-</ThirdwebProvider>;
+</EgiftcardProvider>;
 ```
 
 ## Authenticate via Google
@@ -73,8 +73,8 @@ Note that for Apple and Facebook, you just need to update the strategy to "faceb
 In React and React Native, the `useConnect()` hook handles authentication and connection states.
 
 ```tsx
-import { inAppWallet } from "thirdweb/wallets";
-import { useConnect } from "thirdweb/react";
+import { inAppWallet } from "egiftcard/wallets";
+import { useConnect } from "egiftcard/react";
 
 const { connect } = useConnect();
 
@@ -97,7 +97,7 @@ const handleLogin = async () => {
 In other frameworks, use your own instance of the wallet to authenticate and connect.
 
 ```typescript
-import { inAppWallet } from "thirdweb/wallets";
+import { inAppWallet } from "egiftcard/wallets";
 
 const wallet = inAppWallet();
 const account = await wallet.connect({
@@ -122,7 +122,7 @@ const account = await wallet.connect({
 <TabsContent value="react">
 
 ```typescript
-import { inAppWallet, preAuthenticate } from "thirdweb/wallets";
+import { inAppWallet, preAuthenticate } from "egiftcard/wallets";
 
 const { connect } = useConnect();
 
@@ -157,7 +157,7 @@ const handleLogin = async (email: string, verificationCode: string) => {
 In other frameworks, use your own instance of the wallet to authenticate and connect.
 
 ```typescript
-import { inAppWallet, preAuthenticate } from "thirdweb/wallets";
+import { inAppWallet, preAuthenticate } from "egiftcard/wallets";
 
 // send email verification code
 await preAuthenticate({

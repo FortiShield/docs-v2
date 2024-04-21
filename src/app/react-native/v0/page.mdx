@@ -2,10 +2,10 @@ import { OpenSourceCard, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
 	image: {
-		title: "thirdweb React Native SDK",
+		title: "egiftcard React Native SDK",
 		icon: "react",
 	},
-	title: "thirdweb React Native SDK",
+	title: "egiftcard React Native SDK",
 	description:
 		"A collection of React hooks and UI components for your React Native apps, for any EVM-compatible blockchain.",
 });
@@ -19,7 +19,7 @@ messages, and utilize common standards such as tokens, NFTs, marketplaces; all w
 
 <OpenSourceCard
 	title="React Native SDK"
-	href="https://github.com/thirdweb-dev/js/tree/main/legacy_packages/react-native"
+	href="https://github.com/egiftcard/js/tree/main/legacy_packages/react-native"
 />
 
 ## How It Works
@@ -49,7 +49,7 @@ Each one comes with some helpful properties to create a powerful user experience
 - `error` - The error returned from the query, if any.
 
 ```tsx
-import { useContractRead, useContract } from "@thirdweb-dev/react-native";
+import { useContractRead, useContract } from "@egiftcard/react-native";
 
 function App() {
 	const { data: contract } = useContract("{{contract_address}}");
@@ -75,7 +75,7 @@ import {
 	useContractWrite,
 	useContract,
 	Web3Button,
-} from "@thirdweb-dev/react-native";
+} from "@egiftcard/react-native";
 
 function App() {
 	const { data: contract } = useContract("{{contract_address}}");

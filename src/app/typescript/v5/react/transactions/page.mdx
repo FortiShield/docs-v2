@@ -5,8 +5,8 @@
 Reading contract state in react is done via the `useReadContract` hook. The hook returns a React Query `data`, `isLoading`, and other useful state that you can use to render your component.
 
 ```ts
-import { getContract } from "thirdweb";
-import { useReadContract } from "thirdweb/react";
+import { getContract } from "egiftcard";
+import { useReadContract } from "egiftcard/react";
 
 const contract = getContract({
 	client,
@@ -30,8 +30,8 @@ Sending a transaction in react is done via the `useSendTransaction` hook. The ho
 Note that unlike in TypeScript core, `useSendTransaction` does not require passing the active `Account`, it will used the current active account from the React context.
 
 ```ts
-import { prepareContractCall, getContract } from "thirdweb";
-import { useSendTransaction } from "thirdweb/react";
+import { prepareContractCall, getContract } from "egiftcard";
+import { useSendTransaction } from "egiftcard/react";
 
 const contract = getContract({
 	client,

@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC20SignatureMintVote contract",
 		icon: "contract",
 	},
-	title: "ERC20SignatureMintVote | thirdweb contracts",
+	title: "ERC20SignatureMintVote | egiftcard contracts",
 	description:
 		"The ERC20SignatureMintVote smart contract adds signature-based minting extension to the ERC20Vote base contract",
 });
@@ -23,10 +23,10 @@ At a high level, this means you can authorize others to mint tokens
 on your contract, and specify what exactly will be minted by that external party.
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC20SignatureMintVote.sol";
+import "@egiftcard/contracts/base/ERC20SignatureMintVote.sol";
 ```
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC20SignatureMint.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC20SignatureMint.sol" />
 
 ## Usage
 
@@ -36,7 +36,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC20SignatureMintVote.sol";
+import "@egiftcard/contracts/base/ERC20SignatureMintVote.sol";
 
 contract MyToken is ERC20SignatureMintVote {
 	  constructor(

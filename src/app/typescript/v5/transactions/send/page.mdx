@@ -9,8 +9,8 @@ Send the prepared transaction to the blockchain. Sending a transaction requires 
 See [Wallets](/typescript/v5/wallets) for more information on how to create a wallet.
 
 ```ts
-import { sendTransaction } from "thirdweb";
-import { createWallet } from "thirdweb/wallets";
+import { sendTransaction } from "egiftcard";
+import { createWallet } from "egiftcard/wallets";
 
 const wallet = createWallet("io.metamask");
 await wallet.connect();
@@ -26,8 +26,8 @@ const transactionResult = await sendTransaction({
 Send a transaction and wait for it to be mined. Useful when you want to block until the transaction is fully confirmed onchain before proceeding to the next step.
 
 ```ts
-import { sendAndConfirmTransaction } from "thirdweb";
-import { createWallet } from "thirdweb/wallets";
+import { sendAndConfirmTransaction } from "egiftcard";
+import { createWallet } from "egiftcard/wallets";
 
 const wallet = createWallet("io.metamask");
 await wallet.connect();
@@ -43,8 +43,8 @@ const receipt = await sendAndConfirmTransaction({
 Wait for a transaction to be mined and get the transaction receipt.
 
 ```ts
-import { sendTransaction, waitForReceipt } from "thirdweb";
-import { createWallet } from "thirdweb/wallets";
+import { sendTransaction, waitForReceipt } from "egiftcard";
+import { createWallet } from "egiftcard/wallets";
 
 const wallet = createWallet("io.metamask");
 await wallet.connect();
@@ -62,7 +62,7 @@ const receipt = await waitForReceipt(transactionResult);
 Estimating gas used by a transaction
 
 ```ts
-import { estimateGas } from "thirdweb";
+import { estimateGas } from "egiftcard";
 
 const gasEstimate = await estimateGas({ transaction });
 console.log("estmated gas used", gasEstimate);
@@ -73,7 +73,7 @@ console.log("estmated gas used", gasEstimate);
 Estimating gas cost in ether and wei for a transaction
 
 ```ts
-import { estimateGas } from "thirdweb";
+import { estimateGas } from "egiftcard";
 
 const gasCost = await estimateGasCost({ transaction });
 console.log("cost in ether", gasCost.ether);
@@ -84,7 +84,7 @@ console.log("cost in ether", gasCost.ether);
 Simulate a transaction to see if it would be successful.
 
 ```ts
-import { simulateTransaction } from "thirdweb";
+import { simulateTransaction } from "egiftcard";
 
 const result = await simulateTransaction({ transaction });
 console.log("simulation result", result);
@@ -95,7 +95,7 @@ console.log("simulation result", result);
 Encode a transaction data to be used later
 
 ```ts
-import { encode } from "thirdweb";
+import { encode } from "egiftcard";
 
 const data = await encode(transaction);
 console.log("encoded data", data);

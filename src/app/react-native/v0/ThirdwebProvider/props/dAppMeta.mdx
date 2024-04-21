@@ -4,8 +4,8 @@ If no `dAppMeta` prop is set, it defaults to below object:
 
 ```js
 {
-	name: "thirdweb powered dApp",
-	url: "https://thirdweb.com",
+	name: "egiftcard powered dApp",
+	url: "https://egiftcard.cc",
 };
 ```
 
@@ -18,11 +18,11 @@ If no `dAppMeta` prop is set, it defaults to below object:
 | `isDarkMode`  | boolean | optional - whether to show the connect dialog in dark mode or not |
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react-native";
+import { EgiftcardProvider } from "@egiftcard/react-native";
 
 function MyApp() {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			dAppMeta={{
 				name: "My App",
 				description: "My app description",
@@ -32,7 +32,7 @@ function MyApp() {
 			}}
 		>
 			<YourApp />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC20Drop contract",
 		icon: "contract",
 	},
-	title: "ERC20Drop | thirdweb contracts",
+	title: "ERC20Drop | egiftcard contracts",
 	description:
 		"The ERC20Drop base contract adds the Drop Single Phase extension contract to the ERC20 base contract to allow you to distribute your tokens under the criteria of claim conditions.",
 });
@@ -18,10 +18,10 @@ The `ERC20Drop` base contract adds the [Drop Single Phase](/contracts/build/exte
 to allow you to distribute your tokens under the criteria of claim conditions.
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC20Drop.sol";
+import "@egiftcard/contracts/base/ERC20Drop.sol";
 ```
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC20Drop.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC20Drop.sol" />
 
 ## Usage
 
@@ -31,7 +31,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC20Drop.sol";
+import "@egiftcard/contracts/base/ERC20Drop.sol";
 
 contract MyToken is ERC20Drop {
 	  constructor(

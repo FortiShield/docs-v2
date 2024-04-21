@@ -1,7 +1,7 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Preventing Duplicate Transactions | thirdweb Engine",
+	title: "Preventing Duplicate Transactions | egiftcard Engine",
 	description: "Manage dashboard and API access to your Engine instance.",
 });
 
@@ -31,7 +31,7 @@ for (let i = 0; i < numRetries; i++) {
 	const resp = await fetch(url, {
 		method: "POST",
 		headers: {
-			Authorization: `Bearer ${process.env.THIRDWEB_ACCESS_TOKEN}`,
+			Authorization: `Bearer ${process.env.EGIFTCARD_ACCESS_TOKEN}`,
 			"Content-Type": "application/json",
 			"x-backend-wallet-address": "0x4Ff9aa707AE1eAeb40E581DF2cf4e14AffcC553d",
 			"x-idempotency-key": idempotencyKey,

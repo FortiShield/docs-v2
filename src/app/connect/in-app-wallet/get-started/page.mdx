@@ -21,7 +21,7 @@ See In-App Wallets in action with our demo app:
 <OpenSourceCard
 	title="CatAttack"
 	description="In-App Wallet Demo App"
-	href="https://catattack.thirdweb.com"
+	href="https://catattack.egiftcard.cc"
 />
 
 ## Starting from a template
@@ -31,7 +31,7 @@ Quickly get started with one of our templates:
 <OpenSourceCard
 	title="In-app wallets with gasless transactions (account abstraction)"
 	description="A starter kit for building in-app wallets with smart contract integrations."
-	href="https://github.com/thirdweb-example/embedded-smart-wallet"
+	href="https://github.com/egiftcard-example/embedded-smart-wallet"
 	tag="v4 SDK"
 />
 
@@ -40,15 +40,15 @@ Quickly get started with one of our templates:
 Install the required package:
 
 <InstallTabs
-	npm="npm i thirdweb"
-	yarn="yarn add thirdweb"
-	pnpm="pnpm i thirdweb"
-	bun="bun i thirdweb"
+	npm="npm i egiftcard"
+	yarn="yarn add egiftcard"
+	pnpm="pnpm i egiftcard"
+	bun="bun i egiftcard"
 />
 
 ## Get your client ID
 
-To use in-app wallets in your applications, you will need a client ID. You can get one for free on [your thirdweb dashboard](https://thirdweb.com/create-api-key).
+To use in-app wallets in your applications, you will need a client ID. You can get one for free on [your egiftcard dashboard](https://egiftcard.cc/create-api-key).
 
 ## Connecting & Creating In-App Wallets
 
@@ -64,17 +64,17 @@ Quickest ways to get started with in-app wallets on each platform.
 
 <TabsContent value="react">
 ```tsx
-import { ThirdwebProvider, ConnectButton } from "thirdweb/react";
-import { createWallet } from "thirdweb/wallets";
+import { EgiftcardProvider, ConnectButton } from "egiftcard/react";
+import { createWallet } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 const wallets = [inAppWallet()];
 
 export default function App() {
 	return (
-		<ThirdwebProvider>
+		<EgiftcardProvider>
 			<ConnectButton client={client} wallets={wallets} />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
@@ -84,9 +84,9 @@ export default function App() {
 <TabsContent value="typescript">
 
 ```tsx
-import { inAppWallet } from "thirdweb/wallets";
+import { inAppWallet } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 const wallet = inAppWallet();
 const account = await wallet.connect({
 	client,
@@ -99,12 +99,12 @@ const account = await wallet.connect({
 <TabsContent value="unity">
 
 ```c#
-using Thirdweb;
+using Egiftcard;
 
 public async void ConnectWallet()
 {
-    // Reference to your Thirdweb SDK
-    var sdk = ThirdwebManager.Instance.SDK;
+    // Reference to your Egiftcard SDK
+    var sdk = EgiftcardManager.Instance.SDK;
 
     // Configure the connection
     var connection = new WalletConnection(

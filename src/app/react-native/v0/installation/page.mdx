@@ -3,12 +3,12 @@ import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Installing thirdweb React Native SDK",
+		title: "Installing egiftcard React Native SDK",
 		icon: "react",
 	},
-	title: "Installing thirdweb React Native SDK",
+	title: "Installing egiftcard React Native SDK",
 	description:
-		"Steps to install the thirdweb React Native SDK in your existing or new project.",
+		"Steps to install the egiftcard React Native SDK in your existing or new project.",
 });
 
 # Installation
@@ -36,9 +36,9 @@ export const metadata = createMetadata({
 
 <TabsContent value="cli_project">
 	<InstallTabs
-		npm="npm i ethers@^5 @thirdweb-dev/react-native @thirdweb-dev/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
-		yarn="yarn add ethers@^5 @thirdweb-dev/react-native @thirdweb-dev/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values 'react-native-svg@^13.9.0' react-native-mmkv @react-native-async-storage/async-storage"
-		pnpm="pnpm i ethers@^5 @thirdweb-dev/react-native @thirdweb-dev/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
+		npm="npm i ethers@^5 @egiftcard/react-native @egiftcard/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
+		yarn="yarn add ethers@^5 @egiftcard/react-native @egiftcard/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values 'react-native-svg@^13.9.0' react-native-mmkv @react-native-async-storage/async-storage"
+		pnpm="pnpm i ethers@^5 @egiftcard/react-native @egiftcard/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
 	/>
 
 Our wallets package uses the Expo Modules API, please [configure it](https://docs.expo.dev/modules/overview/) in your app:
@@ -129,9 +129,9 @@ npx expo prebuild
 Now, we can add the dependencies:
 
 <InstallTabs
-	npm="npm i ethers@^5 @thirdweb-dev/react-native @thirdweb-dev/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
-	yarn="yarn add ethers@^5 @thirdweb-dev/react-native @thirdweb-dev/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
-	pnpm="pnpm i ethers@^5 @thirdweb-dev/react-native @thirdweb-dev/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
+	npm="npm i ethers@^5 @egiftcard/react-native @egiftcard/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
+	yarn="yarn add ethers@^5 @egiftcard/react-native @egiftcard/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
+	pnpm="pnpm i ethers@^5 @egiftcard/react-native @egiftcard/react-native-compat node-libs-browser react-native-crypto react-native-randombytes react-native-get-random-values react-native-svg@^13.9.0 react-native-mmkv @react-native-async-storage/async-storage"
 />
 
 Our wallets package uses the Expo Modules API, please [configure it](https://docs.expo.dev/modules/overview/) in your app:
@@ -147,7 +147,7 @@ We provide a package that imports all the necessary polyfills for you, please, i
 
 ```javascript
 // Import polyfills
-import "@thirdweb-dev/react-native-compat";
+import "@egiftcard/react-native-compat";
 ```
 
 ### Why are all these packages needed?
@@ -175,8 +175,8 @@ Make sure to have your React Native environment setup before using the template.
 <Tabs defaultValue="tw_cli">
 
 <TabsList>
-	<TabsTrigger value="tw_cli">thirdweb CLI</TabsTrigger>
-	<TabsTrigger value="tw_cli_expo">thirdweb CLI Expo</TabsTrigger>
+	<TabsTrigger value="tw_cli">egiftcard CLI</TabsTrigger>
+	<TabsTrigger value="tw_cli_expo">egiftcard CLI Expo</TabsTrigger>
 	<TabsTrigger value="rn_cli">React Native CLI</TabsTrigger>
 	<TabsTrigger value="expo_cli">Expo CLI</TabsTrigger>
 </TabsList>
@@ -184,7 +184,7 @@ Make sure to have your React Native environment setup before using the template.
 <TabsContent value="tw_cli">
 
 ```bash
-npx thirdweb create --template react-native-typescript-starter
+npx egiftcard create --template react-native-typescript-starter
 ```
 
 </TabsContent>
@@ -192,10 +192,10 @@ npx thirdweb create --template react-native-typescript-starter
 <TabsContent value="tw_cli_expo">
 Note that running through <b>Expo Go</b> app currently isn't supported. You
     need to connect your device and build manually. Use the following command to
-    create an Expo React Native app using thirdweb CLI:
+    create an Expo React Native app using egiftcard CLI:
 
 ```bash
-npx thirdweb create --template react-native-expo-starter
+npx egiftcard create --template react-native-expo-starter
 ```
 
 </TabsContent>

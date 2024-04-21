@@ -11,11 +11,11 @@ By default, The "Send Funds" screen shows a few popular tokens for default chain
 `supportedTokens` prop allows you to customize this list as shown below.
 
 ```tsx
-import { Base } from "@thirdweb-dev/chains";
+import { Base } from "@egiftcard/chains";
 
 const supportedTokens = {
 	// use chain id of the network as key and pass an array of tokens to show
-	// you can directly pass the number or import the chain object from @thirdweb-dev/chains to get the chain id
+	// you can directly pass the number or import the chain object from @egiftcard/chains to get the chain id
 	[Base.chainId]: [
 		{
 			address: "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb", // token contract address

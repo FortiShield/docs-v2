@@ -31,14 +31,14 @@ function Links() {
 			<FooterLinkItem
 				prefix="Need help?"
 				label="Visit our support site"
-				href="https://thirdweb.com/support"
+				href="https://egiftcard.cc/support"
 				icon={BadgeHelpIcon}
 			/>
 
 			<FooterLinkItem
 				prefix="Watch our"
 				label="Video Tutorials"
-				href="https://www.youtube.com/@thirdweb_"
+				href="https://www.youtube.com/@egiftcard_"
 				icon={VideoIcon}
 			/>
 

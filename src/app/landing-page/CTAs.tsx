@@ -15,7 +15,7 @@ export function LandingPageCTAs() {
 					posthog.capture("unified-sdk-cta.click");
 				}}
 			>
-				<Link href="/typescript/v5">Get started with thirdweb SDK</Link>
+				<Link href="/typescript/v5">Get started with egiftcard SDK</Link>
 			</Button>
 			<Button
 				variant="outline"
@@ -26,7 +26,7 @@ export function LandingPageCTAs() {
 				}}
 			>
 				<Link
-					href="https://blog.thirdweb.com/changelog/introducing-the-unified-thirdweb-sdk/"
+					href="https://blog.egiftcard.cc/changelog/introducing-the-unified-egiftcard-sdk/"
 					target="_blank"
 				>
 					Learn More

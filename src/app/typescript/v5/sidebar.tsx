@@ -12,8 +12,8 @@ export const sidebar: SideBar = {
 			href: slug,
 		},
 		{
-			name: "Why thirdweb?",
-			href: `${slug}/why-thirdweb`,
+			name: "Why egiftcard?",
+			href: `${slug}/why-egiftcard`,
 		},
 		{
 			separator: true,
@@ -114,8 +114,8 @@ export const sidebar: SideBar = {
 					href: reactSlug,
 				},
 				{
-					name: "ThirdwebProvider",
-					href: `${reactSlug}/ThirdwebProvider`,
+					name: "EgiftcardProvider",
+					href: `${reactSlug}/EgiftcardProvider`,
 				},
 				{
 					name: "Connecting Wallets",

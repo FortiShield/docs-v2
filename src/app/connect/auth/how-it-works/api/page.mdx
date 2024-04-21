@@ -7,10 +7,10 @@ import authAPIImage4 from "../../assets/auth-api-4.svg";
 
 export const metadata = createMetadata({
 	image: {
-		title: "thirdweb Auth API",
+		title: "egiftcard Auth API",
 		icon: "wallets",
 	},
-	title: "Auth API | thirdweb",
+	title: "Auth API | egiftcard",
 	description:
 		"The Auth API is a set of REST endpoints that all server-side plugins of the Auth SDK implement. They enable wallet-based authentication and authorization for any API that they are added to",
 });
@@ -88,4 +88,4 @@ The purpose of this endpoint is to support the more advanced flow of enabling mu
 
 The way Auth maintains multiple logged-in accounts at once is by storing the JWT for each logged-in wallet in a separate cookie on the browser. In order to determine which of these cookies should be used with each request, the Auth API sends an additional cookie that stores the "active account" that the user wants to perform actions. Then, when the user wants to switch accounts, they can make a request to this `/switch-account` endpoint to update the active account cookie.
 
-If you're using the thirdweb React SDK on the client side, switching accounts is automatically handled for you when users switch between logged-in wallets.
+If you're using the egiftcard React SDK on the client side, switching accounts is automatically handled for you when users switch between logged-in wallets.

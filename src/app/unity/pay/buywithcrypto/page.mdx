@@ -1,7 +1,7 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "BuyWithCrypto | thirdweb Unity SDK",
+	title: "BuyWithCrypto | egiftcard Unity SDK",
 	description: "Send a quoted swap transaction.",
 });
 
@@ -12,12 +12,12 @@ Send a quoted swap transaction. See [GetBuyWithCryptoQuote](/unity/pay/getbuywit
 ## Usage
 
 ```csharp
-using Thirdweb.Pay;
+using Egiftcard.Pay;
 
 public async void Buy()
 {
-	string txHash = await ThirdwebPay.BuyWithCrypto(_quote);
-	ThirdwebDebug.Log($"Transaction hash: {_txHash}");
+	string txHash = await EgiftcardPay.BuyWithCrypto(_quote);
+	EgiftcardDebug.Log($"Transaction hash: {_txHash}");
 }
 ```
 

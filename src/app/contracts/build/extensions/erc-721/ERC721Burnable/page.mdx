@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC721Burnable contract",
 		icon: "solidity",
 	},
-	title: "ERC721Burnable | thirdweb contract",
+	title: "ERC721Burnable | egiftcard contract",
 	description:
 		"ERC721Burnable allows the NFTs in the contract to be burned (transferred to a non-recoverable address)",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC721Burnable
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/interface/IBurnableERC721.sol";
+import "@egiftcard/contracts/extension/interface/IBurnableERC721.sol";
 ```
 
 ERC721Burnable allows the NFTs in the contract to be burned (transferred to a non-recoverable address).
@@ -28,7 +28,7 @@ This extension is an interface and requires all of the functions to be implement
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/interface/IBurnableERC721.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/interface/IBurnableERC721.sol" />
 
 ## Usage
 
@@ -38,8 +38,8 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/ERC721A.sol";
-import "@thirdweb-dev/contracts/extension/interface/IBurnableERC721.sol";
+import "@egiftcard/contracts/eip/ERC721A.sol";
+import "@egiftcard/contracts/extension/interface/IBurnableERC721.sol";
 
 contract Contract is ERC721A, IBurnableERC721 {
     constructor(

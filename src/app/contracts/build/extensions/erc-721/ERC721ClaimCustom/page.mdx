@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "ERC721ClaimCustom contract",
 		icon: "solidity",
 	},
-	title: "ERC721ClaimCustom | thirdweb contract",
+	title: "ERC721ClaimCustom | egiftcard contract",
 	description:
 		"Allow other wallets to claim/mint tokens that you have Lazy Minted by implementing ERC721 and ERC721Claimable extensions",
 });
@@ -14,8 +14,8 @@ export const metadata = createMetadata({
 # ERC721ClaimCustom
 
 ```solidity
-import "@thirdweb-dev/contracts/eip/ERC721.sol";
-import "@thirdweb-dev/contracts/extension/interface/IClaimableERC721.sol";
+import "@egiftcard/contracts/eip/ERC721.sol";
+import "@egiftcard/contracts/extension/interface/IClaimableERC721.sol";
 ```
 
 Allow other wallets to claim/mint tokens that you have Lazy Minted by
@@ -24,7 +24,7 @@ implementing [`ERC721`](/contracts/build/extensions/erc-721/ERC721) and [`ERC721
 This is an extension which is detectable in the dashboard if the smart contract implements the
 [`ERC721`](/contracts/build/extensions/erc-721/ERC721) and [`ERC721Claimable`](/contracts/build/extensions/erc-721/ERC721Claimable) extensions.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/interface/IClaimableERC721.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/interface/IClaimableERC721.sol" />
 
 ## Usage
 
@@ -35,9 +35,9 @@ The functions which are available to be overridden (optionally) are also detaile
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/ERC721A.sol";
-import "@thirdweb-dev/contracts/extension/LazyMint.sol";
-import "@thirdweb-dev/contracts/extension/interface/IClaimableERC721.sol";
+import "@egiftcard/contracts/eip/ERC721A.sol";
+import "@egiftcard/contracts/extension/LazyMint.sol";
+import "@egiftcard/contracts/extension/interface/IClaimableERC721.sol";
 
 contract Contract is ERC721A, LazyMint, IClaimableERC721 {
     constructor(

@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 		title: "Get started with Account Abstraction",
 		icon: "wallets",
 	},
-	title: "Getting Started with Account Abstraction | thirdweb",
+	title: "Getting Started with Account Abstraction | egiftcard",
 	description:
 		"Getting started to add ERC-4337 Account Abstraction support to your application easily.",
 });
@@ -26,23 +26,23 @@ Once set, your application will:
 
 - Let users **connect to their smart account** using any personal wallet, including email and local wallets for easy onboarding.
 - Automatically **deploy individual account contracts** for your users when they do their first onchain transaction.
-- **Handle all transaction gas costs** via the thirdweb paymaster.
+- **Handle all transaction gas costs** via the egiftcard paymaster.
 
 ## 1. Deploy an account factory contract
 
-Deployable via the [explore page](https://thirdweb.com/explore/smart-wallet) or build your own [ERC 4337](https://eips.ethereum.org/EIPS/eip-4337) compatible factory contract using the [Solidity SDK](/contracts/build/base-contracts/erc-4337).
+Deployable via the [explore page](https://egiftcard.cc/explore/smart-wallet) or build your own [ERC 4337](https://eips.ethereum.org/EIPS/eip-4337) compatible factory contract using the [Solidity SDK](/contracts/build/base-contracts/erc-4337).
 
-thirdweb offers different kinds of account factories:
+egiftcard offers different kinds of account factories:
 
 <Grid>
 	<ArticleIconCard
 		title="Account Factory"
-		href="https://thirdweb.com/thirdweb.eth/AccountFactory"
+		href="https://egiftcard.cc/egiftcard.eth/AccountFactory"
 		icon={WalletsSmartIcon}
 	/>
 	<ArticleIconCard
 		title="Managed Account Factory"
-		href="https://thirdweb.com/thirdweb.eth/ManagedAccountFactory"
+		href="https://egiftcard.cc/egiftcard.eth/ManagedAccountFactory"
 		icon={WalletsSmartIcon}
 	/>
 </Grid>
@@ -51,11 +51,11 @@ Read about the differences between the account factory types [here](/connect/acc
 
 ## 2. Get a free API key
 
-You will require an API key to use thirdweb's infrastructure services such as the bundler and paymaster.
+You will require an API key to use egiftcard's infrastructure services such as the bundler and paymaster.
 
-Obtain an API key from the [thirdweb dashboard Settings page](https://thirdweb.com/create-api-key).
+Obtain an API key from the [egiftcard dashboard Settings page](https://egiftcard.cc/create-api-key).
 
-The API key lets you access thirdweb's bundler and paymaster infrastructure, which is required for smart accounts to operate and optionally enable [gasless transactions](/glossary/gasless-transactions).
+The API key lets you access egiftcard's bundler and paymaster infrastructure, which is required for smart accounts to operate and optionally enable [gasless transactions](/glossary/gasless-transactions).
 
 Learn more about creating an API key and restricting which contracts the smart account can interact with [here](/api-keys).
 
@@ -65,8 +65,8 @@ Use the following code to integrate account abstraction into your apps. This wil
 
 - Connect your users to their smart account based on their personal wallet (can be any EOA wallet such as in-app wallet or metamask).
 - Automatically deploy the individual account contracts for your users when they do their first onchain transaction.
-- Handle all transaction gas costs via the thirdweb paymaster.
-- Select your deployed account factory and client ID to use the thirdweb infrastructure.
+- Handle all transaction gas costs via the egiftcard paymaster.
+- Select your deployed account factory and client ID to use the egiftcard infrastructure.
 
 <Callout title="Galess transactions" variant="info">
 
@@ -85,16 +85,16 @@ All transactions performed with the smart account will then be gasless.
 
 <TabsContent value="react">
 ```tsx
-import { createThirdwebClient } from "thirdweb";
-import { ThirdwebProvider, ConnectButton } from "thirdweb/react";
+import { createEgiftcardClient } from "egiftcard";
+import { EgiftcardProvider, ConnectButton } from "egiftcard/react";
 
-const client = createThirdwebClient({
+const client = createEgiftcardClient({
 clientId: "YOUR_CLIENT_ID",
 });
 
 export default function App() {
 return (
-    <ThirdwebProvider>
+    <EgiftcardProvider>
       <ConnectButton
 	    client={client}
 	    accountAbstraction={{
@@ -103,7 +103,7 @@ return (
             gasless: true // enable or disable gasless transactions
         }}
 	  />
-    </ThirdwebProvider>
+    </EgiftcardProvider>
   );
 }
 ```
@@ -112,10 +112,10 @@ return (
 <TabsContent value="typescript">
 
 ```ts
-import { createThirdwebClient } from "thirdweb";
-import { inAppWallet, smartWallet } from "thirdweb/wallets";
+import { createEgiftcardClient } from "egiftcard";
+import { inAppWallet, smartWallet } from "egiftcard/wallets";
 
-const client = createThirdwebClient({
+const client = createEgiftcardClient({
 	clientId,
 });
 
@@ -143,12 +143,12 @@ const smartAccount = await wallet.connect({
 <TabsContent value="unity">
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
 public async void ConnectWallet()
 {
-// Reference to your Thirdweb SDK
-var sdk = ThirdwebManager.Instance.SDK;
+// Reference to your Egiftcard SDK
+var sdk = EgiftcardManager.Instance.SDK;
 // Configure the connection
 var connection = new WalletConnection(
 provider: WalletProvider.SmartWallet, // The wallet provider you want to connect to (Required)
@@ -173,17 +173,17 @@ Clone these templates to create smart accounts and connect to them quickly.
 <OpenSourceCard
 	title="Node.js Script"
 	description="A Node.js script to create and interact with smart accounts."
-	href={"https://github.com/thirdweb-example/smart-wallet-script"}
+	href={"https://github.com/egiftcard-example/smart-wallet-script"}
 />
 <OpenSourceCard
 	title="React App"
 	description="A React app to create and interact with smart accounts."
-	href={"https://github.com/thirdweb-example/smart-wallet-react"}
+	href={"https://github.com/egiftcard-example/smart-wallet-react"}
 />
 
 ## 4. Executing Transactions with Smart Accounts
 
-Once setup, you can use the thirdweb [TypeScript](/typescript/latest), [React](/react/latest), [React Native](/react-native/latest)
+Once setup, you can use the egiftcard [TypeScript](/typescript/latest), [React](/react/latest), [React Native](/react-native/latest)
 and [Unity SDKs](/unity) to deploy contracts, perform transactions, and manipulate wallets like any other wallet.
 
 <Tabs defaultValue="react">
@@ -198,13 +198,13 @@ and [Unity SDKs](/unity) to deploy contracts, perform transactions, and manipula
 <TabsContent value="react">
 
 ```tsx
-import { getContract } from "thirdweb";
-import { useActiveAccount, TransactionButton } from "thirdweb/react";
-import { mintTo } from "thirdweb/extensions/erc721";
+import { getContract } from "egiftcard";
+import { useActiveAccount, TransactionButton } from "egiftcard/react";
+import { mintTo } from "egiftcard/extensions/erc721";
 
 const contract = getContract({ client, chain, address: "0x..." });
 
-// The ThirdwebProvider setup above already handles the connection to the smart account
+// The EgiftcardProvider setup above already handles the connection to the smart account
 // Within the provider, you can use the SDK normally to interact with the blockchain
 export default function MyComponent() {
 	// Get the connected smart account
@@ -247,13 +247,13 @@ export default function MyComponent() {
 <TabsContent value="react-native">
 
 ```tsx
-import { getContract } from "thirdweb";
-import { useActiveAccount, TransactionButton } from "thirdweb/react";
-import { mintTo } from "thirdweb/extensions/erc721";
+import { getContract } from "egiftcard";
+import { useActiveAccount, TransactionButton } from "egiftcard/react";
+import { mintTo } from "egiftcard/extensions/erc721";
 
 const contract = getContract({ client, chain, address: "0x..." });
 
-// The ThirdwebProvider setup above already handles the connection to the smart account
+// The EgiftcardProvider setup above already handles the connection to the smart account
 // Within the provider, you can use the SDK normally to interact with the blockchain
 export default function MyComponent() {
 	// Get the connected smart account
@@ -295,8 +295,8 @@ export default function MyComponent() {
 <TabsContent value="typescript">
 
 ```ts
-import { getContract, prepareContractCall } from "thirdweb";
-import { mintTo } from "thirdweb/extensions/erc721";
+import { getContract, prepareContractCall } from "egiftcard";
+import { mintTo } from "egiftcard/extensions/erc721";
 
 // Once you have a smartAccount connected, you can interact with the blockchain as you would with a regular EOA
 const smartWalletAddress = smartAccount.address;
@@ -322,11 +322,11 @@ console.log(`Minted NFT with transaction hash: ${transactionHash}`);
 <TabsContent value="unity">
 
 ```cs
-using Thirdweb;
+using Egiftcard;
 public async void MintNFT()
 {
-  // The ThirdwebManger prefab holds the smart wallet connection state
-  var sdk = ThirdwebManager.Instance.SDK;
+  // The EgiftcardManger prefab holds the smart wallet connection state
+  var sdk = EgiftcardManager.Instance.SDK;
   // Get the connected smart wallet address
   var smartWalletAddress = await sdk.Wallet.GetAddress();
   // Interact with contracts

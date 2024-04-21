@@ -1,14 +1,14 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Webhooks | thirdweb NFT Checkout",
+	title: "Webhooks | egiftcard NFT Checkout",
 	description:
-		"Configure webhook URLs to have thirdweb notify your backend when successful or failed events occur.",
+		"Configure webhook URLs to have egiftcard notify your backend when successful or failed events occur.",
 });
 
 # Webhooks
 
-Configure webhook URLs to have thirdweb notify your backend when successful or failed events occur.
+Configure webhook URLs to have egiftcard notify your backend when successful or failed events occur.
 
 ## Use cases
 
@@ -31,13 +31,13 @@ The following webhook events are supported.
 
 ## Request format
 
-thirdweb will call your backend with an HTTPS `POST` request:
+egiftcard will call your backend with an HTTPS `POST` request:
 
 ### Headers
 
 ```text
 Content-Type: application/json
-x-thirdweb-signature: <SIGNATURE_FROM_THIRDWEB>
+x-egiftcard-signature: <SIGNATURE_FROM_EGIFTCARD>
 ```
 
 ### Request body
@@ -141,9 +141,9 @@ Do not provide a `localhost` URL to test your local server. We recommend testing
 
 ### Verify the signature header
 
-To ensure the request came from thirdweb, each webhook request signs the payload and provides this signature in the `x-thirdweb-signature` header.
+To ensure the request came from egiftcard, each webhook request signs the payload and provides this signature in the `x-egiftcard-signature` header.
 
-To verify this signature, create a **SHA-256 HMAC hash** with your **thirdweb payments secret key** that can be found in the thirdweb dashboard [payments settings](https://thirdweb.com/dashboard/payments/settings) and the **body payload as the message** (as a JSON-encoded string).
+To verify this signature, create a **SHA-256 HMAC hash** with your **egiftcard payments secret key** that can be found in the egiftcard dashboard [payments settings](https://egiftcard.cc/dashboard/payments/settings) and the **body payload as the message** (as a JSON-encoded string).
 
 ### Example implementation
 
@@ -152,11 +152,11 @@ Here's a simplified HTTP handler in Next.js:
 ```typescript
 import { createHmac, timingSafeEqual } from "crypto";
 
-const thirdwebCheckoutsWebhookHandler = (req, res) => {
-	const apiKey = "<YOUR_API_KEY>"; // Your thirdweb payments secret key
+const egiftcardCheckoutsWebhookHandler = (req, res) => {
+	const apiKey = "<YOUR_API_KEY>"; // Your egiftcard payments secret key
 
 	// Get the provided signature.
-	const signature = req.headers["x-thirdweb-signature"];
+	const signature = req.headers["x-egiftcard-signature"];
 	// Compute the expected signature.
 	const hash = createHmac("sha256", apiKey)
 		.update(JSON.stringify(req.body)) // {"event":"transfer:succeeded","result":{"id":...
@@ -211,4 +211,4 @@ Webhooks are retried every five minutes for up to one hour until a `2xx` respons
 
 ### Can I filter which webhook events are sent?
 
-Currently there is no way to filter which events are sent to your webhook URLs. thirdweb may add new webhook event types without notice. Please ignore events that you don't need by returning a `2xx` response.
+Currently there is no way to filter which events are sent to your webhook URLs. egiftcard may add new webhook event types without notice. Please ignore events that you don't need by returning a `2xx` response.

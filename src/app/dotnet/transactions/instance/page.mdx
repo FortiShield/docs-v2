@@ -1,23 +1,23 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ThirdwebTransaction Instance Methods | Thirdweb .NET SDK",
+	title: "EgiftcardTransaction Instance Methods | Egiftcard .NET SDK",
 	description:
-		"All instance methods available on the ThirdwebTransaction class in the Thirdweb .NET SDK.",
+		"All instance methods available on the EgiftcardTransaction class in the Egiftcard .NET SDK.",
 });
 
-# ThirdwebTransaction Instance Methods
+# EgiftcardTransaction Instance Methods
 
-The `ThirdwebTransaction` class provides a set of instance methods to set various properties of your transaction's input data and gas settings.
+The `EgiftcardTransaction` class provides a set of instance methods to set various properties of your transaction's input data and gas settings.
 
 Do note that in most cases those are autopolulated by the SDK and you don't need to set them manually.
 
-## ThirdwebTransaction.SetTo
+## EgiftcardTransaction.SetTo
 
 Set the target address or contract of the transaction.
 
 ```csharp
-ThirdwebTransaction transaction = transaction.SetTo("0xToAddress");
+EgiftcardTransaction transaction = transaction.SetTo("0xToAddress");
 ```
 
 <Details summary="Parameters">
@@ -30,18 +30,18 @@ The target address or contract of the transaction. Must be a hexadecimal `string
 
 <Details summary="Return Value">
 
-### ThirdwebTransaction
+### EgiftcardTransaction
 
-Returns the instance of `ThirdwebTransaction` with the `to` property set.
+Returns the instance of `EgiftcardTransaction` with the `to` property set.
 
 </Details>
 
-## ThirdwebTransaction.SetData
+## EgiftcardTransaction.SetData
 
-Set the raw encoded data payload (potentially overriding previous data if the transaction was created using `ThirdwebContract.Prepare`).
+Set the raw encoded data payload (potentially overriding previous data if the transaction was created using `EgiftcardContract.Prepare`).
 
 ```csharp
-ThirdwebTransaction transaction = transaction.SetData("0x");
+EgiftcardTransaction transaction = transaction.SetData("0x");
 ```
 
 <Details summary="Parameters">
@@ -54,18 +54,18 @@ The raw data payload of the transaction. Must be a hexadecimal `string`.
 
 <Details summary="Return Value">
 
-### ThirdwebTransaction
+### EgiftcardTransaction
 
-Returns the instance of `ThirdwebTransaction` with the `data` property set.
+Returns the instance of `EgiftcardTransaction` with the `data` property set.
 
 </Details>
 
-## ThirdwebTransaction.SetValue
+## EgiftcardTransaction.SetValue
 
 Set the value of the payable transaction in Wei.
 
 ```csharp
-ThirdwebTransaction transaction = transaction.SetValue(1000000000000000000);
+EgiftcardTransaction transaction = transaction.SetValue(1000000000000000000);
 ```
 
 <Details summary="Parameters">
@@ -78,18 +78,18 @@ The value of the transaction in Wei. Must be a `BigInteger`.
 
 <Details summary="Return Value">
 
-### ThirdwebTransaction
+### EgiftcardTransaction
 
-Returns the instance of `ThirdwebTransaction` with the `value` property set.
+Returns the instance of `EgiftcardTransaction` with the `value` property set.
 
 </Details>
 
-## ThirdwebTransaction.SetGasLimit
+## EgiftcardTransaction.SetGasLimit
 
 Set the gas limit of the transaction.
 
 ```csharp
-ThirdwebTransaction transaction = transaction.SetGasLimit(21000);
+EgiftcardTransaction transaction = transaction.SetGasLimit(21000);
 ```
 
 <Details summary="Parameters">
@@ -102,16 +102,16 @@ The gas limit of the transaction. Must be an `BigInteger`.
 
 <Details summary="Return Value">
 
-Returns the instance of `ThirdwebTransaction` with the `gasLimit` property set.
+Returns the instance of `EgiftcardTransaction` with the `gasLimit` property set.
 
 </Details>
 
-## ThirdwebTransaction.SetGasPrice
+## EgiftcardTransaction.SetGasPrice
 
 Set the gas price of the transaction.
 
 ```csharp
-ThirdwebTransaction transaction = transaction.SetGasPrice(1000000000);
+EgiftcardTransaction transaction = transaction.SetGasPrice(1000000000);
 ```
 
 <Details summary="Parameters">
@@ -124,18 +124,18 @@ The gas price of the transaction. Must be an `BigInteger`.
 
 <Details summary="Return Value">
 
-### ThirdwebTransaction
+### EgiftcardTransaction
 
-Returns the instance of `ThirdwebTransaction` with the `gasPrice` property set.
+Returns the instance of `EgiftcardTransaction` with the `gasPrice` property set.
 
 </Details>
 
-## ThirdwebTransaction.SetNonce
+## EgiftcardTransaction.SetNonce
 
 Set the nonce of the transaction.
 
 ```csharp
-ThirdwebTransaction transaction = transaction.SetNonce(1);
+EgiftcardTransaction transaction = transaction.SetNonce(1);
 ```
 
 <Details summary="Parameters">
@@ -148,8 +148,8 @@ The nonce of the transaction. Must be an `BigInteger`.
 
 <Details summary="Return Value">
 
-### ThirdwebTransaction
+### EgiftcardTransaction
 
-Returns the instance of `ThirdwebTransaction` with the `nonce` property set.
+Returns the instance of `EgiftcardTransaction` with the `nonce` property set.
 
 </Details>

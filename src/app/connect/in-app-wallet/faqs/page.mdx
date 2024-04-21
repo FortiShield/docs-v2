@@ -2,7 +2,7 @@ import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
 	title: "FAQs for In-App Wallet",
-	description: "Frequently asked questions about thirdweb's In-App Wallet",
+	description: "Frequently asked questions about egiftcard's In-App Wallet",
 	image: {
 		title: "FAQs for In-App Wallet",
 		icon: "wallets",
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 
 ### Which blockchains are supported?
 
-Our thirdweb In-App Wallet is fully EVM compatible and supports all EVM chains.
+Our egiftcard In-App Wallet is fully EVM compatible and supports all EVM chains.
 
 ### Do I need to build separate flows for in-app wallets and external wallets (e.g. MetaMask)?
 
@@ -23,23 +23,23 @@ However, you will need to provide a separate flow to create in-app wallets as yo
 
 ### How do I troubleshoot unexpected console error messages?
 
-Make sure that you are developing on a [secure origin](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features/), which includes `localhost` and any site on `https://`. thirdweb uses cryptography libraries that are unsupported on `http://`.
+Make sure that you are developing on a [secure origin](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features/), which includes `localhost` and any site on `https://`. egiftcard uses cryptography libraries that are unsupported on `http://`.
 
 If you continue to run into a console error, please contact us with more details.
 
-### What is thirdweb's ability to scale?
+### What is egiftcard's ability to scale?
 
-thirdweb can create up to 100 wallets/second by default and can support higher limits (up to 3,000 wallets/second) upon request.
+egiftcard can create up to 100 wallets/second by default and can support higher limits (up to 3,000 wallets/second) upon request.
 
 ### Where can users see assets in their in-app wallet?
 
-Users can login to their in-app wallet at https://ews.thirdweb.com/wallet and see the assets held in it.
+Users can login to their in-app wallet at https://ews.egiftcard.cc/wallet and see the assets held in it.
 
 ### How do users connect to their in-app wallet in a third-party app?
 
-Users can access it by choosing the thirdweb option in WalletConnect. They will have to choose which "app wallet" they want to connect to the app
+Users can access it by choosing the egiftcard option in WalletConnect. They will have to choose which "app wallet" they want to connect to the app
 
-### What login options does thirdweb support?
+### What login options does egiftcard support?
 
 We support Google, Apple, Facebook and email out of the box, and in-app wallets can be configured to work with any Open ID Compatible authentication service. We will be adding out of the box support for more social login options soon.
 
@@ -59,23 +59,23 @@ Yes, we show the email by default in the details modal after you connect. To dis
 
 The in-app wallet can be sued as a signer to a smart contract account (account abstraction), but it can also be used as a standalone EOA.
 
-### What happens if thirdweb ceases to exist? Will my users be able to access their wallets?
+### What happens if egiftcard ceases to exist? Will my users be able to access their wallets?
 
-In the event that thirdweb ceases to exist, we have committed to keeping our in-app wallet service running for a period of at least 12 months after the shutdown announcement. During this time users will be able to access their wallet and transfer their assets out, or export their private key which they can then import into a different client.
+In the event that egiftcard ceases to exist, we have committed to keeping our in-app wallet service running for a period of at least 12 months after the shutdown announcement. During this time users will be able to access their wallet and transfer their assets out, or export their private key which they can then import into a different client.
 
 # Custom JWT Auth FAQs
 
 ### Can I use my own Auth service with In-App Wallets?
 
-Yes, you have the option to use your own Auth provider with the thirdweb In-App Wallet. For instructions on how to log in using your custom authentication, refer to our [Bring your own authentication with Custom JWT](https://docs.withpaper.com/reference/authenticate-a-user#bring-your-own-authentication-with-custom-jwt-advanced) guide.
+Yes, you have the option to use your own Auth provider with the egiftcard In-App Wallet. For instructions on how to log in using your custom authentication, refer to our [Bring your own authentication with Custom JWT](https://docs.withpaper.com/reference/authenticate-a-user#bring-your-own-authentication-with-custom-jwt-advanced) guide.
 
-### For a user who creates a wallet via the JWT method, can they recover their account via thirdweb?
+### For a user who creates a wallet via the JWT method, can they recover their account via egiftcard?
 
-The user can still recover by authenticating via your application and then using the password that was sent to them to gain access to the wallet on a new device. thirdweb doesn't have access to the authentication mechanism and would only be able to provide the user access to their wallet if they are already on a device that has the wallet share saved.
+The user can still recover by authenticating via your application and then using the password that was sent to them to gain access to the wallet on a new device. egiftcard doesn't have access to the authentication mechanism and would only be able to provide the user access to their wallet if they are already on a device that has the wallet share saved.
 
 ### Who retains custody over wallets created with custom JWT?
 
-The user has custody of the wallet because (a) thirdweb does not have enough shares to access the wallet. After all, we do not know the password sent to the user to decrypt one of the shares, (b) your app has the auth mechanism, but auth by itself is not enough to access the underlying wallet.
+The user has custody of the wallet because (a) egiftcard does not have enough shares to access the wallet. After all, we do not know the password sent to the user to decrypt one of the shares, (b) your app has the auth mechanism, but auth by itself is not enough to access the underlying wallet.
 
 ### How will my users recover their accounts in case they lose access to their auth?
 
@@ -89,6 +89,6 @@ Soon, developers will be able to toggle on the option for users to add a backup 
 
 You can learn more about the architecture of how in-app wallets are created and stored [here](/connect/in-app-wallet/how-it-works)
 
-### What happens if thirdweb or my database gets breached?
+### What happens if egiftcard or my database gets breached?
 
-Using Shamir Secret Sharing technology, your customers' assets are safe even if thirdweb or you are compromised. This is because the attacker will only be able to access 1 of the 3 shards, and that is not enough to reconstruct the private key.
+Using Shamir Secret Sharing technology, your customers' assets are safe even if egiftcard or you are compromised. This is because the attacker will only be able to access 1 of the 3 shards, and that is not enough to reconstruct the private key.

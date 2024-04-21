@@ -1,7 +1,7 @@
 import { Details, Callout, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "InAppWallet.Create | Thirdweb .NET SDK",
+	title: "InAppWallet.Create | Egiftcard .NET SDK",
 	description:
 		"Instantiate an InAppWallet for secure user authentication and interaction.",
 });
@@ -23,7 +23,7 @@ var wallet = await InAppWallet.Create(client, "userEmail", "userPhoneNumber");
 
 ### client (required)
 
-An instance of `ThirdwebClient`.
+An instance of `EgiftcardClient`.
 
 ### email (optional)
 
@@ -95,7 +95,7 @@ if (!await inAppWallet.IsConnected())
 Console.WriteLine($"InAppWallet address: {await inAppWallet.GetAddress()}");
 
 // Sign a message
-var message = "Hello, Thirdweb!";
+var message = "Hello, Egiftcard!";
 var signature = await wallet.PersonalSign(message);
 Console.WriteLine($"Signature: {signature}");
 ```

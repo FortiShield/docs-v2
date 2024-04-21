@@ -2,26 +2,26 @@ import { Callout } from "@doc";
 
 Override the default [Storage](/storage) interface used by the SDK.
 
-Allows you to create an instance of `ThirdwebStorage` with your own customized config, and pass it to the SDK.
+Allows you to create an instance of `EgiftcardStorage` with your own customized config, and pass it to the SDK.
 
 <Callout variant='info'>
 
-This requires the `@thirdweb-dev/storage` package to be installed.
+This requires the `@egiftcard/storage` package to be installed.
 
 [Learn more about Storage](/storage)
 
 </Callout>
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react-native";
+import { EgiftcardProvider } from "@egiftcard/react-native";
 import {
-	ThirdwebStorage,
+	EgiftcardStorage,
 	StorageDownloader,
 	IpfsUploader,
-} from "@thirdweb-dev/storage";
+} from "@egiftcard/storage";
 
-// Configure a custom ThirdwebStorage instance
-const storage = new ThirdwebStorage({
+// Configure a custom EgiftcardStorage instance
+const storage = new EgiftcardStorage({
 	uploader: new IpfsUploader(),
 	downloader: new StorageDownloader(),
 	gatewayUrls: {
@@ -36,9 +36,9 @@ const storage = new ThirdwebStorage({
 // Provide the custom storage instance to the SDK
 function MyApp() {
 	return (
-		<ThirdwebProvider storageInterface={storage}>
+		<EgiftcardProvider storageInterface={storage}>
 			<YourApp />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

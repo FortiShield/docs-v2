@@ -30,7 +30,7 @@ export const metadata = createMetadata({
 		title: "ConnectWallet component",
 		icon: "react",
 	},
-	title: "ConnectWallet | thirdweb React SDK",
+	title: "ConnectWallet | egiftcard React SDK",
 	description: "API Reference for the ConnectWallet component",
 });
 
@@ -53,7 +53,7 @@ ConnectWallet component renders a button which when clicked opens a modal to all
 
 <Callout variant='info' title="Playground">
 
-See the ConnectWallet in action on [ConnectWallet Playground!](https://thirdweb.com/dashboard/wallets/connect)
+See the ConnectWallet in action on [ConnectWallet Playground!](https://egiftcard.cc/dashboard/wallets/connect)
 
 </Callout>
 
@@ -62,23 +62,23 @@ See the ConnectWallet in action on [ConnectWallet Playground!](https://thirdweb.
 ## Usage
 
 <Steps>
-<Step title="Configure supportedWallets in ThirdwebProvider" >
+<Step title="Configure supportedWallets in EgiftcardProvider" >
 
-To Configure which wallets to show in the ConnectWallet Modal, you need to configure the `supportedWallets` prop in the [`ThirdwebProvider`](/react/v4/ThirdwebProvider) component which wraps your entire application.
+To Configure which wallets to show in the ConnectWallet Modal, you need to configure the `supportedWallets` prop in the [`EgiftcardProvider`](/react/v4/EgiftcardProvider) component which wraps your entire application.
 
 To display a `Recommended` tag below a wallet provider, pass in the `recommended: true` property in the wallet configurator function.
 
 ```jsx
 import {
-	ThirdwebProvider,
+	EgiftcardProvider,
 	metamaskWallet,
 	coinbaseWallet,
 	walletConnect,
-} from "@thirdweb-dev/react";
+} from "@egiftcard/react";
 
 function AppWithProviders() {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			supportedWallets={[
 				metamaskWallet({
 					recommended: true,
@@ -89,12 +89,12 @@ function AppWithProviders() {
 			clientId="<your_client_id>"
 		>
 			<App />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
 
-If `supportedWallets` is not configured in the `ThirdwebProvider`, the ConnectWallet Modal show the default wallets:
+If `supportedWallets` is not configured in the `EgiftcardProvider`, the ConnectWallet Modal show the default wallets:
 
 <Details summary="Default Wallets" id='default-wallets'>
 
@@ -115,7 +115,7 @@ If `supportedWallets` is not configured in the `ThirdwebProvider`, the ConnectWa
 Render the `ConnectWallet` component anywhere in your application. Refer to [Props](#props) to see the configuration options available
 
 ```jsx
-import { ConnectWallet } from "@thirdweb-dev/react";
+import { ConnectWallet } from "@egiftcard/react";
 
 function Example() {
 	return (
@@ -190,14 +190,14 @@ function Example() {
 
 ## Localization
 
-You can set the [`locale`](/react/v4/ThirdwebProvider#locale) prop of `ThirdwebProvider` component to change the language used in the ConnectWallet Modal.
+You can set the [`locale`](/react/v4/EgiftcardProvider#locale) prop of `EgiftcardProvider` component to change the language used in the ConnectWallet Modal.
 
 ## Override UI and Metadata of wallets
 
 Each [Wallet Configurator](/react/v4/wallets) function returns an object. This object contains the metadata and UI of the Wallet. You can choose to override them according to your needs.
 
 ```jsx
-import { metamaskWallet } from "@thirdweb-dev/react";
+import { metamaskWallet } from "@egiftcard/react";
 
 const metamaskConfig = metamaskWallet({ ... });
 
@@ -230,10 +230,10 @@ metamaskConfig.isInstalled = () => {
 
 ```
 
-You can then pass the modified config to the `supportedWallets` prop in the `ThirdwebProvider` component.
+You can then pass the modified config to the `supportedWallets` prop in the `EgiftcardProvider` component.
 
 ```jsx
-<ThirdwebProvider
+<EgiftcardProvider
 	supportedWallets={[metamaskConfig]}
 	clientId="your-client-id"
 />

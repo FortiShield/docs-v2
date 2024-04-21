@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "ContractMetadata contract",
 		icon: "solidity",
 	},
-	title: "ContractMetadata | thirdweb contract",
+	title: "ContractMetadata | egiftcard contract",
 	description:
 		"This extension lets you define metadata for your smart contract. Additionally, ContractMetadata is necessary to enable royalties on NFT contracts on OpenSea.",
 });
@@ -13,12 +13,12 @@ export const metadata = createMetadata({
 # ContractMetadata
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
+import "@egiftcard/contracts/extension/ContractMetadata.sol";
 ```
 
 The `ContractMetadata` smart contract is an extension usable with any smart contract. It lets you define metadata for your smart contract. Additionally, `ContractMetadata` is necessary to enable [royalties](/contracts/build/extensions/general/Royalty) on NFT contracts on OpenSea.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/ContractMetadata.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/ContractMetadata.sol" />
 
 ## Usage
 
@@ -34,7 +34,7 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
+import "@egiftcard/contracts/extension/ContractMetadata.sol";
 
 contract MyContract is ContractMetadata {
 

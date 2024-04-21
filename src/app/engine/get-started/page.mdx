@@ -3,7 +3,7 @@ import { createMetadata, DocImage } from "@doc";
 import lifecycleImage from "../assets/tx-lifecycle.webp";
 
 export const metadata = createMetadata({
-	title: "Getting started with Engine | thirdweb Infrastructure",
+	title: "Getting started with Engine | egiftcard Infrastructure",
 	description:
 		"Learn how to use Engine to manage your backend wallets and call contract methods",
 });
@@ -41,7 +41,7 @@ Tip: Navigate to your Engine URL. You should see the following response: `Engine
 
 </Callout>
 
-Navigate to the [thirdweb Engine dashboard](https://thirdweb.com/dashboard/engine) to manage your Engine instances.
+Navigate to the [egiftcard Engine dashboard](https://egiftcard.cc/dashboard/engine) to manage your Engine instances.
 
 **Overview**
 
@@ -169,7 +169,7 @@ console.log("Queue ID:", result.queueId);
 
 ### Deploy a contract
 
-This code example deploys a [thirdweb NFT drop contract](https://thirdweb.com/thirdweb.eth/DropERC721). It requires gas funds and returns a `queueId` to query for the result.
+This code example deploys a [egiftcard NFT drop contract](https://egiftcard.cc/egiftcard.eth/DropERC721). It requires gas funds and returns a `queueId` to query for the result.
 
 ```ts
 const resp = await fetch("<engine_url>/deploy/<chain>/prebuilts/nft-drop", {
@@ -181,7 +181,7 @@ const resp = await fetch("<engine_url>/deploy/<chain>/prebuilts/nft-drop", {
 	},
 	body: JSON.stringify({
 		contractMetadata: {
-			name: "thirdweb Engine example",
+			name: "egiftcard Engine example",
 			symbol: "eng",
 			primary_sale_recipient: "0x3EcDBF3B911d0e9052b64850693888b008e18373",
 		},

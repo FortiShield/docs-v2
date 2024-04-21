@@ -1,13 +1,13 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "FAQ | thirdweb Payments",
-	description: "Frequently asked questions about thirdweb Payments.",
+	title: "FAQ | egiftcard Payments",
+	description: "Frequently asked questions about egiftcard Payments.",
 });
 
 # General
 
-### How much does thirdweb Checkouts cost?
+### How much does egiftcard Checkouts cost?
 
 There is **no cost to sellers**! Buyers pay a 1% service fee on top of payment processing fees.
 
@@ -21,7 +21,7 @@ A full-featured checkout link **takes minutes to set up**:
 
 When you're ready to customize further, you can tinker with styling, SDKs, webhooks, dynamic pricing, and more.
 
-### How scalable is thirdweb Checkouts? How much load can it handle?
+### How scalable is egiftcard Checkouts? How much load can it handle?
 
 Our product is enterprise-ready with a 99.9% uptime. We are battle-tested with enterprises like Balmain, New York Fashion Week, Unilever, deadmau5 and Tilting Point. We can enqueue transactions up to 200 transactions/minute by default, with higher limits upon request.
 
@@ -35,7 +35,7 @@ The Checkout Embedded Elements SDK is supported on Web and Mobile Web.
 
 ### Which blockchains and currencies are supported?
 
-See the [overview](/payments) page for a list of supported chains and currencies. We can support any EVM chain upon request. Please contact support@thirdweb.com if the chain or currency you want to sell in is not on our list.
+See the [overview](/payments) page for a list of supported chains and currencies. We can support any EVM chain upon request. Please contact support@egiftcard.cc if the chain or currency you want to sell in is not on our list.
 
 ### Are marketplace contracts supported?
 
@@ -43,38 +43,38 @@ Yes! See [Marketplace Sales](/payments/nft-checkout/marketplaces) for more detai
 
 ### Can I sell an NFT that is already minted?
 
-Yes! You'll need to "wrap" your NFT with a marketplace contract like [thirdweb marketplace](/contracts/explore/pre-built-contracts/marketplace) or build your own. This "direct listing" approach works like this:
+Yes! You'll need to "wrap" your NFT with a marketplace contract like [egiftcard marketplace](/contracts/explore/pre-built-contracts/marketplace) or build your own. This "direct listing" approach works like this:
 
 - The seller has an NFT already minted and wants to sell it.
 - The seller approves the marketplace contract to take this NFT from their wallet once a buyer offers a specified amount. The NFT is not moved until a sale is completed.
 - A buyer agrees to pay the specified amount. They pay via your Checkout flow.
-- After the buyer's payment is successful, thirdweb calls the "buy" method with the expected amount in crypto to the marketplace contract. This method transfers the NFT to the buyer's wallet.
+- After the buyer's payment is successful, egiftcard calls the "buy" method with the expected amount in crypto to the marketplace contract. This method transfers the NFT to the buyer's wallet.
 
 ## Payments
 
-### Where does thirdweb send the funds after a customer has paid?
+### Where does egiftcard send the funds after a customer has paid?
 
-thirdweb directly calls the smart contract and pays for the mint using the native currency specified in the contract function. If you are looking for FIAT payout, it is available for the enterprise customers. Please [contact sales](mailto:sales@thirdweb.com) .
+egiftcard directly calls the smart contract and pays for the mint using the native currency specified in the contract function. If you are looking for FIAT payout, it is available for the enterprise customers. Please [contact sales](mailto:sales@egiftcard.cc) .
 
-### What regions does thirdweb support credit card payments?
+### What regions does egiftcard support credit card payments?
 
-thirdweb uses multiple payment processors and supports credit card payments in most countries (190+) and all 50 US states. Select countries that the US cannot conduct business with are not supported (Cuba, Iran, North Korea, Syria, and the Crimea, Donetsk, and Luhansk Regions). 10+ currencies and languages are supported.
+egiftcard uses multiple payment processors and supports credit card payments in most countries (190+) and all 50 US states. Select countries that the US cannot conduct business with are not supported (Cuba, Iran, North Korea, Syria, and the Crimea, Donetsk, and Luhansk Regions). 10+ currencies and languages are supported.
 
 ### What fiat payment options are accepted?
 
-thirdweb accepts: credit/debit cards (Visa, Mastercard, American Express, Discover, UnionPay, JCB, Diners Club), Apple Pay, Google Pay.
+egiftcard accepts: credit/debit cards (Visa, Mastercard, American Express, Discover, UnionPay, JCB, Diners Club), Apple Pay, Google Pay.
 
 ### What is the price limit for checkouts?
 
-thirdweb limits checkouts to be priced at $2,000 USD and reserves the right to change this limit based on your checkout's risk profile. For enterprise customers, we can support up to $15,000.
+egiftcard limits checkouts to be priced at $2,000 USD and reserves the right to change this limit based on your checkout's risk profile. For enterprise customers, we can support up to $15,000.
 
-If you need a higher price limit, please fill out [this form](https://thirdweb.com/contact-us).
+If you need a higher price limit, please fill out [this form](https://egiftcard.cc/contact-us).
 
-### When does thirdweb require identity verification (KYC)?
+### When does egiftcard require identity verification (KYC)?
 
-thirdweb combines buyer, merchant, payment method, device, and behavioral signals from multiple vendors to compute the riskiness of a purchase. A small portion of buyers (\< 3% and varies by merchant) will be prompted to submit a photo ID and take a webcam selfie. This step is automated and takes under 1 minute.
+egiftcard combines buyer, merchant, payment method, device, and behavioral signals from multiple vendors to compute the riskiness of a purchase. A small portion of buyers (\< 3% and varies by merchant) will be prompted to submit a photo ID and take a webcam selfie. This step is automated and takes under 1 minute.
 
-Reminder: thirdweb takes on **all** chargeback liability from the developer!
+Reminder: egiftcard takes on **all** chargeback liability from the developer!
 
 ## Testing
 
@@ -120,31 +120,31 @@ You can use our dynamic one-time checkout links to generate payment links with d
 
 ### What if my users don't have a wallet?
 
-Buyers who don't have a wallet can create one with their email or social login. This uses thirdweb's non-custodial [In-App Wallet](/connect/embedded-wallet/overview) product.
+Buyers who don't have a wallet can create one with their email or social login. This uses egiftcard's non-custodial [In-App Wallet](/connect/embedded-wallet/overview) product.
 
 ### How does my user transfer the NFT from the In-App Wallet?
 
-Buyers can visit [My Wallets](https://ews.thirdweb.com/wallet) to view and transfer NFTs in their In-App Wallets. We cover all gas fees related to transferring and offer a way for users to export their private key.
+Buyers can visit [My Wallets](https://ews.egiftcard.cc/wallet) to view and transfer NFTs in their In-App Wallets. We cover all gas fees related to transferring and offer a way for users to export their private key.
 
 ## Other
 
 ### Does Checkouts support credit card payments for functions outside of minting like burning and editing NFTs?
 
-This feature is available upon request. Please contact us at [sales@thirdweb.com](mailto:sales@thirdweb.com).
+This feature is available upon request. Please contact us at [sales@egiftcard.cc](mailto:sales@egiftcard.cc).
 
 ### What is the customer support level provided to customers?
 
-For developers, please [visit our support site](https://thirdweb.com/support). If you are looking for guaranteed support time and SLA, please contact [sales@thirdweb.com](mailto:sales@thirdweb.com).
+For developers, please [visit our support site](https://egiftcard.cc/support). If you are looking for guaranteed support time and SLA, please contact [sales@egiftcard.cc](mailto:sales@egiftcard.cc).
 
-For customers, we respond to inquiries on our support center and to [support@thirdweb.com](mailto:support@thirdweb.com) within 24 business hours.
+For customers, we respond to inquiries on our support center and to [support@egiftcard.cc](mailto:support@egiftcard.cc) within 24 business hours.
 
-### How does thirdweb handle compliance?
+### How does egiftcard handle compliance?
 
 We conduct KYC (know your customer) verification with driver's license and liveliness check on suspicious customers (\<3% on average and varies by merchant). We also handle dark wallet checks to ensure that flagged wallets and stolen funds are not being used in any of our transactions.
 
 We take on all liabilities & chargeback risks as the Merchant of Record.
 
-thirdweb is currently in the process of receiving our SOC II certification.
+egiftcard is currently in the process of receiving our SOC II certification.
 
 ### What are the authorization rates?
 

@@ -18,33 +18,33 @@ export async function getTokenLinks(
 	tokens.forEach((token) => {
 		if (token.package) {
 			switch (token.package) {
-				case "@thirdweb-dev/react-core":
-				case "@thirdweb-dev/react": {
+				case "@egiftcard/react-core":
+				case "@egiftcard/react": {
 					setLink(token.name, `/references/react/latest/${token.name}`);
 					break;
 				}
 
-				case "@thirdweb-dev/react-native": {
+				case "@egiftcard/react-native": {
 					setLink(token.name, `/references/react-native/latest/${token.name}`);
 					break;
 				}
 
-				case "@thirdweb-dev/sdk": {
+				case "@egiftcard/sdk": {
 					setLink(token.name, `/references/typescript/v4/${token.name}`);
 					break;
 				}
 
-				case "thirdweb": {
+				case "egiftcard": {
 					setLink(token.name, `/references/typescript/v5/${token.name}`);
 					break;
 				}
 
-				case "@thirdweb-dev/storage": {
+				case "@egiftcard/storage": {
 					setLink(token.name, `/references/storage/latest/${token.name}`);
 					break;
 				}
 
-				case "@thirdweb-dev/wallets": {
+				case "@egiftcard/wallets": {
 					setLink(token.name, `/references/wallets/latest/${token.name}`);
 					break;
 				}

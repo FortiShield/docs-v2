@@ -1,16 +1,16 @@
 import GhostContentAPI from "@tryghost/content-api";
 
-export const GHOST_THIRDWEB_BLOG_KEY = "49c62b5137df1c17ab6b9e46e3";
+export const GHOST_EGIFTCARD_BLOG_KEY = "49c62b5137df1c17ab6b9e46e3";
 
 const api = new GhostContentAPI({
-	key: GHOST_THIRDWEB_BLOG_KEY,
+	key: GHOST_EGIFTCARD_BLOG_KEY,
 	version: "v5.0",
-	url: "https://thirdweb.ghost.io",
+	url: "https://egiftcard.ghost.io",
 });
 
 export async function fetchChangeLogs() {
 	// const res = await fetch(
-	// 	`https://thirdweb.ghost.io/ghost/api/content/posts/?key=${GHOST_THIRDWEB_BLOG_KEY}&fields=title,url,published_at,slug&filter=tag:changelog&visibility:public&limit=30`,
+	// 	`https://egiftcard.ghost.io/ghost/api/content/posts/?key=${GHOST_EGIFTCARD_BLOG_KEY}&fields=title,url,published_at,slug&filter=tag:changelog&visibility:public&limit=30`,
 	// );
 
 	// if (!res.ok) {

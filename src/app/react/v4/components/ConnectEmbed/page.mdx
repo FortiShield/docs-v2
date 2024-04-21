@@ -19,7 +19,7 @@ export const metadata = createMetadata({
 		title: "ConnectEmbed component",
 		icon: "react",
 	},
-	title: "ConnectEmbed | thirdweb React SDK",
+	title: "ConnectEmbed | egiftcard React SDK",
 	description: "API Reference for the ConnectEmbed component",
 });
 
@@ -43,13 +43,13 @@ This is really useful for Implementing a "Sign in" page.
 
 <Callout variant='info' title="Playground">
 
-See the ConnectWallet in action on [ConnectWallet Playground!](https://thirdweb.com/dashboard/wallets/connect)
+See the ConnectWallet in action on [ConnectWallet Playground!](https://egiftcard.cc/dashboard/wallets/connect)
 
 </Callout>
 
 <DocImage src={ConnectEmbedDefaultImg} />
 
-It also renders a UI to [Sign in with wallet](/connect/auth/how-it-works/siwe) if it is enabled by setting [`authConfig`](/react/v4/ThirdwebProvider#authConfig) in [`ThirdwebProvider`](/react/v4/ThirdwebProvider) component and `loginOptional` prop is either not provided or set to `false` in `ConnectEmbed` component
+It also renders a UI to [Sign in with wallet](/connect/auth/how-it-works/siwe) if it is enabled by setting [`authConfig`](/react/v4/EgiftcardProvider#authConfig) in [`EgiftcardProvider`](/react/v4/EgiftcardProvider) component and `loginOptional` prop is either not provided or set to `false` in `ConnectEmbed` component
 
 <DocImage src={ConnectEmbedSigninImg} />
 
@@ -62,23 +62,23 @@ Because of this use case, It only renders UI if either one of the following cond
 ## Usage
 
 <Steps>
-<Step title="Configure supportedWallets in ThirdwebProvider" id='configure-thirdwebprovider' >
+<Step title="Configure supportedWallets in EgiftcardProvider" id='configure-egiftcardprovider' >
 
-To Configure which wallets to show in the `ConnectEmbed` UI, you need to configure the `supportedWallets` prop in the [`ThirdwebProvider`](/react/v4/ThirdwebProvider) component which wraps your entire application.
+To Configure which wallets to show in the `ConnectEmbed` UI, you need to configure the `supportedWallets` prop in the [`EgiftcardProvider`](/react/v4/EgiftcardProvider) component which wraps your entire application.
 
 To display a `Recommended` tag below a wallet provider, pass in the `recommended: true` property in the wallet configurator function.
 
 ```jsx
 import {
-	ThirdwebProvider,
+	EgiftcardProvider,
 	metamaskWallet,
 	coinbaseWallet,
 	walletConnect,
-} from "@thirdweb-dev/react";
+} from "@egiftcard/react";
 
 function AppWithProviders() {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			supportedWallets={[
 				metamaskWallet({
 					recommended: true,
@@ -89,12 +89,12 @@ function AppWithProviders() {
 			clientId="<your_client_id>"
 		>
 			<App />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
 
-If `supportedWallets` is not configured in the `ThirdwebProvider`, the ConnectWallet Modal show the default wallets:
+If `supportedWallets` is not configured in the `EgiftcardProvider`, the ConnectWallet Modal show the default wallets:
 
 <Details summary="Default Wallets" id='default-wallets'>
 
@@ -115,7 +115,7 @@ If `supportedWallets` is not configured in the `ThirdwebProvider`, the ConnectWa
 Render the `ConnectEmbed` component anywhere in your application. Refer to [Props](#props) to see the configuration options available
 
 ```tsx
-import { ConnectEmbed } from "@thirdweb-dev/react";
+import { ConnectEmbed } from "@egiftcard/react";
 
 function Example() {
 	return (
@@ -129,7 +129,7 @@ function Example() {
 You can use the [`useShowConnectEmbed`](/references/react/v4/useShowConnectEmbed) hook to check if the `ConnectEmbed` is rendering a UI or not and render something else if it is not rendering anything. It takes an optional `loginOptional` boolean argument to specify whether the `<ConnectEmbed />` you want to render has auth enabled or not. If not specified, it is assumed to be `false` ( sign in is required )
 
 ```tsx
-import { ConnectEmbed } from "@thirdweb-dev/react";
+import { ConnectEmbed } from "@egiftcard/react";
 
 const loginOptional = false;
 
@@ -172,7 +172,7 @@ Class name to be added to the root element of `ConnectEmbed` component for addin
 
 theme to apply on the `ConnectEmbed` component.
 
-If a theme is set on the [`ThirdWebProvider`](/react/v4/ThirdwebProvider) component, it will be used as the default theme for all thirdweb components, else the default will be `"dark"`
+If a theme is set on the [`EgiftCardProvider`](/react/v4/EgiftcardProvider) component, it will be used as the default theme for all egiftcard components, else the default will be `"dark"`
 
 theme can be set to either `"dark"` or `"light"` or a custom theme object.
 
@@ -184,10 +184,10 @@ function Example() {
 
 <DocImage src={ConnectEmbedLight} />
 
-You can also import [`lightTheme`](/references/react/v4/lightTheme) or [`darkTheme`](/references/react/v4/darkTheme) functions from `@thirdweb-dev/react` to use the default themes as base and overrides parts of it.
+You can also import [`lightTheme`](/references/react/v4/lightTheme) or [`darkTheme`](/references/react/v4/darkTheme) functions from `@egiftcard/react` to use the default themes as base and overrides parts of it.
 
 ```tsx
-import { lightTheme } from "@thirdweb-dev/react";
+import { lightTheme } from "@egiftcard/react";
 
 const customTheme = lightTheme({
 	colors: {
@@ -247,13 +247,13 @@ function Example() {
 <Details summary="auth">
 
 Enforce that users must [sign in with their wallet](/connect/auth/how-it-works/siwe) using [auth](/connect/auth) after connecting their wallet.
-This requires the [`authConfig`](/react/v4/ThirdwebProvider#authConfig) prop in [`ThirdwebProvider`](/react/v4/ThirdwebProvider) component
+This requires the [`authConfig`](/react/v4/EgiftcardProvider#authConfig) prop in [`EgiftcardProvider`](/react/v4/EgiftcardProvider) component
 
 <DocImage src={ConnectEmbedSigninImg} />
 
 The `auth` prop accepts an object with the following properties:
 
-- `loginOptional` - specify whether signing in is optional or not. By default it is `false` ( sign in is required ) if `authConfig` is set on `ThirdWebProvider`
+- `loginOptional` - specify whether signing in is optional or not. By default it is `false` ( sign in is required ) if `authConfig` is set on `EgiftCardProvider`
 
 - `onLogin` - Callback to be called after user signs in with their wallet
 
@@ -312,5 +312,5 @@ Note that this does not include the sign in, If you want to call a callback afte
 
 <GithubTemplateCard
 	title="Using ConnectEmbed to create sign-in page in Next.js"
-	href="https://github.com/thirdweb-example/connect-embed-next"
+	href="https://github.com/egiftcard-example/connect-embed-next"
 />

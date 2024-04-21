@@ -1,22 +1,22 @@
 import { Details, Callout, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ThirdwebClient.Create | Thirdweb .NET SDK",
+	title: "EgiftcardClient.Create | Egiftcard .NET SDK",
 	description:
-		"Instantiate a Thirdweb client to interact with the blockchain and smart contracts.",
+		"Instantiate a Egiftcard client to interact with the blockchain and smart contracts.",
 });
 
-# Initializing a Thirdweb Client
+# Initializing a Egiftcard Client
 
-The `ThirdwebClient` class is the main entry point for interacting with the Thirdweb SDK.
+The `EgiftcardClient` class is the main entry point for interacting with the Egiftcard SDK.
 
 You can pass the client to other methods to interact with wallets and smart contracts.
 
-One client unlocks all thirdweb infrastructure services by default.
+One client unlocks all egiftcard infrastructure services by default.
 
 ## Usage
 
-To start interacting with a deployed smart contract using the Thirdweb .NET SDK, first create a `ThirdwebClient` instance. You can create a client using either a `secretKey` for backend applications or a `clientId` for frontend applications. If your application is not web-based (has no origin), you should also provide a `bundleId`.
+To start interacting with a deployed smart contract using the Egiftcard .NET SDK, first create a `EgiftcardClient` instance. You can create a client using either a `secretKey` for backend applications or a `clientId` for frontend applications. If your application is not web-based (has no origin), you should also provide a `bundleId`.
 
 <Callout variant='info' title="Choosing between clientId and secretKey">
 
@@ -29,31 +29,31 @@ Always ensure that your secret keys are stored securely and not exposed in clien
 </Callout>
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
 // For native applications
-var client = ThirdwebClient.Create(clientId: "yourClientId", bundleId: "yourBundleId");
+var client = EgiftcardClient.Create(clientId: "yourClientId", bundleId: "yourBundleId");
 
 // For frontend applications
-var client = ThirdwebClient.Create(clientId: "yourClientId");
+var client = EgiftcardClient.Create(clientId: "yourClientId");
 
 // For backend applications
-var client = ThirdwebClient.Create(secretKey: "yourSecretKey");
+var client = EgiftcardClient.Create(secretKey: "yourSecretKey");
 ```
 
 <Details summary="Configuration">
 
 ### clientId (optional)
 
-The client ID associated with your thirdweb dashboard API Key.
+The client ID associated with your egiftcard dashboard API Key.
 
 ### secretKey (optional)
 
-The secret key associated with your thirdweb dashboard API Key.
+The secret key associated with your egiftcard dashboard API Key.
 
 ### bundleId (optional)
 
-The bundle ID associated with your thirdweb dashboard API Key. Required for non-web applications and paired with the client ID.
+The bundle ID associated with your egiftcard dashboard API Key. Required for non-web applications and paired with the client ID.
 
 ### fetchTimeoutOptions (optional)
 

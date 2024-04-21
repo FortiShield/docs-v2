@@ -143,7 +143,7 @@ export const sidebar: SideBar = {
 			href: "/dotnet/godot",
 		},
 		{
-			name: "Thirdweb Client",
+			name: "Egiftcard Client",
 			href: "/dotnet/client",
 		},
 		contracts,

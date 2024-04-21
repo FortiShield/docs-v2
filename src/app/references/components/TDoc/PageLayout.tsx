@@ -125,7 +125,7 @@ export function getTDocPage(options: {
 
 		if (!docName) {
 			return {
-				title: sdkTitle + " | thirdweb docs",
+				title: sdkTitle + " | egiftcard docs",
 			};
 		}
 		const extensionName = props.params.slug ? props.params.slug[1] : undefined;

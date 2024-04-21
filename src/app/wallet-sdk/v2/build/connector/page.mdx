@@ -5,8 +5,8 @@ export const metadata = createMetadata({
 		title: "Build a Wallet interface",
 		icon: "wallets",
 	},
-	title: "Build a Wallet interface | thirdweb Wallet SDK",
-	description: "Learn how to build a Wallet interface for thirdweb Wallet SDK",
+	title: "Build a Wallet interface | egiftcard Wallet SDK",
+	description: "Learn how to build a Wallet interface for egiftcard Wallet SDK",
 });
 
 # Build a Wallet interface
@@ -21,7 +21,7 @@ Building a Wallet interface is done in two steps:
 Extend the abstract [`Connector`](/references/wallets/v2/Connector) interface and implement the all the required methods.
 
 ```javascript
-import { Connector, ConnectParams } from '@thirdweb-dev/wallets';
+import { Connector, ConnectParams } from '@egiftcard/wallets';
 
 export class MyConnector extends Connector {
   connect(options?: ConnectParams<TConnectParams>): Promise<string> {
@@ -136,7 +136,7 @@ The [`AbstractClientWallet`](/wallet/interface/abstract-client-wallet) class is 
 class that provides an interface for interacting with your connector on one side and with applications on the other.
 
 The main method that needs to be overridden is the `getConnector` method. This method should return a `Promise`
-that resolves to the [`Connector`](https://github.com/thirdweb-dev/js/blob/main/packages/wallets/src/evm/interfaces/connector.ts#L6)
+that resolves to the [`Connector`](https://github.com/egiftcard/js/blob/main/packages/wallets/src/evm/interfaces/connector.ts#L6)
 class that you implemented.
 
 ```javascript
@@ -168,13 +168,13 @@ wallet.connect();
 
 ## Examples
 
-You can look at how the built-in wallets in `@thirdweb-dev/wallets` package are created for reference
+You can look at how the built-in wallets in `@egiftcard/wallets` package are created for reference
 
-- [MetaMask](https://github.com/thirdweb-dev/js/blob/main/packages/wallets/src/evm/wallets/metamask.ts)
-- [Coinbase](https://github.com/thirdweb-dev/js/blob/main/packages/wallets/src/evm/wallets/coinbase-wallet.ts)
-- [WalletConnect v2](https://github.com/thirdweb-dev/js/blob/main/packages/wallets/src/evm/wallets/wallet-connect.ts)
-- [Local Wallet](https://github.com/thirdweb-dev/js/blob/main/packages/wallets/src/evm/wallets/local-wallet.ts)
-- [Safe](https://github.com/thirdweb-dev/js/blob/main/packages/wallets/src/evm/wallets/safe.ts)
-- [Smart Account](https://github.com/thirdweb-dev/js/blob/main/packages/wallets/src/evm/wallets/smart-wallet.ts)
-- [In-App Wallet](https://github.com/thirdweb-dev/js/blob/main/packages/wallets/src/evm/wallets/embedded-wallet.ts)
-- [Magic Link](https://github.com/thirdweb-dev/js/blob/main/packages/wallets/src/evm/wallets/magic.ts)
+- [MetaMask](https://github.com/egiftcard/js/blob/main/packages/wallets/src/evm/wallets/metamask.ts)
+- [Coinbase](https://github.com/egiftcard/js/blob/main/packages/wallets/src/evm/wallets/coinbase-wallet.ts)
+- [WalletConnect v2](https://github.com/egiftcard/js/blob/main/packages/wallets/src/evm/wallets/wallet-connect.ts)
+- [Local Wallet](https://github.com/egiftcard/js/blob/main/packages/wallets/src/evm/wallets/local-wallet.ts)
+- [Safe](https://github.com/egiftcard/js/blob/main/packages/wallets/src/evm/wallets/safe.ts)
+- [Smart Account](https://github.com/egiftcard/js/blob/main/packages/wallets/src/evm/wallets/smart-wallet.ts)
+- [In-App Wallet](https://github.com/egiftcard/js/blob/main/packages/wallets/src/evm/wallets/embedded-wallet.ts)
+- [Magic Link](https://github.com/egiftcard/js/blob/main/packages/wallets/src/evm/wallets/magic.ts)

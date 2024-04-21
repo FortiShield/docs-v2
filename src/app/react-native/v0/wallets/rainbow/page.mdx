@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "Rainbow Wallet",
 		icon: "react",
 	},
-	title: "Rainbow Wallet | thirdweb React Native SDK",
+	title: "Rainbow Wallet | egiftcard React Native SDK",
 	description: "API reference for rainbowWallet function",
 });
 
@@ -17,7 +17,7 @@ export const metadata = createMetadata({
 A wallet configurator for [Rainbow](/references/wallets/v2/RainbowWallet) to integrate the wallet with the React Native SDK
 
 ```tsx
-import { rainbowWallet } from "@thirdweb-dev/react-native";
+import { rainbowWallet } from "@egiftcard/react-native";
 
 const rainbowConfig = rainbowWallet(options);
 ```
@@ -57,22 +57,22 @@ rainbowWallet({
 
 ## Usage with ConnectWallet
 
-To allow users to connect to this wallet using the [ConnectWallet](/react-native/v0/connecting-wallets#connect-wallet) component, you can add it to [ThirdwebProvider's supportedWallets](/react-native/v0/connecting-wallets#supported-wallets) prop.
+To allow users to connect to this wallet using the [ConnectWallet](/react-native/v0/connecting-wallets#connect-wallet) component, you can add it to [EgiftcardProvider's supportedWallets](/react-native/v0/connecting-wallets#supported-wallets) prop.
 
 ```tsx
-<ThirdwebProvider
+<EgiftcardProvider
 	supportedWallets={[rainbowWallet()]}
 	clientId="your-client-id"
 >
 	<YourApp />
-</ThirdwebProvider>
+</EgiftcardProvider>
 ```
 
 ## Usage with useConnect
 
 You can use the [`useConnect`](/references/react-native/v0/useConnect) hook to programmatically connect to the wallet without using the [ConnectWallet](/react-native/v0/connecting-wallets#connect-wallet) component.
 
-The wallet also needs to be added in [ThirdwebProvider's supportedWallets](/react-native/v0/connecting-wallets#supported-wallets) if you want the wallet to auto-connect on next page load.
+The wallet also needs to be added in [EgiftcardProvider's supportedWallets](/react-native/v0/connecting-wallets#supported-wallets) if you want the wallet to auto-connect on next page load.
 
 ```tsx
 const rainbowConfig = rainbowWallet();
@@ -98,17 +98,17 @@ function App() {
 
 If `chainId` is provided, wallet will be connected and immediately switch to network with given `chainId`.
 
-`Chain` object corresponding to this chainId from [@thirdweb-dev/chains](https://www.npmjs.com/package/@thirdweb-dev/chains) package must be specified in ThirdwebProvider's supportedChains prop as shown below
+`Chain` object corresponding to this chainId from [@egiftcard/chains](https://www.npmjs.com/package/@egiftcard/chains) package must be specified in EgiftcardProvider's supportedChains prop as shown below
 
 ```tsx
-import { Polygon } from "@thirdweb-dev/chains";
-import { ThirdwebProvider } from "@thirdweb-dev/react-native";
+import { Polygon } from "@egiftcard/chains";
+import { EgiftcardProvider } from "@egiftcard/react-native";
 
 export function YourApp() {
 	return (
-		<ThirdwebProvider supportedChains={[Polygon]} clientId="your-client-id">
+		<EgiftcardProvider supportedChains={[Polygon]} clientId="your-client-id">
 			<App />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

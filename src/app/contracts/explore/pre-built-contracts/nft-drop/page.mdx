@@ -23,7 +23,7 @@ export const metadata = createMetadata({
 		title: "NFT Drop contract",
 		icon: "contract",
 	},
-	title: "NFT Drop contract | thirdweb",
+	title: "NFT Drop contract | egiftcard",
 	description: `NFT Drop enables users to release a collection of unique NFTs using the ERC721A standard. NFT Drop uses a “drop” mechanism intended for large collections to distribute NFTs.`,
 });
 
@@ -63,7 +63,7 @@ Learn how to deploy and manage an NFT Drop contract using dashboard.
 
 <Step title="Select Contract">
 	Navigate to Contracts > Explore > [NFT
-	Drop](https://thirdweb.com/thirdweb.eth/DropERC721)
+	Drop](https://egiftcard.cc/egiftcard.eth/DropERC721)
 </Step>
 
 <Step title="Deploy">
@@ -108,7 +108,7 @@ Set fund distribution recipients for Primary Sales and Secondary Sales by passin
 
 <Step title="Choose network">
 
-Choose a Network / Chain to Deploy to. [View list of available Networks.](https://thirdweb.com/chainlist)
+Choose a Network / Chain to Deploy to. [View list of available Networks.](https://egiftcard.cc/chainlist)
 
 <DocImage src={chooseNetworkImage} alt="Choose network screen" />
 
@@ -147,7 +147,7 @@ Optionally, users may choose to hide their NFT image and metadata from users bef
 1. In the CLI run the following Deploy command:
 
    ```bash
-   npx thirdweb deploy -n --name nft-drop
+   npx egiftcard deploy -n --name nft-drop
    ```
 
 2. Follow the prompts to fill out your contract by following the Deploy NFT Drop (Dashboard) section.
@@ -199,7 +199,7 @@ const sdk = useSDK(
 <TabsContent value="python">
 
 ```python
-from thirdweb.types.settings.metadata import NFTDropContractMetadata
+from egiftcard.types.settings.metadata import NFTDropContractMetadata
 
 metadata = NFTDropContractMetadata(
 	name="<your_contract_name>",
@@ -220,7 +220,7 @@ sdk.deployer.deploy_nft_drop(metadata)
 ```go
 address, err := sdk.Deployer.DeployNFTDrop(
 	context.Background(),
-		&thirdweb.DeployNFTDropMetadata{
+		&egiftcard.DeployNFTDropMetadata{
 				Name: "<your_contract_name>",
 		}
 )

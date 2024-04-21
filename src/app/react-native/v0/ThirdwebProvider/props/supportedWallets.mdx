@@ -7,21 +7,21 @@ the wallet connection hooks.
 
 ```jsx
 import {
-	ThirdwebProvider,
+	EgiftcardProvider,
 	metamaskWallet,
 	coinbaseWallet,
 	walletConnect,
-} from "@thirdweb-dev/react-native";
+} from "@egiftcard/react-native";
 
 function MyApp() {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			supportedWallets={[metamaskWallet(), coinbaseWallet(), walletConnect()]}
 			activeChain="ethereum"
 			clientId="your-client-id"
 		>
 			<App />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

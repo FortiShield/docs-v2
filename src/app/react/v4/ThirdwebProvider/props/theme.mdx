@@ -1,25 +1,25 @@
-Sets the theme for all thirdweb components.
+Sets the theme for all egiftcard components.
 
 By default it is set to `"dark"`
 
 theme can be set to either `"dark"` or `"light"` or a custom [`Theme`](/references/react/v4/Theme) object.
 
-You can also import the [`lightTheme`](/references/react/v4/lightTheme) or [`darkTheme`](/references/react/v4/lightTheme) functions from `@thirdweb-dev/react` to use the default themes as base and overrides parts of it.
+You can also import the [`lightTheme`](/references/react/v4/lightTheme) or [`darkTheme`](/references/react/v4/lightTheme) functions from `@egiftcard/react` to use the default themes as base and overrides parts of it.
 
 ### Using default themes
 
 ```tsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
-<ThirdwebProvider theme="light">
+<EgiftcardProvider theme="light">
 	<App />
-</ThirdwebProvider>;
+</EgiftcardProvider>;
 ```
 
 ### Overriding theme
 
 ```tsx
-import { ThirdwebProvider, lightTheme } from "@thirdweb-dev/react";
+import { EgiftcardProvider, lightTheme } from "@egiftcard/react";
 
 const customTheme = lightTheme({
 	colors: {
@@ -27,7 +27,7 @@ const customTheme = lightTheme({
 	},
 });
 
-<ThirdwebProvider theme={customTheme}>
+<EgiftcardProvider theme={customTheme}>
 	<App />
-</ThirdwebProvider>;
+</EgiftcardProvider>;
 ```

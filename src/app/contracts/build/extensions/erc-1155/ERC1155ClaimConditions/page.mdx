@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "ERC1155ClaimConditions contract",
 		icon: "solidity",
 	},
-	title: "ERC1155ClaimConditions | thirdweb contract",
+	title: "ERC1155ClaimConditions | egiftcard contract",
 	description:
 		"Allow other wallets to claim/mint tokens from the contract under the criteria of claim conditions by implementing ERC1155 and DropSinglePhase extensions",
 });
@@ -14,8 +14,8 @@ export const metadata = createMetadata({
 # ERC1155ClaimConditions
 
 ```solidity
-import "@thirdweb-dev/contracts/eip/ERC1155.sol";
-import "@thirdweb-dev/contracts/extension/DropSinglePhase1155.sol";
+import "@egiftcard/contracts/eip/ERC1155.sol";
+import "@egiftcard/contracts/extension/DropSinglePhase1155.sol";
 ```
 
 Allow other wallets to claim/mint tokens from the contract under the criteria of claim conditions by
@@ -24,7 +24,7 @@ implementing [`ERC1155`](/contracts/build/extensions/erc-1155/ERC1155) and [`Dro
 This is an extension which is detectable in the dashboard if the smart contract implements the
 [`ERC1155`](/contracts/build/extensions/erc-1155/ERC1155) and [`ERC1155DropSinglePhase`](/contracts/build/extensions/erc-1155/ERC1155DropSinglePhase) extensions.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/DropSinglePhase1155.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/DropSinglePhase1155.sol" />
 
 ## Usage
 
@@ -35,9 +35,9 @@ The functions which are available to be (optionally) overridden are also detaile
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/ERC1155A.sol";
-import "@thirdweb-dev/contracts/extension/LazyMint.sol";
-import "@thirdweb-dev/contracts/extension/DropSinglePhase1155.sol";
+import "@egiftcard/contracts/eip/ERC1155A.sol";
+import "@egiftcard/contracts/extension/LazyMint.sol";
+import "@egiftcard/contracts/extension/DropSinglePhase1155.sol";
 
 contract Contract is ERC1155, LazyMint, DropSinglePhase1155 {
     constructor(

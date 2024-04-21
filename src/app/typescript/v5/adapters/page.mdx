@@ -1,21 +1,21 @@
 # Adapters
 
-The thirdweb SDK can work side by side with:
+The egiftcard SDK can work side by side with:
 
 - ethers.js v5
 - ethers.js v6
 - viem
-- older versions of the @thirdweb-dev/sdk (using the ethers.js v5 adapter)
+- older versions of the @egiftcard/sdk (using the ethers.js v5 adapter)
 
-Adapters allow you to use contracts, providers and wallets from these libraries with the thirdweb SDK and vice versa.
+Adapters allow you to use contracts, providers and wallets from these libraries with the egiftcard SDK and vice versa.
 
 ## Ethers v6
 
-You can use an existing ethers.js v6 Signer with the thirdweb SDK by converting it using the `ethers6Adapter`:
+You can use an existing ethers.js v6 Signer with the egiftcard SDK by converting it using the `ethers6Adapter`:
 
 ```ts
-import { ethers6Adapter } from "thirdweb/adapters/ethers6";
-import { sendTransaction } from "thirdweb";
+import { ethers6Adapter } from "egiftcard/adapters/ethers6";
+import { sendTransaction } from "egiftcard";
 
 // convert a ethers signer
 const signer: ethers.Signer = ...;
@@ -23,21 +23,21 @@ const account = await ethers6Adapter.signer.fromEthers({
   signer,
 });
 
-// use it with the thirdweb SDK
+// use it with the egiftcard SDK
 await sendTransaction({
   transaction,
   account,
 });
 ```
 
-Similarly, you can use any wallets created with the thirdweb SDK with ethers.js v6 by converting them using the `ethers6Adapter`:
+Similarly, you can use any wallets created with the egiftcard SDK with ethers.js v6 by converting them using the `ethers6Adapter`:
 
 ```ts
-import { ethers6Adapter } from "thirdweb/adapters/ethers6";
-import { createThirdwebClient, inAppWallet } from "thirdweb/wallets";
-import { sepolia } from "thirdweb/chains";
+import { ethers6Adapter } from "egiftcard/adapters/ethers6";
+import { createEgiftcardClient, inAppWallet } from "egiftcard/wallets";
+import { sepolia } from "egiftcard/chains";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 const wallet = inAppWallet();
 const chain = sepolia;
 const account = await wallet.connect({
@@ -45,7 +45,7 @@ const account = await wallet.connect({
 	strategy: "google",
 });
 
-// convert a thirdweb account to ethers signer
+// convert a egiftcard account to ethers signer
 const ethersSigner = await ethers6Adapter.signer.toEthers({
 	client,
 	chain,
@@ -53,24 +53,24 @@ const ethersSigner = await ethers6Adapter.signer.toEthers({
 });
 ```
 
-You can also convert ethers.js providers and contracts from and to the thirdweb SDK.
+You can also convert ethers.js providers and contracts from and to the egiftcard SDK.
 
 View the [ethers6Adapter](/references/typescript/v5/ethers6Adapter) reference for more details.
 
 ## Ethers v5
 
-You can use an existing ethers.js v5 Signer with the thirdweb SDK by converting it using the `ethers5Adapter`:
+You can use an existing ethers.js v5 Signer with the egiftcard SDK by converting it using the `ethers5Adapter`:
 
 ```ts
-import { ethers5Adapter } from "thirdweb/adapters/ethers5";
+import { ethers5Adapter } from "egiftcard/adapters/ethers5";
 
-// convert an ethers signer to a thirdweb account
+// convert an ethers signer to a egiftcard account
 const signer: ethers.Signer = ...;
 const account = await ethers5Adapter.signer.fromEthers({
   signer,
 });
 
-// convert a thirdweb account to ethers signer
+// convert a egiftcard account to ethers signer
 const ethersSigner = await ethers5Adapter.signer.toEthers({
   client,
   chain,
@@ -78,25 +78,25 @@ const ethersSigner = await ethers5Adapter.signer.toEthers({
 });
 ```
 
-You can also convert ethers.js providers and contracts from and to the thirdweb SDK.
+You can also convert ethers.js providers and contracts from and to the egiftcard SDK.
 
 View the [ethers5Adapter](/references/typescript/v5/ethers5Adapter) reference for more details.
 
 ## viem
 
-You can use an existing wallet client from viem with the thirdweb SDK by converting it using the `viemAdapter`:
+You can use an existing wallet client from viem with the egiftcard SDK by converting it using the `viemAdapter`:
 
 ```ts
-import { viemAdapter } from "thirdweb/adapters/viem";
+import { viemAdapter } from "egiftcard/adapters/viem";
 
-// convert a viem wallet client to a thirdweb account
+// convert a viem wallet client to a egiftcard account
 const walletClient = createWalletClient(...);
 const account = await viemAdapter.walletClient.fromViem({
   walletClient,
 });
 
 
-// convert a thirdweb account to viem wallet client
+// convert a egiftcard account to viem wallet client
 const viemClientWallet = viemAdapter.walletClient.toViem({
   client,
   chain,
@@ -104,6 +104,6 @@ const viemClientWallet = viemAdapter.walletClient.toViem({
 });
 ```
 
-You can also convert viem public clients and contracts from and to the thirdweb SDK.
+You can also convert viem public clients and contracts from and to the egiftcard SDK.
 
 View the [viemAdapter](/references/typescript/v5/viemAdapter) reference for more details.

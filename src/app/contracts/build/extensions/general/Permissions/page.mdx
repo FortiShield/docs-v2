@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "Permissions contract",
 		icon: "solidity",
 	},
-	title: "Permissions | thirdweb contract",
+	title: "Permissions | egiftcard contract",
 	description:
 		"The Permissions extension provides role-based access control: you can create roles and write custom logic in your smart contract that depends on whether a given wallet holds a given role",
 });
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 # Permissions
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/Permissions.sol";
+import "@egiftcard/contracts/extension/Permissions.sol";
 ```
 
 The `Permissions` extension provides role-based access control: you can create roles and write custom logic in your smart contract that depends on whether a given wallet holds a given role.
@@ -25,7 +25,7 @@ There are two different contracts you can implement to add permissions:
 
 You only need to implement **one** of the two.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/Permissions.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/Permissions.sol" />
 
 ## Usage
 
@@ -35,7 +35,7 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/Permissions.sol";
+import "@egiftcard/contracts/extension/Permissions.sol";
 
 contract MyContract is Permissions {
     // Any `bytes32` value is a valid role. You can create roles by defining them like this.

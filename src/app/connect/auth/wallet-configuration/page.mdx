@@ -3,10 +3,10 @@ import { V4SDKbanner } from "@/components/others/V4SDKBanner";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Wallet Configuration for thirdweb Auth",
+		title: "Wallet Configuration for egiftcard Auth",
 		icon: "wallets",
 	},
-	title: "Wallet Configuration | thirdweb Auth",
+	title: "Wallet Configuration | egiftcard Auth",
 	description:
 		"configure wallet using a variety of wallet management options, giving you the freedom to choose the most convenient and secure setup for your project",
 });
@@ -19,19 +19,19 @@ Auth makes use of a server-side wallet to sign and verify JWTs, as covered in th
 
 ## Simple Wallets
 
-The easiest way to get started with Auth would be to use a simple private key or signer wallet directly. It's easy to use such a setup with just the core `@thirdweb-dev/auth` package.
+The easiest way to get started with Auth would be to use a simple private key or signer wallet directly. It's easy to use such a setup with just the core `@egiftcard/auth` package.
 
 ### Setup
 
 Use the following installation to get started with Auth using a simple EVM private key or signer wallet:
 
 ```bash npm2yarn
-npm install @thirdweb-dev/auth ethers@5
+npm install @egiftcard/auth ethers@5
 ```
 
 **Private Key Wallet**
 
-You can use an EVM private key (a 64-character hex-string) as your wallet by using the `PrivateKeyWallet` class from the `@thirdweb-dev/auth/evm` entrypoint.
+You can use an EVM private key (a 64-character hex-string) as your wallet by using the `PrivateKeyWallet` class from the `@egiftcard/auth/evm` entrypoint.
 
 <Callout variant='warning'>
 
@@ -40,11 +40,11 @@ Never hardcode your private key into your codebase or commit it to version contr
 </Callout>
 
 ```typescript
-import { PrivateKeyWallet } from "@thirdweb-dev/auth/evm";
+import { PrivateKeyWallet } from "@egiftcard/auth/evm";
 
 // Pass private key from environment variables directly
 const wallet = new PrivateKeyWallet(
-	process.env.THIRDWEB_AUTH_PRIVATE_KEY || "",
+	process.env.EGIFTCARD_AUTH_PRIVATE_KEY || "",
 );
 
 // Pass the wallet to your auth configuration...
@@ -55,7 +55,7 @@ const wallet = new PrivateKeyWallet(
 You can also use any signer wallet compatible with the `ethers.Signer` interface, such as the `ethers.Wallet` class.
 
 ```typescript
-import { SignerWallet } from "@thirdweb-dev/auth/evm";
+import { SignerWallet } from "@egiftcard/auth/evm";
 import { ethers } from "ethers";
 
 // Create a new ethers signer or use an existing one
@@ -67,18 +67,18 @@ const wallet = new SignerWallet(signer);
 
 ## Advanced Wallets
 
-For more advanced wallet setups like cloud wallets, managed private keys, and more, we have a variety of options available in our `@thirdweb-dev/wallets` package. The package is an optional `peerDependency` of `@thirdweb-dev/auth`, so you'll need to install it separately, along with any peer dependencies of the specific wallet you want to use.
+For more advanced wallet setups like cloud wallets, managed private keys, and more, we have a variety of options available in our `@egiftcard/wallets` package. The package is an optional `peerDependency` of `@egiftcard/auth`, so you'll need to install it separately, along with any peer dependencies of the specific wallet you want to use.
 
 ```bash npm2yarn
-npm install @thirdweb-dev/auth @thirdweb-dev/wallets
+npm install @egiftcard/auth @egiftcard/wallets
 ```
 
-For more information on the available wallets and the specific of their setup, see the [`@thirdweb-dev/wallets` documentation](/references/wallets/latest)
+For more information on the available wallets and the specific of their setup, see the [`@egiftcard/wallets` documentation](/references/wallets/latest)
 
-For example, here's how you would use a signing key from AWS Secrets Manager as your Auth wallet using the `@thirdweb-dev/wallets` package (you would need to install its `@aws-sdk/client-secrets-manager` peer dependency as well):
+For example, here's how you would use a signing key from AWS Secrets Manager as your Auth wallet using the `@egiftcard/wallets` package (you would need to install its `@aws-sdk/client-secrets-manager` peer dependency as well):
 
 ```typescript
-import { AwsSecretsManagerWallet } from "@thirdweb-dev/wallets/evm/wallets/aws-secrets-manager";
+import { AwsSecretsManagerWallet } from "@egiftcard/wallets/evm/wallets/aws-secrets-manager";
 
 // Pass in your AWS configuration
 const wallet = new AwsSecretsManagerWallet({
@@ -98,7 +98,7 @@ const wallet = new AwsSecretsManagerWallet({
 
 ## Custom Wallets
 
-If none of the above methods are suitable for your project, you can also create your own custom wallet class by implementing the `GenericAuthWallet` interface from the `@thirdweb-dev/wallets` package for a completely custom setup.
+If none of the above methods are suitable for your project, you can also create your own custom wallet class by implementing the `GenericAuthWallet` interface from the `@egiftcard/wallets` package for a completely custom setup.
 
 Auth only requires the following simple wallet interface to facilitate the signing and verification of JWTs:
 
@@ -121,10 +121,10 @@ interface GenericAuthWallet {
 
 You can see how this interface is chain agnostic and can be used across different blockchain ecosystems.
 
-For example, here is a minimal implementation of the basic `SignerWallet` class from the `@thirdweb-dev/auth/evm` entry point, which follows the `GenericAuthWallet` interface:
+For example, here is a minimal implementation of the basic `SignerWallet` class from the `@egiftcard/auth/evm` entry point, which follows the `GenericAuthWallet` interface:
 
 ```typescript
-import type { Ecosystem, GenericAuthWallet } from "@thirdweb-dev/wallets";
+import type { Ecosystem, GenericAuthWallet } from "@egiftcard/wallets";
 
 class SignerWallet implements GenericAuthWallet {
 	type: Ecosystem = "evm";

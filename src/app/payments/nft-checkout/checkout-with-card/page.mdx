@@ -4,7 +4,7 @@ import checkoutCardDemoImage from "./assets/checkout-with-card-demo.png";
 import checkoutCardCustomizationImage from "./assets/checkout-with-card-customization-demo.png";
 
 export const metadata = createMetadata({
-	title: "CheckoutWithCard | thirdweb Embedded Elements",
+	title: "CheckoutWithCard | egiftcard Embedded Elements",
 	description:
 		"The CheckoutWithCard element embeds a form on your app that accepts credit/debit card, Apple Pay, and Google Pay.",
 });
@@ -29,11 +29,11 @@ This component also handles:
   Follow our SDK [install guide](/react/latest/getting-started) here.
    {/* <!-- prettier-ignore --> */}
 		```bash
-    npm install @thirdweb-dev/react
+    npm install @egiftcard/react
     ```
     {/* <!-- prettier-ignore --> */}
 		```bash
-    yarn add @thirdweb-dev/react
+    yarn add @egiftcard/react
     ```
 	</Step>
   <Step title="Embed your component">
@@ -44,7 +44,7 @@ This component also handles:
 ### Example
 
 ```typescript
-import { CheckoutWithCard } from "@thirdweb-dev/react";
+import { CheckoutWithCard } from "@egiftcard/react";
 
 <CheckoutWithCard
   clientId="YOUR_CLIENT_ID"
@@ -77,7 +77,7 @@ import { CheckoutWithCard } from "@thirdweb-dev/react";
 
 | Name                    | Type                                                                                                                              | Description                                                                                                                                                                                                                      |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| clientId **\***         | string                                                                                                                            | thirdweb client ID (Obtained from an API key which you can generate on the [Dashboard](https://thirdweb.com/dashboard))                                                                                                          |
+| clientId **\***         | string                                                                                                                            | egiftcard client ID (Obtained from an API key which you can generate on the [Dashboard](https://egiftcard.cc/dashboard))                                                                                                          |
 | configs **\***          | object                                                                                                                            | A list of configs to create your card checkout element. Fields are the same as the ones found in the [Create Checkout Elements Client Secret](https://docs.withpaper.com/reference/create-checkout-elements-client-secret) API.  |
 | onPaymentSuccess **\*** | `({ transactionId: string; }) => void`                                                                                            | This method is called after the payment has been submitted for processing. This payment may still be rejected by the cardholder's bank.                                                                                          |
 | onError                 | `(PaperSDKError) => void`                                                                                                         | This method is called when an error is encountered.                                                                                                                                                                              |
@@ -92,11 +92,11 @@ import { CheckoutWithCard } from "@thirdweb-dev/react";
   Follow our SDK [install guide](/react/latest/getting-started) here.
    {/* <!-- prettier-ignore --> */}
 		```bash
-    npm install @thirdweb-dev/payments
+    npm install @egiftcard/payments
     ```
     {/* <!-- prettier-ignore --> */}
 		```bash
-    yarn add @thirdweb-dev/payments
+    yarn add @egiftcard/payments
     ```
 	</Step>
   <Step title="Add your iframe">
@@ -108,7 +108,7 @@ import { CheckoutWithCard } from "@thirdweb-dev/react";
 ### Example code
 
 ```typescript
-import { createCheckoutWithCardElement } from "@thirdweb-dev/payments";
+import { createCheckoutWithCardElement } from "@egiftcard/payments";
 
 // Assume a container exists:
 //

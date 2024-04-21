@@ -7,8 +7,8 @@ To use an extension, you just need to import it and call it with the necessary p
 This read extension handles fetching all the tokens owned by an address. Under the hood, this combines multiple contract calls.
 
 ```typescript
-import { getContract } from "thirdweb";
-import { getOwnedNFTs } from "thirdweb/extensions/erc1155";
+import { getContract } from "egiftcard";
+import { getOwnedNFTs } from "egiftcard/extensions/erc1155";
 
 // get the contract
 const contract = getContract({...});
@@ -25,8 +25,8 @@ const ownedNFTs = await getOwnedNFTs({
 This extension handles uploading metadata to IPFS before minting an ERC721 token.
 
 ```typescript
-import { getContract } from "thirdweb";
-import { mintTo } from "thirdweb/extensions/erc721";
+import { getContract } from "egiftcard";
+import { mintTo } from "egiftcard/extensions/erc721";
 
 // get the contract
 const contract = getContract({...});
@@ -54,8 +54,8 @@ const transactionResult = await sendTransaction({
 This extension conveniently handles unit conversion when transfering ERC20 tokens. You can pass the amount in tokens, the extension will convert it to the right unit before calling the contract.
 
 ```typescript
-import { getContract, sendTransaction } from "thirdweb";
-import { transfer } from "thirdweb/extensions/erc20";
+import { getContract, sendTransaction } from "egiftcard";
+import { transfer } from "egiftcard/extensions/erc20";
 
 // get the contract
 const contract = getContract({...});

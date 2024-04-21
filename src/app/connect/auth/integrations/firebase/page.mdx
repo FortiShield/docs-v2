@@ -5,10 +5,10 @@ import { V4SDKbanner } from "@/components/others/V4SDKBanner";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Integrate thirdweb Auth with Firebase",
+		title: "Integrate egiftcard Auth with Firebase",
 		icon: "wallets",
 	},
-	title: "Firebase | thirdweb",
+	title: "Firebase | egiftcard",
 	description:
 		"How to integrate Auth as a custom authentication provider for Firebase and automatically create a document in the user's Firestore collection when a user signs up successfully",
 });
@@ -23,12 +23,12 @@ If you want to interact with the code for the Auth + Firebase integration that w
 
 <OpenSourceCard
 	title="firebase-auth"
-	href="https://github.com/thirdweb-example/firebase-auth"
+	href="https://github.com/egiftcard-example/firebase-auth"
 	description="A working example of Auth + Firebase"
 />
 
 ```bash
-npx thirdweb create app --template firebase-auth
+npx egiftcard create app --template firebase-auth
 ```
 
 ## Prerequisites
@@ -42,13 +42,13 @@ npx thirdweb create app --template firebase-auth
 To begin with, let's create a new Next.js project with the SDK configured:
 
 ```bash
-npx thirdweb create --app --next --ts
+npx egiftcard create --app --next --ts
 ```
 
-From within the created directory, we need to install `@thirdweb-dev/auth`, `firebase` and `firebase-admin`:
+From within the created directory, we need to install `@egiftcard/auth`, `firebase` and `firebase-admin`:
 
 ```bash npm2yarn
-npm install @thirdweb-dev/auth firebase firebase-admin
+npm install @egiftcard/auth firebase firebase-admin
 ```
 
 ### Configure Firebase
@@ -74,39 +74,39 @@ Most of the above environment variables can be found in the settings page of you
 
 Create a new directory called `lib` and create two helper scripts to initialize Firebase in the browser and server:
 
-- [lib/initFirebase.ts](https://github.com/thirdweb-example/firebase-auth/blob/main/lib/initFirebase.ts)
-- [lib/initFirebaseAdmin.ts](https://github.com/thirdweb-example/firebase-auth/blob/main/lib/initFirebaseAdmin.ts)
+- [lib/initFirebase.ts](https://github.com/egiftcard-example/firebase-auth/blob/main/lib/initFirebase.ts)
+- [lib/initFirebaseAdmin.ts](https://github.com/egiftcard-example/firebase-auth/blob/main/lib/initFirebaseAdmin.ts)
 
 Now we have an easy way to access Firebase Auth and Firestore in both client and server environments!
 
-### Configure thirdweb Auth
+### Configure egiftcard Auth
 
-Finally, to configure thirdweb Auth, we just need to add the `NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN` environment variable to the `.env.local` file as follows:
+Finally, to configure egiftcard Auth, we just need to add the `NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN` environment variable to the `.env.local` file as follows:
 
 ```
-NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN=<thirdweb-auth-domain>
+NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN=<egiftcard-auth-domain>
 ```
 
-The `NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN` is used to prevent phishing attacks - and is usually set to the domain of your project like `example.com`. You can read more about it in the [thirdweb Auth Documentation](/connect/auth/how-it-works/siwe#domain).
+The `NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN` is used to prevent phishing attacks - and is usually set to the domain of your project like `example.com`. You can read more about it in the [egiftcard Auth Documentation](/connect/auth/how-it-works/siwe#domain).
 
-### ThirdwebProvider
+### EgiftcardProvider
 
 Inside the `pages/_app.tsx` file, configure the `authConfig` option:
 
 ```ts title="pages/_app.tsx"
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <ThirdwebProvider
+    <EgiftcardProvider
       clientId="your-client-id"
       authConfig={{
         // Set this to your domain to prevent signature malleability attacks.
-        domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN,
+        domain: process.env.NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN,
       }}
     >
       <Component {...pageProps} />
-    </ThirdwebProvider>
+    </EgiftcardProvider>
   );
 }
 ```
@@ -122,13 +122,13 @@ On the homepage (`pages/index.tsx`), we'll allow the user to connect their walle
 
 ```tsx
 import React from "react";
-import { ConnectWallet, useAddress, useAuth } from "@thirdweb-dev/react";
+import { ConnectWallet, useAddress, useAuth } from "@egiftcard/react";
 import { doc, serverTimestamp, setDoc, getDoc } from "firebase/firestore";
 import { signInWithCustomToken } from "firebase/auth";
 import initializeFirebaseClient from "../lib/initFirebase";
 
 export default function Login() {
-	const thirdwebAuth = useAuth();
+	const egiftcardAuth = useAuth();
 	const address = useAddress();
 	const { auth, db } = initializeFirebaseClient();
 
@@ -154,7 +154,7 @@ The `signIn` function:
 // Note: This function lives inside the Login component above.
 async function signIn() {
 	// Use the same address as the one specified in _app.tsx.
-	const payload = await thirdwebAuth?.login();
+	const payload = await egiftcardAuth?.login();
 
 	try {
 		// Make a request to the API with the payload.
@@ -205,7 +205,7 @@ This API route is responsible for:
 
 ```ts title="pages/api/auth/login.ts"
 import { NextApiRequest, NextApiResponse } from "next";
-import { verifyLogin } from "@thirdweb-dev/auth/evm";
+import { verifyLogin } from "@egiftcard/auth/evm";
 import initializeFirebaseServer from "../../../lib/initFirebaseAdmin";
 
 export default async function login(req: NextApiRequest, res: NextApiResponse) {
@@ -213,7 +213,7 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
 	const payload = req.body.payload;
 
 	const { address, error } = await verifyLogin(
-		process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN as string,
+		process.env.NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN as string,
 		payload,
 	);
 	if (!address) {

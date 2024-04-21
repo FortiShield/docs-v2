@@ -58,7 +58,7 @@ function Hero() {
 			<div className="flex flex-col justify-center">
 				<div>
 					<h1 className="mb-5 text-4xl font-bold tracking-tight md:text-5xl">
-						thirdweb Documentation
+						egiftcard Documentation
 					</h1>
 					<p className="mb-8 max-w-md text-lg font-medium leading-7 text-f-300 md:text-xl">
 						Everything you need to connect your apps and games to decentralized
@@ -89,7 +89,7 @@ function Hero() {
 // 					links={[
 // 						{
 // 							name: "Create a web3 Shopify theme",
-// 							href: "https://blog.thirdweb.com/guides/create-a-shopify-theme-with-thirdweb/",
+// 							href: "https://blog.egiftcard.cc/guides/create-a-shopify-theme-with-egiftcard/",
 // 						},
 // 						{
 // 							name: "Create Loyalty Points",

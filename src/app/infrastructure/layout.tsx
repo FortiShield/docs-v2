@@ -11,7 +11,7 @@ export default async function Layout(props: { children: React.ReactNode }) {
 }
 
 export const metadata = createMetadata({
-	title: "thirdweb Infrastructure",
+	title: "egiftcard Infrastructure",
 	description:
 		"All the infrastructure to scale and build production grade web3 applications",
 });

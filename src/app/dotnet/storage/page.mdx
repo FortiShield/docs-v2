@@ -1,20 +1,20 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ThirdwebStorage | Thirdweb .NET SDK",
+	title: "EgiftcardStorage | Egiftcard .NET SDK",
 	description: "Interact with IPFS for downloading and uploading data.",
 });
 
-# ThirdwebStorage
+# EgiftcardStorage
 
-The `ThirdwebStorage` class provides methods to interact with any URL including IPFS, allowing you to download and upload data easily.
+The `EgiftcardStorage` class provides methods to interact with any URL including IPFS, allowing you to download and upload data easily.
 
 ## Download
 
 Download data from an HTTP or IPFS URI.
 
 ```csharp
-var data = await ThirdwebStorage.Download<string>(client, "{{uri}}");
+var data = await EgiftcardStorage.Download<string>(client, "{{uri}}");
 ```
 
 <Details summary="Configuration">
@@ -36,7 +36,7 @@ Returns the data as the specified type. If you're downloading a string, such as 
 Upload data to IPFS and pin it.
 
 ```csharp
-var result = await ThirdwebStorage.Upload(client, "{{path/to-file}}");
+var result = await EgiftcardStorage.Upload(client, "{{path/to-file}}");
 ```
 
 <Details summary="Configuration">
@@ -58,13 +58,13 @@ Returns an `IPFSUploadResult` containing the IPFS hash (IpfsHash), the size of t
 ### Downloading JSON Data
 
 ```csharp
-var jsonData = await ThirdwebStorage.Download<Dictionary<string, object>>(client, "ipfs://Qm...");
+var jsonData = await EgiftcardStorage.Download<Dictionary<string, object>>(client, "ipfs://Qm...");
 ```
 
 ### Uploading a File
 
 ```csharp
-var uploadResult = await ThirdwebStorage.Upload(client, @"C:\path\to\your\file.txt");
+var uploadResult = await EgiftcardStorage.Upload(client, @"C:\path\to\your\file.txt");
 Console.WriteLine($"IPFS Hash: {uploadResult.IpfsHash}");
 ```
 

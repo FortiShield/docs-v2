@@ -3,39 +3,39 @@ import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Getting Started with thirdweb React Native SDK",
+		title: "Getting Started with egiftcard React Native SDK",
 		icon: "react",
 	},
-	title: "Getting Started with thirdweb React Native SDK",
-	description: "Getting Started with thirdweb React Native SDK",
+	title: "Getting Started with egiftcard React Native SDK",
+	description: "Getting Started with egiftcard React Native SDK",
 });
 
 # Getting Started
 
-Our SDK uses a [Provider Pattern](https://flexiple.com/react/provider-pattern-with-react-context-api/), meaning any component within the `ThirdwebProvider` will have access to the SDK.
+Our SDK uses a [Provider Pattern](https://flexiple.com/react/provider-pattern-with-react-context-api/), meaning any component within the `EgiftcardProvider` will have access to the SDK.
 
 <Callout variant='info' title="API Key">
 
-You will require an API key to use thirdweb's infrastructure services with the SDK.
+You will require an API key to use egiftcard's infrastructure services with the SDK.
 
-you need to first obtain an API key from the [dashboard](https://thirdweb.com/dashboard) and then copy the "Client ID" and pass it to the `ThirdwebPovider` as the `clientId` prop.
+you need to first obtain an API key from the [dashboard](https://egiftcard.cc/dashboard) and then copy the "Client ID" and pass it to the `EgiftcardPovider` as the `clientId` prop.
 
 </Callout>
 
 Let's take a look at a typical setup.
 
-## Configure the ThirdwebProvider
+## Configure the EgiftcardProvider
 
 Specify the network your smart contracts are deployed to in the `activeChain` prop and wrap your application like so:
 
 ```tsx title="App.tsx"
-import { ThirdwebProvider } from "@thirdweb-dev/react-native";
+import { EgiftcardProvider } from "@egiftcard/react-native";
 
 const App = () => {
 	return (
-		<ThirdwebProvider activeChain={"mainnet"} clientId={"your-client-id"}>
+		<EgiftcardProvider activeChain={"mainnet"} clientId={"your-client-id"}>
 			<AppInner />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 };
 ```
@@ -44,7 +44,7 @@ Below is an example of where to set this up in your application:
 
 <p>
 	[Create React Native
-	App](https://github.com/thirdweb-example/react-native-typescript-starter/blob/main/App.tsx)
+	App](https://github.com/egiftcard-example/react-native-typescript-starter/blob/main/App.tsx)
 </p>
 
 Finally, we can run our app!
@@ -62,7 +62,7 @@ yarn ios
 ```javascript
 import React from "react";
 import { SafeAreaView } from "react-native";
-import { ConnectWallet } from "@thirdweb-dev/react-native";
+import { ConnectWallet } from "@egiftcard/react-native";
 
 const AppInner = () => {
 	return (
@@ -78,7 +78,7 @@ const AppInner = () => {
 Connect to your smart contract using the [`useContract`](/references/react-native/v0/useContract) hook like so:
 
 ```jsx title="pages/index.jsx"
-import { useContract } from "@thirdweb-dev/react-native";
+import { useContract } from "@egiftcard/react-native";
 
 export default function Home() {
 	const { contract } = useContract("<CONTRACT_ADDRESS>");
@@ -98,7 +98,7 @@ import {
 	useContract,
 	useContractRead,
 	useContractWrite,
-} from "@thirdweb-dev/react-native";
+} from "@egiftcard/react-native";
 
 export default function Home() {
 	const { contract } = useContract("<CONTRACT_ADDRESS>");
@@ -122,7 +122,7 @@ These hooks make it easy to interact with your smart contracts by implementing t
 For example, if your smart contract implements [ERC721Supply](/contracts/build/extensions/erc-721/ERC721Supply), you unlock the ability to view all NFTs on that contract using the SDK; which fetches all of your NFT metadata and the current owner of each NFT in parallel. In the React SDK, that is available using `useNFTs`:
 
 ```jsx
-import { useContract, useNFTs } from "@thirdweb-dev/react-native";
+import { useContract, useNFTs } from "@egiftcard/react-native";
 
 export default function Home() {
 	const { contract } = useContract("<CONTRACT_ADDRESS>");
@@ -133,7 +133,7 @@ export default function Home() {
 If we want to mint an NFT and our contract implements [ERC721Mintable](/contracts/build/extensions/erc-721/ERC721Mintable), we can use the [`useMintNFT`](/references/react-native/v0/useMintNFT) hook to mint an NFT from the connected wallet; handling all of the logic of uploading and pinning the metadata to IPFS for us behind the scenes.
 
 ```jsx
-import { useContract, useNFTs, useMintNFT } from "@thirdweb-dev/react-native";
+import { useContract, useNFTs, useMintNFT } from "@egiftcard/react-native";
 
 export default function Home() {
 	const { contract } = useContract("<CONTRACT_ADDRESS>");
@@ -144,8 +144,8 @@ export default function Home() {
 
 ## Advanced Configuration
 
-The `ThirdwebProvider` offers a number of configuration options to control the behavior of the React Native and Typescript SDK.
-We provide defaults for all of them, but you customize them to suit your needs. For more info see the [ThirdwebProvider reference](/references/react-native/v0/ThirdwebProvider).
+The `EgiftcardProvider` offers a number of configuration options to control the behavior of the React Native and Typescript SDK.
+We provide defaults for all of them, but you customize them to suit your needs. For more info see the [EgiftcardProvider reference](/references/react-native/v0/EgiftcardProvider).
 
 ### Supported Wallets Behavior
 
@@ -154,19 +154,19 @@ We provide defaults for all of them, but you customize them to suit your needs. 
 
 ### Localizing our UI components
 
-You can pass a `locale` prop to the `ThirdwebProvider` with the strings in the language of your preference. See the list of strings to translate [here](https://github.com/thirdweb-dev/js/blob/main/packages/react-native/src/evm/i18n/en.ts).
+You can pass a `locale` prop to the `EgiftcardProvider` with the strings in the language of your preference. See the list of strings to translate [here](https://github.com/egiftcard/js/blob/main/packages/react-native/src/evm/i18n/en.ts).
 
 We support 'en' (English), 'es' (Spanish) and 'ja' (Japanese) out of the box. The default value is 'en'.
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react-native";
+import { EgiftcardProvider } from "@egiftcard/react-native";
 import React from "react";
 
 const App = () => {
 	return (
-		<ThirdwebProvider locale={"ja"}>
+		<EgiftcardProvider locale={"ja"}>
 			<AppInner />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 };
 ```
@@ -174,12 +174,12 @@ const App = () => {
 You can pass your own strings:
 
 ```jsx
-import { ThirdwebProvider, en } from "@thirdweb-dev/react-native";
+import { EgiftcardProvider, en } from "@egiftcard/react-native";
 import React from "react";
 
 const App = () => {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			locale={{
 				connect_wallet: {
 					label: "Conectar Cartera",
@@ -191,7 +191,7 @@ const App = () => {
 			}}
 		>
 			<AppInner />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 };
 ```
@@ -199,16 +199,16 @@ const App = () => {
 Note that you can also use this prop to replace any string in our UI components.
 
 ```jsx
-import { ThirdwebProvider, en } from "@thirdweb-dev/react-native";
+import { EgiftcardProvider, en } from "@egiftcard/react-native";
 import React from "react";
 
 const App = () => {
   return (
-    <ThirdwebProvider locale={en({
+    <EgiftcardProvider locale={en({
        ... // you can overwrite any string!
     })}>
       <AppInner />
-    </ThirdwebProvider>
+    </EgiftcardProvider>
   );
 };
 ```

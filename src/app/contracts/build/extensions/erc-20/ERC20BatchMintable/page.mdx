@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "ERC20BatchMintable contract",
 		icon: "solidity",
 	},
-	title: "ERC20BatchMintable | thirdweb contract",
+	title: "ERC20BatchMintable | egiftcard contract",
 	description:
 		"Enable minting multiple NFTs at once in a single transaction by Implementing ERC20, IMintableERC20, and Multicall extensions",
 });
@@ -13,9 +13,9 @@ export const metadata = createMetadata({
 # ERC20BatchMintable
 
 ```solidity
-import "@thirdweb-dev/eip/interface/IERC20.sol"
-import "@thirdweb-dev/contracts/extension/multicall.sol";
-import "@thirdweb-dev/contracts/extension/interface/IMintableERC20.sol";
+import "@egiftcard/eip/interface/IERC20.sol"
+import "@egiftcard/contracts/extension/multicall.sol";
+import "@egiftcard/contracts/extension/interface/IMintableERC20.sol";
 ```
 
 Enable minting multiple NFTs at once in a single transaction by Implementing [`ERC20`](/contracts/build/extensions/erc-20/ERC20), [`IMintableERC20`](/contracts/build/extensions/erc-20/ERC20BatchMintable), and [`Multicall`](/contracts/build/extensions/general/Multicall) extensions.
@@ -31,9 +31,9 @@ This is an example smart contract that will have ERC20BatchMintable detected on 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
-import "@thirdweb-dev/contracts/extension/interface/IMintableERC20.sol";
-import "@thirdweb-dev/contracts/extension/Multicall.sol";
+import "@egiftcard/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
+import "@egiftcard/contracts/extension/interface/IMintableERC20.sol";
+import "@egiftcard/contracts/extension/Multicall.sol";
 
 contract Contract is ERC20, IMintableERC20, Multicall {
     constructor(

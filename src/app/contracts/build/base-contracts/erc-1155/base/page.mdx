@@ -3,7 +3,7 @@ import { GithubButtonLink } from "@doc";
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ERC1155Base | thirdweb contracts",
+	title: "ERC1155Base | egiftcard contracts",
 	description:
 		"The ERC1155Base smart contract implements the ERC1155 NFT standard. It allows for minting NFTs to yourself (or to someone else) and selling those NFTs on a marketplace.",
 	image: {
@@ -15,13 +15,13 @@ export const metadata = createMetadata({
 # ERC1155Base
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC1155Base.sol";
+import "@egiftcard/contracts/base/ERC1155Base.sol";
 ```
 
 The `ERC1155Base` smart contract implements the [ERC1155](https://eips.ethereum.org/EIPS/eip-1155) NFT standard.
 It allows for minting NFTs to yourself (or to someone else) and selling those NFTs on a marketplace.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC1155Base.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC1155Base.sol" />
 
 ## Usage
 
@@ -31,7 +31,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC1155Base.sol";
+import "@egiftcard/contracts/base/ERC1155Base.sol";
 
 contract MyNFT is ERC1155Base {
 	  constructor(

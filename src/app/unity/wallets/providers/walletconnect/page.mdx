@@ -1,8 +1,8 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "WalletConnect | thirdweb Unity SDK",
-	description: "Connect to WalletConnect with thirdweb Unity SDK",
+	title: "WalletConnect | egiftcard Unity SDK",
+	description: "Connect to WalletConnect with egiftcard Unity SDK",
 });
 
 # WalletConnect
@@ -12,12 +12,12 @@ Prompt users to connect to your app with their [WalletConnect-compatible](https:
 ## Usage
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
 public async void ConnectWallet()
 {
-    // Reference to your Thirdweb SDK
-    var sdk = ThirdwebManager.Instance.SDK;
+    // Reference to your Egiftcard SDK
+    var sdk = EgiftcardManager.Instance.SDK;
 
     // Configure the connection
     var connection = new WalletConnection(
@@ -47,8 +47,8 @@ Instantiates the customizable `WalletProvider_WalletConnect` UI prefab, displayi
 ## Miscellaneous
 
 You may customize the `WalletProvider_WalletConnect` prefab to fit your app's design.
-The prefab is located at `Assets/Thirdweb/Core/Prefabs` and referenced in the [ThirdwebManager](/unity/thirdwebmanager) prefab.
+The prefab is located at `Assets/Egiftcard/Core/Prefabs` and referenced in the [EgiftcardManager](/unity/egiftcardmanager) prefab.
 
 ## Additional Options
 
-You may set the your WalletConnect Project ID (all platforms) and explorer recommended wallet ids (WebGL only) in the [ThirdwebManager](/unity/thirdwebmanager) prefab.
+You may set the your WalletConnect Project ID (all platforms) and explorer recommended wallet ids (WebGL only) in the [EgiftcardManager](/unity/egiftcardmanager) prefab.

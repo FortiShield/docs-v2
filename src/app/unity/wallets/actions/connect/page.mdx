@@ -1,7 +1,7 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "wallet.Connect | thirdweb Unity SDK",
+	title: "wallet.Connect | egiftcard Unity SDK",
 	description: "Connect a user's wallet to your game",
 });
 
@@ -12,12 +12,12 @@ Connect a user's wallet to your game.
 ## Usage
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
 public async void ConnectWallet()
 {
-    // Reference to your Thirdweb SDK
-    var sdk = ThirdwebManager.Instance.SDK;
+    // Reference to your Egiftcard SDK
+    var sdk = EgiftcardManager.Instance.SDK;
 
     // Configure the connection
     var connection = new WalletConnection(

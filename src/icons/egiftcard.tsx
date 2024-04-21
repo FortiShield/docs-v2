@@ -1,4 +1,4 @@
-export function ThirdwebIcon(props: { className?: string }) {
+export function EgiftcardIcon(props: { className?: string }) {
 	return (
 		<svg viewBox="0 0 516 321" fill="none" className={props.className}>
 			<g clipPath="url(#clip0_3:35)">

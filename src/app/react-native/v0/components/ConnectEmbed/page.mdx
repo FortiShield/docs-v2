@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 		title: "ConnectEmbed component",
 		icon: "react",
 	},
-	title: "ConnectEmbed | thirdweb React Native SDK",
+	title: "ConnectEmbed | egiftcard React Native SDK",
 	description: "API Reference for the ConnectEmbed component",
 });
 
@@ -39,28 +39,28 @@ This is really useful for Implementing a "Sign in" / "Welcome" page.
 
 <DocImage src={ConnectEmbedDefaultImg} className="w-80" />
 
-You can start writing code with our [React Native Connect Embed template](https://github.com/thirdweb-example/react-native-connect-embed).
+You can start writing code with our [React Native Connect Embed template](https://github.com/egiftcard-example/react-native-connect-embed).
 
 ## Usage
 
 <Steps>
-<Step title="Configure supportedWallets in ThirdwebProvider" id='configure-thirdwebprovider' >
+<Step title="Configure supportedWallets in EgiftcardProvider" id='configure-egiftcardprovider' >
 
-To Configure which wallets to show in the `ConnectEmbed` UI, you need to configure the `supportedWallets` prop in the [`ThirdwebProvider`](/react/v4/ThirdwebProvider) component which wraps your entire application.
+To Configure which wallets to show in the `ConnectEmbed` UI, you need to configure the `supportedWallets` prop in the [`EgiftcardProvider`](/react/v4/EgiftcardProvider) component which wraps your entire application.
 
 To display a `Recommended` tag below a wallet provider, pass in the `recommended: true` property in the wallet configurator function.
 
 ```jsx
 import {
-	ThirdwebProvider,
+	EgiftcardProvider,
 	metamaskWallet,
 	coinbaseWallet,
 	walletConnect,
-} from "@thirdweb-dev/react-native";
+} from "@egiftcard/react-native";
 
 function AppWithProviders() {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			supportedWallets={[
 				metamaskWallet({
 					recommended: true,
@@ -71,12 +71,12 @@ function AppWithProviders() {
 			clientId="<your_client_id>"
 		>
 			<App />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
 
-If `supportedWallets` is not configured in the `ThirdwebProvider`, the ConnectWallet Modal show the default wallets:
+If `supportedWallets` is not configured in the `EgiftcardProvider`, the ConnectWallet Modal show the default wallets:
 
 <Details summary="Default Wallets" id='default-wallets'>
 
@@ -93,7 +93,7 @@ If `supportedWallets` is not configured in the `ThirdwebProvider`, the ConnectWa
 Render the `ConnectEmbed` component anywhere in your application. Refer to [Props](#props) to see the configuration options available
 
 ```tsx
-import { ConnectEmbed } from "@thirdweb-dev/react-native";
+import { ConnectEmbed } from "@egiftcard/react-native";
 
 function Example() {
 	return <ConnectEmbed />;
@@ -123,7 +123,7 @@ Sets the modal icon.
 You can pass empty string to hide the icon.
 
 ```tsx
-<ConnectEmbed modalTitleIconUrl="https://thirdweb.com/favicon.ico" />
+<ConnectEmbed modalTitleIconUrl="https://egiftcard.cc/favicon.ico" />
 ```
 
 </Details>
@@ -148,7 +148,7 @@ Custom styles to be added to the root container of `ConnectEmbed` component.
 
 theme to apply on the `ConnectEmbed` component.
 
-If a theme is set on the [`ThirdWebProvider`](/react-native/v0/ThirdwebProvider) component, it will be used as the default theme for all thirdweb components, else the default will be `"dark"`
+If a theme is set on the [`EgiftCardProvider`](/react-native/v0/EgiftcardProvider) component, it will be used as the default theme for all egiftcard components, else the default will be `"dark"`
 
 theme can be set to either `"dark"` or `"light"` or a custom theme object.
 
@@ -160,10 +160,10 @@ function Example() {
 
 <DocImage src={ConnectEmbedLight} className="w-80" />
 
-You can also import [`lightTheme`](/references/react-native/v0/lightTheme) or [`darkTheme`](/references/react-native/v0/darkTheme) functions from `@thirdweb-dev/react-native` to use the default themes as base and overrides parts of it.
+You can also import [`lightTheme`](/references/react-native/v0/lightTheme) or [`darkTheme`](/references/react-native/v0/darkTheme) functions from `@egiftcard/react-native` to use the default themes as base and overrides parts of it.
 
 ```tsx
-import { lightTheme, ConnectEmbed } from "@thirdweb-dev/react-native";
+import { lightTheme, ConnectEmbed } from "@egiftcard/react-native";
 
 const customTheme = lightTheme({
 	colors: {
@@ -222,5 +222,5 @@ Callback to be called on successful connection of wallet
 
 <GithubTemplateCard
 	title="ConnectEmbed usage in React Native"
-	href="https://github.com/thirdweb-example/react-native-connect-embed"
+	href="https://github.com/egiftcard-example/react-native-connect-embed"
 />

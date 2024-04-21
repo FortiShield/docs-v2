@@ -327,7 +327,7 @@ const blocks: SidebarLink = {
 };
 
 const pay: SidebarLink = {
-	name: "Thirdweb Pay",
+	name: "Egiftcard Pay",
 	links: [
 		{
 			name: "Get Buy With Crypto Quote",
@@ -360,8 +360,8 @@ export const sidebar: SideBar = {
 			href: "/unity/getting-started",
 		},
 		{
-			name: "Thirdweb Manager",
-			href: "/unity/thirdwebmanager",
+			name: "Egiftcard Manager",
+			href: "/unity/egiftcardmanager",
 		},
 		wallets,
 		contracts,

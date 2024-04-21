@@ -6,13 +6,13 @@ import NftCheckout3 from "../../assets/nft-checkout-3.png";
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "NFT Checkout | thirdweb Engine",
-	description: "This guide uses thirdweb Engine to sell NFTs with credit card",
+	title: "NFT Checkout | egiftcard Engine",
+	description: "This guide uses egiftcard Engine to sell NFTs with credit card",
 });
 
 # NFT Checkout
 
-This guide uses thirdweb Engine to sell NFTs with credit card:
+This guide uses egiftcard Engine to sell NFTs with credit card:
 
 1. A buyer pays with credit card.
 1. Upon payment, your backend calls Engine.
@@ -24,7 +24,7 @@ The buyer receives the NFT without requiring wallet signatures or gas funds.
 
 ## Prerequisites
 
-- A thirdweb client ID and secret key from the [API Keys page](https://thirdweb.com/dashboard/settings/api-keys)
+- A egiftcard client ID and secret key from the [API Keys page](https://egiftcard.cc/dashboard/settings/api-keys)
 - An Engine instance
 - A [backend wallet](/engine/features/backend-wallets) with currency to pay for gas
 - An [access token](/engine/features/authentication) for your Engine instance
@@ -38,9 +38,9 @@ Use [`<ConnectWallet>`](/react/latest/components/ConnectWallet) to prompt the bu
 ```tsx
 function Home() {
 	return (
-		<ThirdwebProvider activeChain="<chain_id>" clientId="<thirdweb_client_id>">
+		<EgiftcardProvider activeChain="<chain_id>" clientId="<egiftcard_client_id>">
 			<PurchasePage />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
@@ -175,7 +175,7 @@ export async function POST(req: NextRequest) {
 				metadataWithSupply: {
 					metadata: {
 						name: "Engine Hackathon 2023",
-						description: "Created with thirdweb Engine",
+						description: "Created with egiftcard Engine",
 						image:
 							"ipfs://QmakhKF5oMyxupCZ2RsmcvPRyYTHnQzYeb9mQGv3RM81n1/hat.webp",
 					},
@@ -217,7 +217,7 @@ They are informed when their payment is submitted.
 
 ## Full code example
 
-The code above is simplified for readability. [View the full source code &rarr;](https://github.com/thirdweb-example/engine-nft-checkout)
+The code above is simplified for readability. [View the full source code &rarr;](https://github.com/egiftcard-example/engine-nft-checkout)
 
 ## FAQ
 
@@ -225,6 +225,6 @@ The code above is simplified for readability. [View the full source code &rarr;]
 
 Yes! You provide the payment provider and can accept different currencies (EUR, JPY), digital wallets (Apple Pay, Google Pay), bank payments (ACH, SEPA), local payment methods (UPI, iDEAL), and more.
 
-### How is thirdweb NFT Checkout different?
+### How is egiftcard NFT Checkout different?
 
-[thirdweb Checkout](https://thirdweb.com/checkout) is a full solution that detects fraud, provides chargeback liability, accepts multiple payment methods including cryptocurrency, includes a prebuilt checkout UX, and more.
+[egiftcard Checkout](https://egiftcard.cc/checkout) is a full solution that detects fraud, provides chargeback liability, accepts multiple payment methods including cryptocurrency, includes a prebuilt checkout UX, and more.

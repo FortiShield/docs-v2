@@ -4,7 +4,7 @@ import {
 	getAllWalletsList,
 	getWalletInfo,
 	type WalletId,
-} from "thirdweb/wallets";
+} from "egiftcard/wallets";
 import {
 	Breadcrumb,
 	CodeBlock,
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 	return createMetadata({
 		title: walletMetadata.name,
-		description: `Connect ${walletMetadata.name} with thirdweb Connect SDK`,
+		description: `Connect ${walletMetadata.name} with egiftcard Connect SDK`,
 		image: {
 			title: walletMetadata.name,
 			icon: "wallets",
@@ -195,10 +195,10 @@ export async function generateStaticParams(): Promise<PageProps["params"][]> {
 
 function injectedSupportedTS(id: string) {
 	return `\
-import { createThirdwebClient } from "thirdweb";
-import { createWallet, injectedProvider } from "thirdweb/wallets";
+import { createEgiftcardClient } from "egiftcard";
+import { createWallet, injectedProvider } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 
 const wallet = createWallet("${id}"); // pass the wallet id
 
@@ -216,10 +216,10 @@ else {
 
 function WCSupportedTS(id: string) {
 	return `\
-import { createThirdwebClient } from "thirdweb";
-import { createWallet } from "thirdweb/wallets";
+import { createEgiftcardClient } from "egiftcard";
+import { createWallet } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 
 const wallet = createWallet("${id}"); // pass the wallet id
 
@@ -233,10 +233,10 @@ await wallet.connect({
 
 function injectedAndWCSupportedCodeTS(id: string) {
 	return `\
-import { createThirdwebClient } from "thirdweb";
-import { createWallet, injectedProvider } from "thirdweb/wallets";
+import { createEgiftcardClient } from "egiftcard";
+import { createWallet, injectedProvider } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 
 const wallet = createWallet("${id}"); // pass the wallet id
 
@@ -257,11 +257,11 @@ else {
 
 function injectedAndWCSupportedCodeReact(id: string) {
 	return `\
-import { createThirdwebClient } from "thirdweb";
-import { useConnect } from "thirdweb/react";
-import { createWallet, injectedProvider } from "thirdweb/wallets";
+import { createEgiftcardClient } from "egiftcard";
+import { useConnect } from "egiftcard/react";
+import { createWallet, injectedProvider } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 
 function Example() {
   const { connect, isConnecting, error } = useConnect();
@@ -298,11 +298,11 @@ function Example() {
 
 function WCSupportedCodeReact(id: string) {
 	return `\
-import { createThirdwebClient } from "thirdweb";
-import { useConnect } from "thirdweb/react";
-import { createWallet } from "thirdweb/wallets";
+import { createEgiftcardClient } from "egiftcard";
+import { useConnect } from "egiftcard/react";
+import { createWallet } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 
 function Example() {
   const { connect, isConnecting, error } = useConnect();
@@ -332,11 +332,11 @@ function Example() {
 
 function injectedSupportedCodeReact(id: string) {
 	return `\
-import { createThirdwebClient } from "thirdweb";
-import { useConnect } from "thirdweb/react";
-import { createWallet, injectedProvider } from "thirdweb/wallets";
+import { createEgiftcardClient } from "egiftcard";
+import { useConnect } from "egiftcard/react";
+import { createWallet, injectedProvider } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 
 function Example() {
   const { connect, isConnecting, error } = useConnect();
@@ -367,8 +367,8 @@ function Example() {
 
 function componentCode(id: string) {
 	return `\
-import { ConnectButton } from "thirdweb/react";
-import { createWallet } from "thirdweb/wallets";
+import { ConnectButton } from "egiftcard/react";
+import { createWallet } from "egiftcard/wallets";
 
 const wallets = [
   createWallet("${id}"), // Add your wallet in wallet list

@@ -3,10 +3,10 @@ import { V4SDKbanner } from "@/components/others/V4SDKBanner";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Auth in thirdweb React SDK",
+		title: "Auth in egiftcard React SDK",
 		icon: "react",
 	},
-	title: "Auth in thirdweb React SDK",
+	title: "Auth in egiftcard React SDK",
 	description: "Add support for Auth to your React apps",
 });
 
@@ -14,24 +14,24 @@ export const metadata = createMetadata({
 
 <V4SDKbanner />
 
-Once you've set up an Auth API for your application, you can use the `@thirdweb-dev/react` and `@thirdweb-dev/auth` packages to add Auth support to your React apps.
+Once you've set up an Auth API for your application, you can use the `@egiftcard/react` and `@egiftcard/auth` packages to add Auth support to your React apps.
 
 ## Getting Started
 
 To add support for Auth to your React apps, you'll first need to install the following packages:
 
 ```bash npm2yarn
-npm install @thirdweb-dev/react @thirdweb-dev/sdk @thirdweb-dev/auth ethers@5
+npm install @egiftcard/react @egiftcard/sdk @egiftcard/auth ethers@5
 ```
 
-Now we'll need to wrap our app with the `ThirdwebProvider` which stores the necessary context for Auth, and we'll provide some configuration with the `authConfig` option so that our frontend knows how to communicate with our Auth API.
+Now we'll need to wrap our app with the `EgiftcardProvider` which stores the necessary context for Auth, and we'll provide some configuration with the `authConfig` option so that our frontend knows how to communicate with our Auth API.
 
 ```tsx title="_app.tsx"
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 export default function MyApp({ Component, pageProps }) {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			// Required configuration for the provider, but doesn't affect Auth.
 			activeChain="ethereum"
 			clientId="your-client-id"
@@ -43,17 +43,17 @@ export default function MyApp({ Component, pageProps }) {
 			}}
 		>
 			<Component {...pageProps} />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
 
 ### Connect wallet & login button
 
-The simplest way to add an Auth flow to our app is to use the `ConnectWallet` button. This button detects the `authConfig` on our `ThirdwebProvider` and will automatically prompt the user to connect their wallet with MetaMask, Coinbase Wallet, or WalletConnect, and then login to our app with Auth.
+The simplest way to add an Auth flow to our app is to use the `ConnectWallet` button. This button detects the `authConfig` on our `EgiftcardProvider` and will automatically prompt the user to connect their wallet with MetaMask, Coinbase Wallet, or WalletConnect, and then login to our app with Auth.
 
 ```tsx title="pages/index.tsx"
-import { ConnectWallet } from "@thirdweb-dev/react";
+import { ConnectWallet } from "@egiftcard/react";
 
 export default function Home() {
 	return <ConnectWallet />;
@@ -62,7 +62,7 @@ export default function Home() {
 
 ### Connect wallet & auth hooks
 
-For a more customized setup with custom UI or logic, we can instead use the wallet connection and Auth hooks provided by the `@thirdweb-dev/react` package.
+For a more customized setup with custom UI or logic, we can instead use the wallet connection and Auth hooks provided by the `@egiftcard/react` package.
 
 ```tsx title="pages/index.tsx"
 import {
@@ -71,7 +71,7 @@ import {
 	useLogin,
 	useLogout,
 	useUser,
-} from "@thirdweb-dev/react";
+} from "@egiftcard/react";
 
 export default function Home() {
 	const address = useAddress();
@@ -108,7 +108,7 @@ For a full list of wallet connection hooks, check out our [React SDK documentati
 On the frontend, you may want to check whether or not the user is logged in to conditionally render certain parts of your app. You can do this with the `isLoggedIn` value from the `useUser` hook:
 
 ```tsx
-import { useUser } from "@thirdweb-dev/react";
+import { useUser } from "@egiftcard/react";
 
 export default function Home() {
 	const { isLoggedIn } = useUser();
@@ -130,7 +130,7 @@ export default function Home() {
 Once a user is logged in, you can access their user data and session data with the `useUser` hook. The `user` value will be `null` if the user is not logged in, but once they're logged in, it will contain the `address` of the logged in user, the session `context` set by the backend on login, and any extra user-associated `data` sent by the backend.
 
 ```tsx
-import { useUser } from "@thirdweb-dev/react";
+import { useUser } from "@egiftcard/react";
 
 export default function Home() {
 	const { user } = useUser();
@@ -154,7 +154,7 @@ Meanwhile, `user.data` is a way for the backend to send the client any data asso
 When using the `useUser` hook, you may want to show a loading state while the user's session is being fetched from the backend. You can do this by checking the `isLoading` value from the hook:
 
 ```tsx
-import { useUser } from "@thirdweb-dev/react";
+import { useUser } from "@egiftcard/react";
 
 export default function Home() {
 	const { user, isLoading } = useUser();
@@ -170,7 +170,7 @@ export default function Home() {
 Similarly, the `useLogin` and `useLogout` hooks also have loading states to indicate when a request to the backend is being made.
 
 ```tsx
-import { useLogin, useLogout } from "@thirdweb-dev/react";
+import { useLogin, useLogout } from "@egiftcard/react";
 
 export default function Home() {
 	const { login, isLoading: isLoggingIn } = useLogin();
@@ -200,7 +200,7 @@ The `login` function automatically uses some default values for the necessary fi
 However, if you want full access to customize these field values, you can overwrite them by passing an object to the `login` function:
 
 ```tsx
-import { useLogin } from "@thirdweb-dev/react";
+import { useLogin } from "@egiftcard/react";
 
 export default function Home() {
 	const { login } = useLogin();
@@ -230,7 +230,7 @@ export default function Home() {
 Since logging in requires the user to sign a message, the `login` function is asynchronous and may throw an error if the user rejects the message. You can handle this error case by using a `try/catch` block:
 
 ```tsx
-import { useLogin } from "@thirdweb-dev/react";
+import { useLogin } from "@egiftcard/react";
 
 export default function Home() {
 	const { login } = useLogin();
@@ -271,11 +271,11 @@ async function getData() {
 
 ### Switching between logged-in accounts
 
-As discussed in the [switching accounts section of the Auth API explanation](/connect/auth/how-it-works/api#switching-accounts), Auth enables multiple wallets to login at once. If you use the thirdweb React SDK on the frontend to enable users to connect their wallets via the wallet connection hooks or the `<ConnectWallet/>` button, switching accounts will be automatically handled for your users when they switch connected wallets.
+As discussed in the [switching accounts section of the Auth API explanation](/connect/auth/how-it-works/api#switching-accounts), Auth enables multiple wallets to login at once. If you use the egiftcard React SDK on the frontend to enable users to connect their wallets via the wallet connection hooks or the `<ConnectWallet/>` button, switching accounts will be automatically handled for your users when they switch connected wallets.
 However, if you want to customize when accounts or switched or add your own manual account switching flows, you can use the `useSwitchAccount` hook exposed by the React SDK.
 
 ```ts
-import { useSwitchAccount } from "@thirdweb-dev/react";
+import { useSwitchAccount } from "@egiftcard/react";
 
 export default function Home() {
   const { switchAccount } = useSwitchAccount();

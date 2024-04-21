@@ -1,12 +1,12 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ThirdwebContract.Prepare | Thirdweb .NET SDK",
+	title: "EgiftcardContract.Prepare | Egiftcard .NET SDK",
 	description:
 		"Instantiate a low level Transaction object from a contract prepare call.",
 });
 
-# ThirdwebContract.Prepare
+# EgiftcardContract.Prepare
 
 Instantiate a low level [Transaction](/dotnet/transactions/create) object from a contract prepare call.
 
@@ -15,18 +15,18 @@ Useful for preparing, simulating and manipulating transactions before sending th
 ## Usage
 
 ```csharp
-ThirdwebTransaction transaction = await ThirdwebContract.Prepare(wallet, contract, "methodName", weiValue, parameters);
+EgiftcardTransaction transaction = await EgiftcardContract.Prepare(wallet, contract, "methodName", weiValue, parameters);
 ```
 
 <Details summary="Parameters">
 
 ### wallet (required)
 
-An instance of `IThirdwebWallet`. This represents the signer of the transaction, which can be any type of wallet provider.
+An instance of `IEgiftcardWallet`. This represents the signer of the transaction, which can be any type of wallet provider.
 
 ### contract (required)
 
-An instance of `ThirdwebContract`. Represents the smart contract you wish to interact with.
+An instance of `EgiftcardContract`. Represents the smart contract you wish to interact with.
 
 ### methodName (required)
 
@@ -46,6 +46,6 @@ The parameters to pass to the smart contract method, if any. Provide these as a 
 
 ### Transaction
 
-Returns an instance of `ThirdwebTransaction` configured with the provided parameters, ready to be sent to the blockchain.
+Returns an instance of `EgiftcardTransaction` configured with the provided parameters, ready to be sent to the blockchain.
 
 </Details>

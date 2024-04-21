@@ -2,20 +2,20 @@ import DefaultChainsMDX from "../../common/defaultChains.mdx";
 
 An array of chains supported by your app.
 
-You can import chains from `@thirdweb-dev/chains` which contains 1000+ chains.
+You can import chains from `@egiftcard/chains` which contains 1000+ chains.
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react-native";
-import { Ethereum, Polygon } from "@thirdweb-dev/chains";
+import { EgiftcardProvider } from "@egiftcard/react-native";
+import { Ethereum, Polygon } from "@egiftcard/chains";
 
 function MyApp() {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			activeChain={Ethereum}
 			supportedChains={[Ethereum, Polygon]}
 		>
 			<App />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

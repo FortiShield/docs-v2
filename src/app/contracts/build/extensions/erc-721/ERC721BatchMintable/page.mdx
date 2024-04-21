@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "ERC721BatchMintable contract",
 		icon: "solidity",
 	},
-	title: "ERC721BatchMintable | thirdweb contract",
+	title: "ERC721BatchMintable | egiftcard contract",
 	description:
 		"Enable minting multiple NFTs at once in a single transaction by Implementing ERC721, IMintableERC721, and Multicall extensions",
 });
@@ -13,9 +13,9 @@ export const metadata = createMetadata({
 # ERC721BatchMintable
 
 ```solidity
-import "@thirdweb-dev/eip/ERC721.sol"
-import "@thirdweb-dev/contracts/extension/multicall.sol";
-import "@thirdweb-dev/contracts/extension/interface/IMintableERC721.sol";
+import "@egiftcard/eip/ERC721.sol"
+import "@egiftcard/contracts/extension/multicall.sol";
+import "@egiftcard/contracts/extension/interface/IMintableERC721.sol";
 ```
 
 Enable minting multiple NFTs at once in a single transaction by Implementing [`ERC721`](/contracts/build/extensions/erc-721/ERC721), [`IMintableERC721`](/contracts/build/extensions/erc-721/ERC721Mintable), and [`Multicall`](/contracts/build/extensions/general/Multicall) extensions.
@@ -31,9 +31,9 @@ This is an example smart contract which will have ERC721BatchMintable detected o
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/ERC721A.sol";
-import "@thirdweb-dev/contracts/extension/interface/IMintableERC721.sol";
-import "@thirdweb-dev/contracts/extension/Multicall.sol";
+import "@egiftcard/contracts/eip/ERC721A.sol";
+import "@egiftcard/contracts/extension/interface/IMintableERC721.sol";
+import "@egiftcard/contracts/extension/Multicall.sol";
 
 contract Contract is ERC721A, IMintableERC721, Multicall {
     constructor(

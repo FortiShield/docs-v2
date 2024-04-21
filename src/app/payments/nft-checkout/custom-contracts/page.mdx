@@ -1,14 +1,14 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Custom Contracts | thirdweb NFT Checkout",
+	title: "Custom Contracts | egiftcard NFT Checkout",
 	description:
-		"Using your own Custom Contract on Polygon, Ethereum, or another EVM blockchain with thirdweb NFT Checkout",
+		"Using your own Custom Contract on Polygon, Ethereum, or another EVM blockchain with egiftcard NFT Checkout",
 });
 
 # Custom Contracts
 
-Using your own Custom Contract on Polygon, Ethereum, or another EVM blockchain? The following example shows you how to use it with thirdweb.
+Using your own Custom Contract on Polygon, Ethereum, or another EVM blockchain? The following example shows you how to use it with egiftcard.
 
 ## Example
 
@@ -32,7 +32,7 @@ function claimTo(
   }
 ```
 
-You will then need a **mintMethod** in order for thirdweb to call your claim function. For the example above, your mintMethod should look like this:
+You will then need a **mintMethod** in order for egiftcard to call your claim function. For the example above, your mintMethod should look like this:
 
 ```json
 mintMethod: {
@@ -51,7 +51,7 @@ mintMethod: {
 }
 ```
 
-This will ensure that when thirdweb calls the smart contract during any checkout flow, under the hood, we would be calling your smart contract like so:
+This will ensure that when egiftcard calls the smart contract during any checkout flow, under the hood, we would be calling your smart contract like so:
 
 ```javascript
 claimTo("0x...", 1, 0, "xyz", false {
@@ -64,12 +64,12 @@ claimTo("0x...", 1, 0, "xyz", false {
 Your smart contract method that mints the NFT must satisfy these requirements:
 
 1. The method must accept the buyer's wallet address as an argument.
-2. The method must allow thirdweb's minter wallets to mint an unlimited amount as the `msg.sender`. Any restrictions on the minting wallet address or quantity is not allowed.
+2. The method must allow egiftcard's minter wallets to mint an unlimited amount as the `msg.sender`. Any restrictions on the minting wallet address or quantity is not allowed.
 3. (If priced in USDC) The method must explicitly [request USDC token](/payments/nft-checkout/erc20-pricing) from the `msg.sender`.
 
 ## MintMethod
 
-The **mintMethod** is required when creating [Shareable Checkout Links](/payments/nft-checkout/checkout-link), [One-Time Checkout Links](/payments/nft-checkout/one-time-checkout-link), or [Checkout Elements](/payments/nft-checkout/elements). Think of it as an ABI for thirdweb to know how to call your claim function.
+The **mintMethod** is required when creating [Shareable Checkout Links](/payments/nft-checkout/checkout-link), [One-Time Checkout Links](/payments/nft-checkout/one-time-checkout-link), or [Checkout Elements](/payments/nft-checkout/elements). Think of it as an ABI for egiftcard to know how to call your claim function.
 
 The generic format of the mintMethod is:
 
@@ -91,7 +91,7 @@ The generic format of the mintMethod is:
 
 > 🚧 Don't know the values?
 >
-> thirdweb supports two template variables -`$WALLET` and `$QUANTITY` that you may use if you don't know the buyer's wallet address and quantity. Note that for **all other** fields such as `value` and `currency`, you would need to hardcode the actual values.
+> egiftcard supports two template variables -`$WALLET` and `$QUANTITY` that you may use if you don't know the buyer's wallet address and quantity. Note that for **all other** fields such as `value` and `currency`, you would need to hardcode the actual values.
 
 Template variables will be replaced when calling your contract:
 
@@ -120,8 +120,8 @@ Ensure your mint method **explicitly requests USDC tokens from msg.sender**. See
 
 > 📘 This is required when interacting with the [Seaport contract](https://docs.opensea.io/reference/seaport-overview).
 
-By default thirdweb's float wallet approves your NFT contract to request ERC-20 tokens.
-To specify a different contract address that will request ERC-20 tokens from thirdweb's float wallet, set that address in the `"spender"` field:
+By default egiftcard's float wallet approves your NFT contract to request ERC-20 tokens.
+To specify a different contract address that will request ERC-20 tokens from egiftcard's float wallet, set that address in the `"spender"` field:
 
 ```json
 "payment": {
@@ -135,7 +135,7 @@ To specify a different contract address that will request ERC-20 tokens from thi
 
 ### I have multiple methods with the same name. Why isn't my mintMethod isn't working?
 
-Please provide the full signature as your mintMethod. thirdweb will not try to "guess" the correct method.
+Please provide the full signature as your mintMethod. egiftcard will not try to "guess" the correct method.
 
 > **Example**
 >

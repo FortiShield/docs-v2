@@ -2,8 +2,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	image: { title: "Get Started with thirdweb Solidity SDK", icon: "solidity" },
-	title: "Get Started with thirdweb Solidity SDK",
+	image: { title: "Get Started with egiftcard Solidity SDK", icon: "solidity" },
+	title: "Get Started with egiftcard Solidity SDK",
 	description:
 		"To get started with the Solidity SDK, run the following command to create a new project:",
 });
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 To get started with the Solidity SDK, run the following command to create a new project:
 
 ```bash
-npx thirdweb create contract
+npx egiftcard create contract
 ```
 
 Or, install the `contracts` package into your existing Solidity project:
@@ -27,12 +27,12 @@ Or, install the `contracts` package into your existing Solidity project:
 
 <TabsContent value="forge">
 ```bash
-forge install https://github.com/thirdweb-dev/contracts
+forge install https://github.com/egiftcard/contracts
 ```
 </TabsContent>
 <TabsContent value="hardhat">
 ```bash
-npm i @thirdweb-dev/contracts
+npm i @egiftcard/contracts
 ```
 </TabsContent>
 </Tabs>
@@ -56,7 +56,7 @@ appropriate values to a constructor for the base contract.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721Base.sol";
+import "@egiftcard/contracts/base/ERC721Base.sol";
 
 contract MyNFT is ERC721Base {
     constructor(
@@ -83,8 +83,8 @@ Additional [extensions](/contracts/build/extensions) can be added to existing sm
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721Base.sol";
-import "@thirdweb-dev/contracts/extension/Permissions.sol";
+import "@egiftcard/contracts/base/ERC721Base.sol";
+import "@egiftcard/contracts/extension/Permissions.sol";
 
 contract MyNFT is ERC721Base, Permissions {
     constructor(
@@ -110,8 +110,8 @@ contract MyNFT is ERC721Base, Permissions {
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721Base.sol";
-import "@thirdweb-dev/contracts/extension/Permissions.sol";
+import "@egiftcard/contracts/base/ERC721Base.sol";
+import "@egiftcard/contracts/extension/Permissions.sol";
 
 contract MyNFT is ERC721Base, Permissions {
     bytes32 private constant MINTER_ROLE = keccak256("MINTER_ROLE");
@@ -162,8 +162,8 @@ and restrict this function in the `myNFT` contract to only allow 1 NFT per walle
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721Base.sol";
-import "@thirdweb-dev/contracts/extension/Permissions.sol";
+import "@egiftcard/contracts/base/ERC721Base.sol";
+import "@egiftcard/contracts/extension/Permissions.sol";
 
 contract MyNFT is ERC721Base, Permissions {
     constructor(

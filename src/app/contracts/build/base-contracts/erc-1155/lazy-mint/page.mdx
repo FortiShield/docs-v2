@@ -3,7 +3,7 @@ import { GithubButtonLink } from "@doc";
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ERC1155LazyMint | thirdweb contracts",
+	title: "ERC1155LazyMint | egiftcard contracts",
 	description:
 		"ERC1155LazyMint allows you to Lazy Mint NFTs on your contract. It exposes a verifyClaim function that you can override to add your claim-restriction logic",
 	image: {
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC1155LazyMint
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC1155LazyMint.sol";
+import "@egiftcard/contracts/base/ERC1155LazyMint.sol";
 ```
 
 `ERC1155LazyMint` allows you to [Lazy Mint](/glossary/lazy-minting) NFTs on your contract.
@@ -25,7 +25,7 @@ Lazy minting allows you to define the metadata of NFTs without minting it to an 
 As a contract admin, this lets you prepare the metadata for NFTs that will be minted by other wallets,
 without paying the gas cost for actually minting the NFTs.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC1155LazyMint.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC1155LazyMint.sol" />
 
 ## Usage
 
@@ -35,7 +35,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC1155LazyMint.sol";
+import "@egiftcard/contracts/base/ERC1155LazyMint.sol";
 
 contract MyNFT is ERC1155LazyMint {
     constructor(

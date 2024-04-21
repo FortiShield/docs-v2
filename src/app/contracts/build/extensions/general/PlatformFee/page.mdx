@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "PlatformFee contract",
 		icon: "solidity",
 	},
-	title: "PlatformFee | thirdweb contract",
+	title: "PlatformFee | egiftcard contract",
 	description:
 		"PlatformFee allows you to charge a percentage fee wherever there is a transfer of currency (ERC20 tokens or native tokens) in your contract",
 });
@@ -13,12 +13,12 @@ export const metadata = createMetadata({
 # PlatformFee
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/PlatformFee.sol";
+import "@egiftcard/contracts/extension/PlatformFee.sol";
 ```
 
 `PlatformFee` allows you to charge a percentage fee wherever there is a transfer of currency (ERC20 tokens or native tokens) in your contract.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/PlatformFee.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/PlatformFee.sol" />
 
 ## Usage
 
@@ -34,7 +34,7 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/PlatformFee.sol";
+import "@egiftcard/contracts/extension/PlatformFee.sol";
 
 contract MyContract is PlatformFee {
     /**

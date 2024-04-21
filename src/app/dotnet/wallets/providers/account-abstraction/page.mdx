@@ -1,7 +1,7 @@
 import { Details, Callout, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "SmartWallet.Create | Thirdweb .NET SDK",
+	title: "SmartWallet.Create | Egiftcard .NET SDK",
 	description:
 		"Instantiate a SmartWallet for enhanced user interactions with blockchain applications.",
 });
@@ -26,11 +26,11 @@ var smartWallet = await SmartWallet.Create(client, personalWallet, factoryAddres
 
 ### client (required)
 
-An instance of `ThirdwebClient`. Facilitates communication with the blockchain.
+An instance of `EgiftcardClient`. Facilitates communication with the blockchain.
 
 ### personalWallet (required)
 
-An instance of IThirdwebWallet (e.g., `PrivateKeyWallet` or `InAppWallet`). Represents the personal wallet connected to the SmartWallet.
+An instance of IEgiftcardWallet (e.g., `PrivateKeyWallet` or `InAppWallet`). Represents the personal wallet connected to the SmartWallet.
 
 ### factoryAddress (required)
 
@@ -71,10 +71,10 @@ Returns an instance of `SmartWallet`, configured with the provided parameters an
 </Details>
 Example
 
-Here's how you can create a SmartWallet for a user, assuming you already have a ThirdwebClient and a personal wallet (PrivateKeyWallet or InAppWallet) set up:
+Here's how you can create a SmartWallet for a user, assuming you already have a EgiftcardClient and a personal wallet (PrivateKeyWallet or InAppWallet) set up:
 
 ```csharp
-var client = ThirdwebClient.Create(clientId: "yourClientId", bundleId: "yourBundleId");
+var client = EgiftcardClient.Create(clientId: "yourClientId", bundleId: "yourBundleId");
 var personalWallet = await PrivateKeyWallet.Create(client, "yourPrivateKeyHex");
 
 BigInteger chainId = 1; // Ethereum mainnet
@@ -96,7 +96,7 @@ var smartWallet = await SmartWallet.Create(
 Console.WriteLine($"SmartWallet address: {await smartWallet.GetAddress()}");
 
 // Sign a message (this will also deploy your smart wallet if it hasn't been deployed yet)
-var message = "Hello, Thirdweb!";
+var message = "Hello, Egiftcard!";
 var signature = await wallet.PersonalSign(message);
 Console.WriteLine($"Signature: {signature}");
 ```

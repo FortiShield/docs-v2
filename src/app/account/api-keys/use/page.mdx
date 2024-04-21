@@ -2,12 +2,12 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Using thirdweb API Key",
+	title: "Using egiftcard API Key",
 	description:
-		"How to use thirdweb API key in TypeScript, React, Unity, Python, and Go.",
+		"How to use egiftcard API key in TypeScript, React, Unity, Python, and Go.",
 	image: {
-		title: "Using thirdweb API Key",
-		icon: "thirdweb",
+		title: "Using egiftcard API Key",
+		icon: "egiftcard",
 	},
 });
 
@@ -28,7 +28,7 @@ When writing backends or scripts, you can use the secret key to instantiate the 
 
 ```ts
 // Read-only mode
-const readOnlySdk = new ThirdwebSDK("goerli", {
+const readOnlySdk = new EgiftcardSDK("goerli", {
 	secretKey: "YOUR_SECRET_KEY", // Use secret key if using on the server, get it from dashboard settings
 });
 ```
@@ -36,9 +36,9 @@ const readOnlySdk = new ThirdwebSDK("goerli", {
 When using the Typescript SDK for frontend applications, use the client id:
 
 ```ts
-import { ThirdwebSDK } from "@thirdweb-dev/sdk";
+import { EgiftcardSDK } from "@egiftcard/sdk";
 // Read-only mode
-const readOnlySdk = new ThirdwebSDK("goerli", {
+const readOnlySdk = new EgiftcardSDK("goerli", {
 	clientId: "YOUR_CLIENT_ID", // Use client id if using on the client side, get it from dashboard settings
 });
 ```
@@ -50,13 +50,13 @@ const readOnlySdk = new ThirdwebSDK("goerli", {
 When using the React SDK, you can use the client id to instantiate the SDK:
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 function MyApp() {
 	return (
-		<ThirdwebProvider activeChain="ethereum" clientId="your-client-id">
+		<EgiftcardProvider activeChain="ethereum" clientId="your-client-id">
 			<YourApp />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
@@ -68,7 +68,7 @@ function MyApp() {
 When using the Unity SDK, you can use the client id to instantiate the SDK:
 
 ```csharp
-ThirdwebSDK sdk = new ThirdwebSDK("goerli", 5, new ThirdwebSDK.Options()
+EgiftcardSDK sdk = new EgiftcardSDK("goerli", 5, new EgiftcardSDK.Options()
 {
   clientId = "my-client-id", // you can get client id from dashboard settings
 });
@@ -81,8 +81,8 @@ ThirdwebSDK sdk = new ThirdwebSDK("goerli", 5, new ThirdwebSDK.Options()
 When using the Python SDK, you can use the secret key to instantiate the SDK:
 
 ```python
-from thirdweb import ThirdwebSDK
-from thirdweb.types import SDKOptions
+from egiftcard import EgiftcardSDK
+from egiftcard.types import SDKOptions
 from dotenv.main import load_dotenv
 import os
 
@@ -90,7 +90,7 @@ import os
   secret_key = os.environ['SECRET_KEY']
   private_key = os.environ['PRIVATE_KEY']
 
-  sdk = ThirdwebSDK.from_private_key(private_key, "<chain_id>", SDKOptions(secret_key=secret_key))
+  sdk = EgiftcardSDK.from_private_key(private_key, "<chain_id>", SDKOptions(secret_key=secret_key))
 ```
 
 </TabsContent>
@@ -105,17 +105,17 @@ package main
 import (
     "fmt"
 
-    "github.com/thirdweb-dev/go-sdk/v2/thirdweb"
+    "github.com/egiftcard/go-sdk/v2/egiftcard"
 )
 
 func main() {
-    // Your secret key from the thirdweb api keys dashboard
+    // Your secret key from the egiftcard api keys dashboard
     secretKey := "..."
 
     // Creates a new SDK instance to get read-only data for your contracts, you can pass:
     // - a chain name (mainnet, rinkeby, goerli, polygon, avalanche, fantom)
     // - a custom RPC URL
-    sdk, err := thirdweb.NewThirdwebSDK("<chain_id>", &thirdweb.SDKOptions{
+    sdk, err := egiftcard.NewEgiftcardSDK("<chain_id>", &egiftcard.SDKOptions{
       SecretKey: secretKey,
     })
     if err != nil {

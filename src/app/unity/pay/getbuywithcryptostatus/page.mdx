@@ -1,7 +1,7 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "GetBuyWithCryptoStatus | thirdweb Unity SDK",
+	title: "GetBuyWithCryptoStatus | egiftcard Unity SDK",
 	description: "Get swap status for a transaction hash.",
 });
 
@@ -12,15 +12,15 @@ Get swap status for a transaction hash returned by [BuyWithCrypto](/unity/pay/bu
 ## Usage
 
 ```csharp
-using Thirdweb.Pay;
+using Egiftcard.Pay;
 
 public async void GetStatus()
 {
-	BuyWithCryptoStatusResult status = await ThirdwebPay.GetBuyWithCryptoStatus(_txHash);
+	BuyWithCryptoStatusResult status = await EgiftcardPay.GetBuyWithCryptoStatus(_txHash);
 	if (status.Status == SwapStatus.FAILED.ToString())
-		ThirdwebDebug.LogWarning($"Failed! Reason: {status.FailureMessage}");
+		EgiftcardDebug.LogWarning($"Failed! Reason: {status.FailureMessage}");
 
-	ThirdwebDebug.Log($"Status: {JsonConvert.SerializeObject(status, Formatting.Indented)}");
+	EgiftcardDebug.Log($"Status: {JsonConvert.SerializeObject(status, Formatting.Indented)}");
 }
 ```
 

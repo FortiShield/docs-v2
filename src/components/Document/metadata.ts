@@ -6,7 +6,7 @@ const BAST_URL = getBaseUrl();
 type DynamicImageOptions = {
 	title: string;
 	icon:
-		| "thirdweb"
+		| "egiftcard"
 		| "react"
 		| "typescript"
 		| "unity"
@@ -31,12 +31,12 @@ export function createMetadata(obj: {
 }): Metadata {
 	return {
 		title: obj.title,
-		metadataBase: new URL("https://portal.thirdweb.com"),
+		metadataBase: new URL("https://portal.egiftcard.cc"),
 		twitter: {
 			title: obj.title,
 			description: obj.description,
-			creator: "@thirdweb",
-			site: "@thirdweb",
+			creator: "@egiftcard",
+			site: "@egiftcard",
 			card: "summary_large_image",
 		},
 		openGraph: {

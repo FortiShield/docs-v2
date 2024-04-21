@@ -10,11 +10,11 @@ export default getTDocLayout({
 
 export const metadata = createMetadata({
 	image: {
-		title: "thirdweb Storage SDK Reference",
+		title: "egiftcard Storage SDK Reference",
 		icon: "storage",
 	},
-	title: "References | thirdweb storage SDK ",
-	description: "Full Reference for thirdweb storage SDK.",
+	title: "References | egiftcard storage SDK ",
+	description: "Full Reference for egiftcard storage SDK.",
 });
 
 export const revalidate = 3600; // revalidate at most every hour

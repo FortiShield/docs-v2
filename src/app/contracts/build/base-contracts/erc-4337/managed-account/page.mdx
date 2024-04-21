@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "Managed Account contract",
 		icon: "contract",
 	},
-	title: "Managed Account | thirdweb contracts",
+	title: "Managed Account | egiftcard contracts",
 	description:
 		"The ManagedAccount contract is an upgradeable smart account contract written in the dynamic contract pattern",
 });
@@ -15,12 +15,12 @@ export const metadata = createMetadata({
 # Managed Account
 
 ```solidity
-import "@thirdweb-dev/contracts/smart-wallet/managed/ManagedAccount.sol";
+import "@egiftcard/contracts/smart-wallet/managed/ManagedAccount.sol";
 ```
 
 This contract inherits from the [`BaseAccount`](/contracts/build/extensions/erc-4337/SmartWallet) contract.
 
-The `ManagedAccount` is an _upgradeable_ smart account contract written in the [dynamic contract pattern](https://github.com/thirdweb-dev/dynamic-contracts).
+The `ManagedAccount` is an _upgradeable_ smart account contract written in the [dynamic contract pattern](https://github.com/egiftcard/dynamic-contracts).
 
 App developers can issue `ManagedAccount` smart accounts programmatically by deploying a [`ManagedAccountFactory`](/contracts/build/base-contracts/erc-4337/managed-account-factory) smart contract.
 
@@ -28,7 +28,7 @@ The admin of the [`ManagedAccountFactory`](/contracts/build/base-contracts/erc-4
 
 An upgrade to the features of `ManagedAccount` applies to **all** `ManagedAccount` smart accounts created by the factory. This is the right wallet for developers who anticipate **pushing upgrades** to their users’ wallets.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/prebuilts/account/managed/ManagedAccount.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/prebuilts/account/managed/ManagedAccount.sol" />
 
 <br />
 
@@ -38,7 +38,7 @@ If you intend to issue accounts programmatically using a custom factory contract
 
 - Create a new factory contract by extending the [BaseAccountFactory](/contracts/build/extensions/erc-4337/SmartWallet-factory) extension.
 
-- Override the `_initializeAccount` function on the factory to create a new wallet. ([reference](https://github.com/thirdweb-dev/contracts/blob/main/contracts/smart-wallet/non-upgradeable/AccountFactory.sol#L36))
+- Override the `_initializeAccount` function on the factory to create a new wallet. ([reference](https://github.com/egiftcard/contracts/blob/main/contracts/smart-wallet/non-upgradeable/AccountFactory.sol#L36))
 
 </Callout>
 
@@ -54,7 +54,7 @@ Once deployed, you can use the features made available by these extensions on th
 Import the contract and inherit from it. This is an example contract demonstrating one way that you could override the functionality to create a token bound account.
 
 ```solidity
-import "@thirdweb-dev/contracts/smart-wallet/managed/ManagedAccount.sol";
+import "@egiftcard/contracts/smart-wallet/managed/ManagedAccount.sol";
 
 contract ManagedTokenBoundAccount is ManagedAccount {
     constructor(

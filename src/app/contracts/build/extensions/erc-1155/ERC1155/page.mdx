@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "ERC1155 contract",
 		icon: "solidity",
 	},
-	title: "ERC1155 | thirdweb contract",
+	title: "ERC1155 | egiftcard contract",
 	description:
 		"ERC1155 is the standard for representing 'Edition' NFTs where each NFT in the collection can have more than 1 quantity; also known as 'semi-fungible' tokens",
 });
@@ -14,13 +14,13 @@ export const metadata = createMetadata({
 # ERC1155
 
 ```solidity
-import "@thirdweb-dev/contracts/eip/ERC1155.sol";
+import "@egiftcard/contracts/eip/ERC1155.sol";
 ```
 
 ERC1155 is the standard for representing "Edition" NFTs
 where each NFT in the collection can have more than 1 quantity; also known as "semi-fungible" tokens.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/eip/ERC1155.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/eip/ERC1155.sol" />
 
 ## Usage
 
@@ -30,7 +30,7 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/ERC1155.sol";
+import "@egiftcard/contracts/eip/ERC1155.sol";
 
 contract Contract is ERC1155 {
     constructor(

@@ -2,14 +2,14 @@ import { Callout } from "@doc";
 
 # Client
 
-A client is the entry point to the thirdweb SDK. It is required for all other actions.
+A client is the entry point to the egiftcard SDK. It is required for all other actions.
 
 <Callout title="Api Key" variant="info">
 
     You must provide a `clientId` or `secretKey` in order to initialize a client.
 
     You can create an Api key for free at
-    [thirdweb.com/create-api-key](https://thirdweb.com/create-api-key).
+    [egiftcard.cc/create-api-key](https://egiftcard.cc/create-api-key).
 
 </Callout>
 
@@ -18,9 +18,9 @@ A client is the entry point to the thirdweb SDK. It is required for all other ac
 #### For "client-side" usage
 
 ```ts
-import { createThirdwebClient } from "thirdweb";
+import { createEgiftcardClient } from "egiftcard";
 
-const client = createThirdwebClient({
+const client = createEgiftcardClient({
 	clientId: "<your_client_id>",
 });
 ```
@@ -28,9 +28,9 @@ const client = createThirdwebClient({
 #### For "server-side" usage
 
 ```ts
-import { createThirdwebClient } from "thirdweb";
+import { createEgiftcardClient } from "egiftcard";
 
-const client = createThirdwebClient({
+const client = createEgiftcardClient({
 	secretKey: "<your_secret_key>",
 });
 ```
@@ -40,4 +40,4 @@ You will need to pass this client to other methods in the SDK. This will allow y
 - get performant RPC to all chains
 - download/upload to IPFS
 - access Account Abstraction infrastructure (bundler, paymaster)
-- access other thirdweb services
+- access other egiftcard services

@@ -10,10 +10,10 @@ import { V4SDKbanner } from "@/components/others/V4SDKBanner";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Integrate thirdweb Auth with Next.js",
+		title: "Integrate egiftcard Auth with Next.js",
 		icon: "react",
 	},
-	title: "Auth in Next.js with thirdweb SDK",
+	title: "Auth in Next.js with egiftcard SDK",
 	description: "Add support for Auth to your Next apps",
 });
 
@@ -36,45 +36,45 @@ To learn more about how to implement Auth on the client side with Next.js (which
 If you want to interact with a working version of the Auth + Next integration that we'll be building in this guide, you can check the following GitHub repository, or clone it with the command below:
 
 ```
-npx thirdweb create app --template thirdweb-auth-next
+npx egiftcard create app --template egiftcard-auth-next
 ```
 
 <OpenSourceCard
-	title="thirdweb-auth-next"
-	href="https://github.com/thirdweb-example/thirdweb-auth-next"
+	title="egiftcard-auth-next"
+	href="https://github.com/egiftcard-example/egiftcard-auth-next"
 	description="Auth Next example repository."
 />
 
 ## Getting Started
 
-To add support for Auth to your Next backend, you'll need to install the `@thirdweb-dev/auth` package (as well as any other packages you'll need for your [wallet configuration](/connect/auth/wallet-configuration), we'll need the `ethers` package for this example as we'll be using the `PrivateKeyWallet`):
+To add support for Auth to your Next backend, you'll need to install the `@egiftcard/auth` package (as well as any other packages you'll need for your [wallet configuration](/connect/auth/wallet-configuration), we'll need the `ethers` package for this example as we'll be using the `PrivateKeyWallet`):
 
 ```bash npm2yarn
-npm install @thirdweb-dev/auth ethers@5
+npm install @egiftcard/auth ethers@5
 ```
 
 Now we can set up our server with Auth using either the standard `pages` directory or the Next 13 `app` directory. We'll explore how to use both setups below.
 
 ### Pages Directory Setup
 
-We can set up the server with the `pages` directory by using the `@thirdweb-dev/auth/next` entry point. First, we need to setup our [Auth API](/connect/auth/how-it-works/api) by creating a new file called `pages/api/auth/[...thirdweb].ts`:
+We can set up the server with the `pages` directory by using the `@egiftcard/auth/next` entry point. First, we need to setup our [Auth API](/connect/auth/how-it-works/api) by creating a new file called `pages/api/auth/[...egiftcard].ts`:
 
-```ts title="pages/api/auth/[...thirdweb].ts"
-import { ThirdwebAuth } from "@thirdweb-dev/auth/next";
-import { PrivateKeyWallet } from "@thirdweb-dev/auth/evm";
+```ts title="pages/api/auth/[...egiftcard].ts"
+import { EgiftcardAuth } from "@egiftcard/auth/next";
+import { PrivateKeyWallet } from "@egiftcard/auth/evm";
 
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuth({
 	domain: "example.com",
-	wallet: new PrivateKeyWallet(process.env.THIRDWEB_AUTH_PRIVATE_KEY || ""),
-	thirdwebAuthOptions: {
+	wallet: new PrivateKeyWallet(process.env.EGIFTCARD_AUTH_PRIVATE_KEY || ""),
+	egiftcardAuthOptions: {
 		secretKey: "...",
 	},
 });
 
-export default ThirdwebAuthHandler();
+export default EgiftcardAuthHandler();
 ```
 
-Here, we first configure our `ThirdwebAuth` instance with the `domain` of our app used for anti-phishing, as well as the admin wallet used to issue and verify JWTs. In this case, we use the `PrivateKeyWallet` from the `@thirdweb-dev/auth/evm` entry point, but there are several other supported wallet setups, which you can learn more about on the wallet configuration page:
+Here, we first configure our `EgiftcardAuth` instance with the `domain` of our app used for anti-phishing, as well as the admin wallet used to issue and verify JWTs. In this case, we use the `PrivateKeyWallet` from the `@egiftcard/auth/evm` entry point, but there are several other supported wallet setups, which you can learn more about on the wallet configuration page:
 
 <Stack>
 	<ArticleIconCard
@@ -84,36 +84,36 @@ Here, we first configure our `ThirdwebAuth` instance with the `domain` of our ap
 	/>
 </Stack>
 
-Finally, we export the `ThirdwebAuthHandler` which sets up all the `/api/auth/*` routes for us automatically. This is all the setup we need to set up a full Auth API on our Next.js backend!
+Finally, we export the `EgiftcardAuthHandler` which sets up all the `/api/auth/*` routes for us automatically. This is all the setup we need to set up a full Auth API on our Next.js backend!
 
 ### App Router Setup
 
-Alternatively, we can set up auth using the app router. We can set up our [Auth API](/auth/how-auth-works/auth-api) by creating a new file called `app/api/auth/[...thirdweb]/route.ts` as follows:
+Alternatively, we can set up auth using the app router. We can set up our [Auth API](/auth/how-auth-works/auth-api) by creating a new file called `app/api/auth/[...egiftcard]/route.ts` as follows:
 
-Create a separate file named `thirdwebAuth.ts`:
+Create a separate file named `egiftcardAuth.ts`:
 
-```ts title="app/api/auth/[...thirdweb]/thirdwebAuth.ts"
-import { ThirdwebAuthAppRouter } from "@thirdweb-dev/auth/next";
-import { PrivateKeyWallet } from "@thirdweb-dev/auth/evm";
+```ts title="app/api/auth/[...egiftcard]/egiftcardAuth.ts"
+import { EgiftcardAuthAppRouter } from "@egiftcard/auth/next";
+import { PrivateKeyWallet } from "@egiftcard/auth/evm";
 
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuthAppRouter({
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuthAppRouter({
 	domain: "example.com",
-	wallet: new PrivateKeyWallet(process.env.THIRDWEB_AUTH_PRIVATE_KEY || ""),
-	thirdwebAuthOptions: {
+	wallet: new PrivateKeyWallet(process.env.EGIFTCARD_AUTH_PRIVATE_KEY || ""),
+	egiftcardAuthOptions: {
 		secretKey: "...",
 	},
 });
 ```
 
-Import `thirdwebAuth.ts` in your `app/api/auth/[...thirdweb]/route.ts` file:
+Import `egiftcardAuth.ts` in your `app/api/auth/[...egiftcard]/route.ts` file:
 
-```ts title="app/api/auth/[...thirdweb]/route.ts"
-import { ThirdwebAuthHandler } from "./thirdwebAuth";
+```ts title="app/api/auth/[...egiftcard]/route.ts"
+import { EgiftcardAuthHandler } from "./egiftcardAuth";
 
-export { ThirdwebAuthHandler as GET, ThirdwebAuthHandler as POST };
+export { EgiftcardAuthHandler as GET, EgiftcardAuthHandler as POST };
 ```
 
-Like above, we first configure our `ThirdwebAuth` instance with the `domain` of our app used for anti-phishing, as well as the admin wallet used to issue and verify JWTs. In this case, we use the `PrivateKeyWallet` from the `@thirdweb-dev/auth/evm` entry point, but there are several other supported wallet setups, which you can learn more about on the wallet configuration page:
+Like above, we first configure our `EgiftcardAuth` instance with the `domain` of our app used for anti-phishing, as well as the admin wallet used to issue and verify JWTs. In this case, we use the `PrivateKeyWallet` from the `@egiftcard/auth/evm` entry point, but there are several other supported wallet setups, which you can learn more about on the wallet configuration page:
 
 <Stack>
 	<ArticleIconCard
@@ -123,7 +123,7 @@ Like above, we first configure our `ThirdwebAuth` instance with the `domain` of 
 	/>
 </Stack>
 
-Finally, we export the `ThirdwebAuthHandler` which sets up all the `/api/auth/*` routes for us automatically. This is all the setup we need to set up a full Auth API on our Next.js backend!
+Finally, we export the `EgiftcardAuthHandler` which sets up all the `/api/auth/*` routes for us automatically. This is all the setup we need to set up a full Auth API on our Next.js backend!
 
 ## Usage
 
@@ -132,7 +132,7 @@ Finally, we export the `ThirdwebAuthHandler` which sets up all the `/api/auth/*`
 The `getUser` function can be used to authenticate the user on the server. It will return the user's address if the user is authenticated, or `null` if the user is not authenticated. It can be used in any server-side context, including in Next.js API routes, as well as server-side functions like `getServerSideProps` and `getStaticProps`:
 
 ```ts title="pages/api/secrets.ts"
-import { getUser } from "./auth/[...thirdweb]";
+import { getUser } from "./auth/[...egiftcard]";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -159,8 +159,8 @@ By default, the Auth API will validate the login request by checking that the us
 
 If you want to add specific checks to enforce the exact data on the login payload signed by users, you can use the `authOptions` configuration:
 
-```ts title="pages/api/auth/[...thirdweb].ts"
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
+```ts title="pages/api/auth/[...egiftcard].ts"
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuth({
   ... // other config
   authOptions: {
     // Enforce that the user's login message has these exact values
@@ -181,8 +181,8 @@ Since the sign-in with wallet payload is used to login to your server, it's impo
 
 Luckily, all sign-in with wallet payloads include a `nonce` field which is a random string generated when the request was created. If you are using a database, or have somewhere to store nonces, you can ensure that each nonce is only used once:
 
-```ts title="pages/api/auth/[...thirdweb].ts"
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
+```ts title="pages/api/auth/[...egiftcard].ts"
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuth({
   ... // other config
   authOptions: {
     validateNonce: async (nonce: string) => {
@@ -203,8 +203,8 @@ export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
 
 By default, the JWTs issued by the server are valid for 3 days (259200 seconds), after which the user will have to login again. If you want to change this duration, you can use the `authOptions.tokenDurationInSeconds` configuration:
 
-```ts title="pages/api/auth/[...thirdweb].ts"
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
+```ts title="pages/api/auth/[...egiftcard].ts"
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuth({
   ... // other config
   authOptions: {
     tokenDurationInSeconds: 60 * 60 * 24 * 7, // 1 week
@@ -220,8 +220,8 @@ This is where the refresh token flow comes in - for users who come back to your 
 
 The `refreshIntervalInSeconds` option allows you to configure how long after a JWT has initially been issued must pass before the token can be refreshed. Ideally, you don't want the token to be refreshed too frequently because you'll receive an unnecessary amount of requests to your API, but you want it to be refreshed frequently enough to increase convenience for frequently returning users. The default value for the `refreshIntervalInSeconds` value is 3 hours (10800 seconds), meaning users who come back to your site after 3 hours of initially logging in will get their tokens refreshed.
 
-```ts title="pages/api/auth/[...thirdweb].ts"
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
+```ts title="pages/api/auth/[...egiftcard].ts"
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuth({
   ... // other config
   authOptions: {
     refreshIntervalInSeconds: 60 * 60, // 1 hour
@@ -235,8 +235,8 @@ The Auth API will set a cookie on the user's browser with the issued JWT token (
 
 If you want to overwrite these, settings, you can with the `cookieOptions` configuration. For example, you may want to set your domain to be less specific - like if you have your API on `api.example.com` and a client on `client.example.com`, you may want to set your domain to `.example.com`, or you want want to set your `SameSite` setting to `strict` if your API and client are on the same domain:
 
-```ts title="pages/api/auth/[...thirdweb].ts"
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
+```ts title="pages/api/auth/[...egiftcard].ts"
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuth({
   ... // other config
   cookieOptions: {
     domain: ".example.com",
@@ -250,8 +250,8 @@ export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
 
 We can use the `callbacks.onLogin` function to remember users in a database whenever they login, enabling a traditional database-enabled authentication flow:
 
-```ts title="pages/api/auth/[...thirdweb].ts"
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
+```ts title="pages/api/auth/[...egiftcard].ts"
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuth({
   ... // other config
   callbacks: {
     onLogin: async (user: User) => {
@@ -268,8 +268,8 @@ export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
 
 When the server issues a JWT, the default JWT claims are added to the token (as elaborated in the [how auth works section](/connect/auth/how-it-works/jwt)). However, you may want to add additional data to the JWT claims to serve as session data that will persist on the token, such as certain user-level permissions or access information. You can do this by returning data from the `callbacks.onLogin` callback function which treats your return value as session data to store onto the JWT.
 
-```ts title="pages/api/auth/[...thirdweb].ts"
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
+```ts title="pages/api/auth/[...egiftcard].ts"
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuth({
   ... // other config
   callbacks: {
     onLogin: async (address: string) => {
@@ -291,10 +291,10 @@ export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
 
 Alternatively, you can populate data about a user every time user data is requested from the `/user` endpoint or `getUser` function. This data is not session-wide as it is not stored on the JWT, so it isn't persisted an can change between requests. It can be useful for populating data that is not stored on the JWT, such as user profile information. We can do this by returning data from the `callbacks.onUser` callback function.
 
-```ts title="pages/api/auth/[...thirdweb].ts"
-import type { User } from "@thirdweb/auth/next";
+```ts title="pages/api/auth/[...egiftcard].ts"
+import type { User } from "@egiftcard/auth/next";
 
-export const { ThirdwebAuthHandler, getUser } = ThirdwebAuth({
+export const { EgiftcardAuthHandler, getUser } = EgiftcardAuth({
   ... // other config
   callbacks: {
     onUser: async (user: User) => {

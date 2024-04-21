@@ -3,7 +3,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Host web application with IPFS | thirdweb Storage",
+	title: "Host web application with IPFS | egiftcard Storage",
 	description:
 		"Uploading an app to decentralized storage offers perks such as reliable data, resistance to censorship, and better user data control. It is also more secure, scalable, and globally accessible.",
 });
@@ -16,12 +16,12 @@ Deploy a web app to decentralized storage (IPFS) using the CLI.
 
 **Prerequisites**
 
-- configure clientId through `<ThirdwebProvider>` in your app
-- login to the thirdweb CLI using your clientId and SecretKey
+- configure clientId through `<EgiftcardProvider>` in your app
+- login to the egiftcard CLI using your clientId and SecretKey
 
 ## Using Starter Templates
 
-[Starter templates](https://thirdweb.com/templates) are already pre-configured and set up for IPFS deployments.
+[Starter templates](https://egiftcard.cc/templates) are already pre-configured and set up for IPFS deployments.
 
 To deploy an app to IPFS from a starter template:
 
@@ -66,7 +66,7 @@ To deploy your app to IPFS in React:
      ...
      "scripts": {
        ...
-       "deploy": "yarn build && npx thirdweb@latest upload build"
+       "deploy": "yarn build && npx egiftcard@latest upload build"
      }
    }
    ```
@@ -97,7 +97,7 @@ To deploy your app to IPFS from Next:
      ...
      "scripts": {
        ...
-       "deploy": "yarn build && npx thirdweb@latest upload build"
+       "deploy": "yarn build && npx egiftcard@latest upload build"
      }
    }
    ```
@@ -137,7 +137,7 @@ To deploy your app to IPFS from Vite:
       ...
       "scripts": {
         ...
-        "deploy": "yarn build && npx thirdweb@latest upload dist"
+        "deploy": "yarn build && npx egiftcard@latest upload dist"
       }
     }
     ```

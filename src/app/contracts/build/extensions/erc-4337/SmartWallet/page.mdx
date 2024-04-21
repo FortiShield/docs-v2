@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "BaseAccount contract",
 		icon: "solidity",
 	},
-	title: "BaseAccount | thirdweb contract",
+	title: "BaseAccount | egiftcard contract",
 	description:
 		"The BaseAccount smart contract is an extension that is intended to be used when creating your own smart account contract which does not use one of our ready-to-use base-contract account smart contracts.",
 });
@@ -14,7 +14,7 @@ export const metadata = createMetadata({
 # BaseAccount
 
 ```solidity
-import "@thirdweb-dev/contracts/smart-wallet/utils/BaseAccount.sol";
+import "@egiftcard/contracts/smart-wallet/utils/BaseAccount.sol";
 ```
 
 The `BaseAccount` smart contract is an extension that is intended to be used when creating your own smart account contract
@@ -30,7 +30,7 @@ It is abstract, allowing you to customize the functionality for your use case.
 <br />
 
 <GithubButtonLink
-	href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/prebuilts/account/utils/BaseAccount.sol"
+	href="https://github.com/egiftcard/contracts/blob/main/contracts/prebuilts/account/utils/BaseAccount.sol"
 	name="BaseAccount"
 />
 
@@ -50,7 +50,7 @@ This is an example factory smart contract demonstrating how to inherit from this
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/smart-wallet/utils/BaseAccountFactory.sol";
+import "@egiftcard/contracts/smart-wallet/utils/BaseAccountFactory.sol";
 
 contract MyAccountFactory is BaseAccountFactory { ... }
 ```

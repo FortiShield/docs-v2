@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
 			body: JSON.stringify({
 				email,
 				send_welcome_email,
-				utm_source: "thirdweb.com",
+				utm_source: "egiftcard.cc",
 			}),
 		},
 	);

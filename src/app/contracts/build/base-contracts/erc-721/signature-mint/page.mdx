@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC721SignatureMint contract",
 		icon: "contract",
 	},
-	title: "ERC721SignatureMint | thirdweb contracts",
+	title: "ERC721SignatureMint | egiftcard contracts",
 	description:
 		"The ERC721SignatureMint smart contract uses the ERC721Base base contract along with the SignatureMintERC721 contract extension",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC721SignatureMint
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC721SignatureMint.sol";
+import "@egiftcard/contracts/base/ERC721SignatureMint.sol";
 ```
 
 The `ERC721SignatureMint` smart contract uses the
@@ -27,7 +27,7 @@ enables a contract admin to authorize an external party's request to mint tokens
 At a high level, this means you can authorize another wallet to mint tokens
 on your contract, and specify what exactly will be minted by that external party.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC721SignatureMint.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC721SignatureMint.sol" />
 
 ## Usage
 
@@ -37,7 +37,7 @@ Import the contract extension and make your contract inherit it.
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721SignatureMint.sol";
+import "@egiftcard/contracts/base/ERC721SignatureMint.sol";
 
 contract MyNFT is ERC721SignatureMint {
     constructor(

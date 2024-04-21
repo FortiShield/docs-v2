@@ -3,12 +3,12 @@
 A "contract" is a wrapper around a smart contract that is deployed on a chain. It is what you use to create transactions and read contract state.
 
 ```ts
-import { getContract } from "thirdweb";
-import { ethereum } from "thirdweb/chains";
+import { getContract } from "egiftcard";
+import { ethereum } from "egiftcard/chains";
 
 // get a contract
 const contract = getContract({
-  // the client you have created via `createThirdwebClient()`
+  // the client you have created via `createEgiftcardClient()`
   client,
   // the chain the contract is deployed on
   chain: ethereum,

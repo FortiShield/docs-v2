@@ -3,7 +3,7 @@ import { GithubButtonLink } from "@doc";
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ERC1155Drop | thirdweb contracts",
+	title: "ERC1155Drop | egiftcard contracts",
 	description:
 		"The ERC1155Drop base contract is the foundation for an Edition (ERC1155) NFT Drop that other wallets can claim.",
 	image: {
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC1155Drop
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC1155Drop.sol";
+import "@egiftcard/contracts/base/ERC1155Drop.sol";
 ```
 
 The `ERC1155Drop` base contract is the foundation for an Edition (ERC1155) NFT Drop that other wallets can claim.
@@ -24,7 +24,7 @@ It implements the [ERC1155 standard](/contracts/build/extensions/erc-1155/ERC115
 [Delayed Reveal](/contracts/build/extensions/general/DelayedReveal) and [Drop](/contracts/build/extensions/erc-1155/ERC1155DropSinglePhase) extensions;
 allowing you to batch lazy-mint NFTs, and allow other wallets to claim them under the criteria of claim conditions, with an optional delayed reveal.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC1155Drop.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC1155Drop.sol" />
 
 ## Usage
 
@@ -34,7 +34,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC1155Drop.sol";
+import "@egiftcard/contracts/base/ERC1155Drop.sol";
 
 contract MyNFT is ERC1155Drop {
     constructor(

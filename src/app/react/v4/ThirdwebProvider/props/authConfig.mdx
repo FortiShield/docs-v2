@@ -9,18 +9,18 @@ The configuration object for setting up [Auth](/connect/auth), allowing users to
 #### Example
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 function MyApp() {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			authConfig={{
 				authUrl: "/api/auth",
 				domain: "https://example.com",
 			}}
 		>
 			<YourApp />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

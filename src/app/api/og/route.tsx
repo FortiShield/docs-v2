@@ -74,7 +74,7 @@ export async function GET(request: Request) {
 						}}
 					>
 						<img
-							src={`${BAST_URL}/icons/thirdweb-logo.svg`}
+							src={`${BAST_URL}/icons/egiftcard-logo.svg`}
 							alt=""
 							width={300 / 1.7}
 							height={50 / 1.7}

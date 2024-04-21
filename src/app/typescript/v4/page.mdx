@@ -9,10 +9,10 @@ import { GraduationCap } from "lucide-react";
 
 export const metadata = createMetadata({
 	image: {
-		title: "thirdweb TypeScript Alpha SDK",
+		title: "egiftcard TypeScript Alpha SDK",
 		icon: "typescript",
 	},
-	title: "thirdweb TypeScript SDK",
+	title: "egiftcard TypeScript SDK",
 	description:
 		"A type-safe library to interact with any EVM-compatible blockchain in both Node.js and the browser.",
 });
@@ -33,22 +33,22 @@ Connect to user's wallets, interact with smart contracts, sign messages, and uti
 
 <OpenSourceCard
 	title="TypeScript SDK"
-	href="https://github.com/thirdweb-dev/js/tree/main/legacy_packages/sdk"
+	href="https://github.com/egiftcard/js/tree/main/legacy_packages/sdk"
 />
 
 ## Installation
 
 <InstallTabs
-	thirdwebInstallSupported
-	npm="npm i @thirdweb-dev/sdk ethers@^5"
-	yarn="yarn add @thirdweb-dev/sdk ethers@^5"
-	pnpm="pnpm i @thirdweb-dev/sdk ethers@^5"
+	egiftcardInstallSupported
+	npm="npm i @egiftcard/sdk ethers@^5"
+	yarn="yarn add @egiftcard/sdk ethers@^5"
+	pnpm="pnpm i @egiftcard/sdk ethers@^5"
 />
 
 <div className="flex gap-3">
-	[Starter Kits](https://github.com/thirdweb-example#starter-kits) •
-	[Templates](https://thirdweb.com/templates) •
-	[GitHub](https://github.com/thirdweb-dev/js)
+	[Starter Kits](https://github.com/egiftcard-example#starter-kits) •
+	[Templates](https://egiftcard.cc/templates) •
+	[GitHub](https://github.com/egiftcard/js)
 </div>
 
 ## Get Started
@@ -72,10 +72,10 @@ It also simplifies interacting with standard contracts using the [Extensions Fra
 For example, if your smart contract implements the standard `ERC721` interface, you can list all NFTs in the contract in one line with `contract.erc721.getAll()` method. This will handle querying supply, downloading metadata and owners for each token, and returning a list of type safe NFT objects.
 
 ```ts
-import { ThirdwebSDK } from "@thirdweb-dev/sdk";
+import { EgiftcardSDK } from "@egiftcard/sdk";
 
 // instantiate the SDK with a simple chain name or chain id
-const sdk = new ThirdwebSDK("polygon");
+const sdk = new EgiftcardSDK("polygon");
 
 // access your deployed contracts, ABI is optional
 const contract = await sdk.getContract("0x...");
@@ -96,4 +96,4 @@ await contract.erc721.mint({
 
 This saves a lot of time and effort, as you don't have to manually implement these common functions yourself.
 
-To get started, create an instance of the ThirdwebSDK class to connect to your smart contract and start interacting with it's functions and extensions.
+To get started, create an instance of the EgiftcardSDK class to connect to your smart contract and start interacting with it's functions and extensions.

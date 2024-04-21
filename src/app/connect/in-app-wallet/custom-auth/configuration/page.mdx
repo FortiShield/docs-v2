@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 		title: "Configure Authentication for In-App Wallet",
 		icon: "wallets",
 	},
-	title: "Configure Authentication In-App Wallet | thirdweb",
+	title: "Configure Authentication In-App Wallet | egiftcard",
 	description:
 		"Configure Authentication with OIDC standard, OR a generic option that lets you bring your own auth server",
 });
@@ -42,7 +42,7 @@ To setup an OIDC compatible auth, enable the first option in the configuration t
 You will be asked to enter the following values
 
 - The URL of the JWKS file (public key): This is used to verify the token was signed by you.
-- The `aud` value of the idToken: This is used to verify that thirdweb is the intended user of the token
+- The `aud` value of the idToken: This is used to verify that egiftcard is the intended user of the token
 
 ### Authenticating a user via OIDC-compatible auth
 
@@ -55,8 +55,8 @@ You will be asked to enter the following values
 <TabsContent value="react">
 
 ```typescript
-import { inAppWallet } from "thirdweb/wallets";
-import { useConnect } from "thirdweb/react";
+import { inAppWallet } from "egiftcard/wallets";
+import { useConnect } from "egiftcard/react";
 
 const { connect } = useConnect();
 
@@ -79,7 +79,7 @@ const handlePostLogin = async (jwt: string) => {
 <TabsContent value="typescript">
 
 ```typescript
-import { inAppWallet } from "thirdweb/wallets";
+import { inAppWallet } from "egiftcard/wallets";
 
 const wallet = inAppWallet();
 
@@ -146,8 +146,8 @@ Once you've logged in with your own auth, you can pass the user's JWT to the in-
 <TabsContent value="react">
 
 ```typescript
-import { inAppWallet } from "thirdweb/wallets";
-import { useConnect } from "thirdweb/react";
+import { inAppWallet } from "egiftcard/wallets";
+import { useConnect } from "egiftcard/react";
 
 const { connect } = useConnect();
 
@@ -173,7 +173,7 @@ const handlePostLogin = async (jwt: string) => {
 In other frameworks, use your own instance of the wallet to authenticate and connect.
 
 ```typescript
-import { inAppWallet } from "thirdweb/wallets";
+import { inAppWallet } from "egiftcard/wallets";
 
 const wallet = inAppWallet();
 

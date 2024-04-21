@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC20DropVote contract",
 		icon: "contract",
 	},
-	title: "ERC20DropVote | thirdweb contracts",
+	title: "ERC20DropVote | egiftcard contracts",
 	description:
 		"The ERC20Drop base contract adds the Drop Single Phase extension to the ERC20 base contract to allow you to distribute your tokens under the criteria of claim conditions",
 });
@@ -20,10 +20,10 @@ implements the [ERC20Votes](https://github.com/OpenZeppelin/openzeppelin-contrac
 which provides voting and delegation functionality, along with delegation by signature.
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC20DropVote.sol";
+import "@egiftcard/contracts/base/ERC20DropVote.sol";
 ```
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC20DropVote.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC20DropVote.sol" />
 
 ## Usage
 
@@ -33,7 +33,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC20DropVote.sol";
+import "@egiftcard/contracts/base/ERC20DropVote.sol";
 
 contract MyToken is ERC20DropVote {
 	  constructor(

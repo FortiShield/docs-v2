@@ -1,8 +1,8 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "MetaMask wallet | thirdweb Unity SDK",
-	description: "Connect to MetaMask wallet with thirdweb Unity SDK",
+	title: "MetaMask wallet | egiftcard Unity SDK",
+	description: "Connect to MetaMask wallet with egiftcard Unity SDK",
 });
 
 # MetaMask
@@ -12,12 +12,12 @@ Prompt users to connect to your app with their [MetaMask](https://metamask.io/) 
 ## Usage
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
 public async void ConnectWallet()
 {
-    // Reference to your Thirdweb SDK
-    var sdk = ThirdwebManager.Instance.SDK;
+    // Reference to your Egiftcard SDK
+    var sdk = EgiftcardManager.Instance.SDK;
 
     // Configure the connection
     var connection = new WalletConnection(
@@ -47,4 +47,4 @@ Instantiates the customizable `WalletProvider_Metamask` UI prefab, displaying a 
 ## Miscellaneous
 
 You may customize the `WalletProvider_Metamask` prefab to fit your app's design.
-The prefab is located at `Assets/Thirdweb/Core/Prefabs` and referenced in the [ThirdwebManager](/unity/thirdwebmanager) prefab.
+The prefab is located at `Assets/Egiftcard/Core/Prefabs` and referenced in the [EgiftcardManager](/unity/egiftcardmanager) prefab.

@@ -23,7 +23,7 @@ You can get a quote by using the [`useBuyWithCryptoQuote`](/references/typescrip
 
 This hook takes an object with the following properties:
 
-- **client:** The Thirdweb client instance.
+- **client:** The Egiftcard client instance.
 - **fromAddress:** The address of the wallet initiating the transaction.
 - **toTokenAddress:** The contract address of the destination token. This is the token the user wants to purchase.
 - **fromTokenAddress:** The contract address of the source token. This is the token the user wants will use to purchase the destination token.
@@ -35,15 +35,15 @@ This hook takes an object with the following properties:
 import {
 	NATIVE_TOKEN_ADDRESS,
 	type BuyWithCryptoQuote,
-	createThirdwebClient,
-} from "thirdweb";
+	createEgiftcardClient,
+} from "egiftcard";
 import {
 	useBuyWithCryptoQuote,
 	useActiveAccount,
 	useSendTransaction,
-} from "thirdweb/react";
+} from "egiftcard/react";
 
-const client = createThirdwebClient({
+const client = createEgiftcardClient({
 	clientId: "YOUR_CLIENT_ID",
 });
 
@@ -94,8 +94,8 @@ Once you've received a quote, you can execute a buy transaction by using the [`u
 Note that buys with non-native (ERC20) tokens requires executing an approval transaction before executing the buy transaction as shown in the example below.
 
 ```tsx
-import { useSendTransaction } from "thirdweb/react";
-import { type BuyWithCryptoQuote, waitForReceipt } from "thirdweb";
+import { useSendTransaction } from "egiftcard/react";
+import { type BuyWithCryptoQuote, waitForReceipt } from "egiftcard";
 
 function BuyCrypto(props: { quote: BuyWithCryptoQuote }) {
 	const quote = props.quote;
@@ -137,7 +137,7 @@ function BuyCrypto(props: { quote: BuyWithCryptoQuote }) {
 Once you've submitted the transaction, you can listen to a transaction's status using the [`useBuyWithCryptoStatus`](/references/typescript/v5/useBuyWithCryptoStatus) hook.
 
 ```ts
-import { useBuyWithCryptoStatus } from "thirdweb/react";
+import { useBuyWithCryptoStatus } from "egiftcard/react";
 
 function DisplayTxStatus(props: { txHash: string }) {
   const statusQuery = useBuyWithCryptoStatus({

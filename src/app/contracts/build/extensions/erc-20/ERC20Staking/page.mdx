@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "ERC20Staking contract",
 		icon: "solidity",
 	},
-	title: "ERC20Staking | thirdweb contract",
+	title: "ERC20Staking | egiftcard contract",
 	description:
 		"The Staking20 smart contract extension implements ERC20 staking mechanism. With this extension, you can set up a staking contract for holders of your ERC20 tokens",
 });
@@ -14,12 +14,12 @@ export const metadata = createMetadata({
 # ERC20Staking
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/Staking20.sol";
+import "@egiftcard/contracts/extension/Staking20.sol";
 ```
 
 The `Staking20` smart contract extension implements ERC20 staking mechanism. With this extension, you can set up a staking contract for holders of your ERC20 tokens. Users can stake their tokens and earn a different set of ERC20 tokens as rewards.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/Staking20.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/Staking20.sol" />
 
 ## Usage
 
@@ -29,9 +29,9 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/Staking20.sol";
-import "@thirdweb-dev/contracts/eip/interface/IERC20.sol";
-import "@thirdweb-dev/contracts/eip/interface/IERC20Metadata.sol";
+import "@egiftcard/contracts/extension/Staking20.sol";
+import "@egiftcard/contracts/eip/interface/IERC20.sol";
+import "@egiftcard/contracts/eip/interface/IERC20Metadata.sol";
 
 contract MyContract is Staking20 {
     // ERC20 Reward Token address. See {_mintRewards}.

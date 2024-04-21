@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC1155Enumerable contract",
 		icon: "solidity",
 	},
-	title: "ERC1155Enumerable | thirdweb contract",
+	title: "ERC1155Enumerable | egiftcard contract",
 	description:
 		"View all of the NFTs in the collection and all the NFTs owned by a specific wallet address by implementing the IERC1155Enumerable interface",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC1155Enumerable
 
 ```solidity
-import "@thirdweb-dev/contracts/eip/interface/IERC1155Enumerable.sol";
+import "@egiftcard/contracts/eip/interface/IERC1155Enumerable.sol";
 ```
 
 View all of the NFTs in the collection and all the NFTs owned by a specific wallet address by implementing the `IERC1155Enumerable` interface.
@@ -28,7 +28,7 @@ This extension is an interface and requires all of the functions to be implement
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/eip/interface/IERC1155Enumerable.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/eip/interface/IERC1155Enumerable.sol" />
 
 ## Usage
 
@@ -38,8 +38,8 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/ERC1155.sol";
-import "@thirdweb-dev/contracts/eip/interface/IERC1155Enumerable.sol";
+import "@egiftcard/contracts/eip/ERC1155.sol";
+import "@egiftcard/contracts/eip/interface/IERC1155Enumerable.sol";
 
 contract Contract is ERC1155, IERC1155Enumerable {
     constructor(

@@ -2,53 +2,53 @@ import { Callout, Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
 	image: {
-		title: "thirdweb Storage SDK",
+		title: "egiftcard Storage SDK",
 		icon: "storage",
 	},
-	title: "thirdweb Storage SDK",
-	description: "Reference of thirdweb Storage SDK",
+	title: "egiftcard Storage SDK",
+	description: "Reference of egiftcard Storage SDK",
 });
 
 # Storage SDK
 
 <Callout variant='info' title="API Key">
 
-We now require you to authenticate using your [API key](/api-keys) which you can obtain from the [Dashboard](https://thirdweb.com/create-api-key).
+We now require you to authenticate using your [API key](/api-keys) which you can obtain from the [Dashboard](https://egiftcard.cc/create-api-key).
 
 </Callout>
 
-The [`ThirdwebSDK`](/typescript/v4/getting-started) class includes `storage`
+The [`EgiftcardSDK`](/typescript/v4/getting-started) class includes `storage`
 **out of the box**, available by using `sdk.storage`:
 
-- [`sdk.storage.download`](/references/storage/v2/ThirdwebStorage#download)
-- [`sdk.storage.downloadJSON`](/references/storage/v2/ThirdwebStorage#downloadJSON)
-- [`sdk.storage.resolveScheme`](/references/storage/v2/ThirdwebStorage#resolveScheme)
-- [`sdk.storage.upload`](/references/storage/v2/ThirdwebStorage#upload)
-- [`sdk.storage.uploadBatch`](/references/storage/v2/ThirdwebStorage#uploadBatch)
+- [`sdk.storage.download`](/references/storage/v2/EgiftcardStorage#download)
+- [`sdk.storage.downloadJSON`](/references/storage/v2/EgiftcardStorage#downloadJSON)
+- [`sdk.storage.resolveScheme`](/references/storage/v2/EgiftcardStorage#resolveScheme)
+- [`sdk.storage.upload`](/references/storage/v2/EgiftcardStorage#upload)
+- [`sdk.storage.uploadBatch`](/references/storage/v2/EgiftcardStorage#uploadBatch)
 
-## The `@thirdweb-dev/storage` Package
+## The `@egiftcard/storage` Package
 
-Storage is also available as it&rsquo;s own package, separate from the `@thirdweb-dev/sdk` package.
+Storage is also available as it&rsquo;s own package, separate from the `@egiftcard/sdk` package.
 
 This is useful if you want to use storage without the rest of the SDK.
 
 ```bash npm2yarn
-npm install @thirdweb-dev/storage
+npm install @egiftcard/storage
 ```
 
-Once installed, import and instantiate the `ThirdwebStorage` class:
+Once installed, import and instantiate the `EgiftcardStorage` class:
 
 ```typescript
-import { ThirdwebStorage } from "@thirdweb-dev/storage";
+import { EgiftcardStorage } from "@egiftcard/storage";
 
-const storage = new ThirdwebStorage({
+const storage = new EgiftcardStorage({
 	secretKey: "YOUR_SECRET_KEY", // You can get one from dashboard settings
 });
 ```
 
 ### Configuration
 
-Customize the behavior of the `ThirdwebStorage` class by passing in a custom `ThirdwebStorageConfig` object.
+Customize the behavior of the `EgiftcardStorage` class by passing in a custom `EgiftcardStorageConfig` object.
 
 <Details summary="gatewayUrls">
 
@@ -58,7 +58,7 @@ When calling [`download`](/typescript/sdk.storage.download) or [`downloadJSON`](
 the SDK will try to download the file from the first gateway URL in the list. If that fails, it will try the next URL in the list, and so on.
 
 ```typescript
-const storage = new ThirdwebStorage({
+const storage = new EgiftcardStorage({
 	gatewayUrls: ["my-own-gateway.com", "some-other-gateway.com"],
 });
 ```
@@ -84,7 +84,7 @@ Provide your own implementation of how to handle downloading from all schemes sp
 ```typescript
 // Can instantiate the downloader with the default gateway URLs
 const downloader = new StorageDownloader();
-const storage = new ThirdwebStorage({ downloader });
+const storage = new EgiftcardStorage({ downloader });
 ```
 
 </Details>
@@ -96,7 +96,7 @@ Specify the default upload behavior.
 ```typescript
 // Instantiate the uploader with default configuration
 const uploader = new StorageUploader();
-const storage = new ThirdwebStorage({ uploader });
+const storage = new EgiftcardStorage({ uploader });
 ```
 
 Optionally, provide configuration:
@@ -108,7 +108,7 @@ const options = {
 };
 
 const uploader = new StorageUploader(options);
-const storage = new ThirdwebStorage({ uploader });
+const storage = new EgiftcardStorage({ uploader });
 ```
 
 </Details>

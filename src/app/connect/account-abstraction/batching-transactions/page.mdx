@@ -8,7 +8,7 @@ export const metadata = createMetadata({
 		title: "Batching transactions",
 		icon: "wallets",
 	},
-	title: "Batching transactions | thirdweb",
+	title: "Batching transactions | egiftcard",
 	description: "How to batch transactions with smart accounts",
 });
 
@@ -26,8 +26,8 @@ A typical example is to do an approval and a transfer in a single userOperation.
 <TabsContent value="react">
 
 ```tsx
-import { useActiveAccount, useSendBatchTransaction } from "thirdweb/react";
-import { approve, transferFrom } from "thirdweb/extensions/erc20";
+import { useActiveAccount, useSendBatchTransaction } from "egiftcard/react";
+import { approve, transferFrom } from "egiftcard/extensions/erc20";
 
 const smartAccount = useActiveAccount();
 const { mutate: sendBatchTransaction } = useSendBatchTransaction();
@@ -55,9 +55,9 @@ const approveAndTransfer = async () => {
 <TabsContent value="typescript">
 
 ```tsx
-import { smartWallet } from "thirdweb/wallets";
-import { sendBatchTransaction } from "thirdweb";
-import { approve, transferFrom } from "thirdweb/extensions/erc20";
+import { smartWallet } from "egiftcard/wallets";
+import { sendBatchTransaction } from "egiftcard";
+import { approve, transferFrom } from "egiftcard/extensions/erc20";
 
 const smartWallet = new smartWallet(config);
 const smartAccount = await smartWallet.connect({

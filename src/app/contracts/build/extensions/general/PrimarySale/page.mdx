@@ -2,7 +2,7 @@ import { Details, GithubButtonLink, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
 	image: { title: "PrimarySale contract", icon: "solidity" },
-	title: "PrimarySale | thirdweb contract",
+	title: "PrimarySale | egiftcard contract",
 	description:
 		"PrimarySale lets you set a recipient for any sale value you intend to collect in your smart contract",
 });
@@ -10,12 +10,12 @@ export const metadata = createMetadata({
 # PrimarySale
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/PrimarySale.sol";
+import "@egiftcard/contracts/extension/PrimarySale.sol";
 ```
 
 `PrimarySale` lets you set a recipient for any sale value you intend to collect in your smart contract.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/PrimarySale.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/PrimarySale.sol" />
 
 ## Usage
 
@@ -31,7 +31,7 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/PrimarySale.sol";
+import "@egiftcard/contracts/extension/PrimarySale.sol";
 
 contract MyContract is PrimarySale {
     /**

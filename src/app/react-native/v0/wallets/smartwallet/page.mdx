@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "Smart Wallet",
 		icon: "react",
 	},
-	title: "Smart Wallet | thirdweb React Native SDK",
+	title: "Smart Wallet | egiftcard React Native SDK",
 	description: "API reference for smartWallet function",
 });
 
@@ -17,7 +17,7 @@ export const metadata = createMetadata({
 A wallet configurator for [Smart Accounts](/connect/acoount-abstraction) which allows integrating the wallet with React Native
 
 ```tsx
-import { smartWallet, metamaskWallet } from "@thirdweb-dev/react-native";
+import { smartWallet, metamaskWallet } from "@egiftcard/react-native";
 
 const walletConfig = metamaskWallet(); // or use any other wallet
 
@@ -58,21 +58,21 @@ Must be a `boolean`.
 
 ## Usage with ConnectWallet
 
-To allow users to connect to this wallet using the [ConnectWallet](/references/react-native/v0/ConnectWallet) component, you can add it to [ThirdwebProvider's supportedWallets](/react-native/v0/connecting-wallets#supported-wallets) prop.
+To allow users to connect to this wallet using the [ConnectWallet](/references/react-native/v0/ConnectWallet) component, you can add it to [EgiftcardProvider's supportedWallets](/react-native/v0/connecting-wallets#supported-wallets) prop.
 
 ```tsx
 import {
   smartWallet,
   metamaskWallet,
   walletConnect,
-} from "@thirdweb-dev/react-native";
+} from "@egiftcard/react-native";
 
 const config = {
   factoryAddress: "0x...",
   gasless: true,
 }
 
-<ThirdwebProvider
+<EgiftcardProvider
   supportedWallets={[
     smartWallet(metamaskWallet(), config),
     smartWallet(walletConnect(), config),
@@ -80,17 +80,17 @@ const config = {
   clientId="your-client-id"
 >
   <YourApp />
-</ThirdwebProvider>;
+</EgiftcardProvider>;
 ```
 
 ## Usage with `useSmartWallet`
 
 you can use the [`useSmartWallet`](/references/react-native/v0/useSmartWallet) hook to programmatically connect to the smart wallet without using the [ConnectWallet](/references/react-native/v0/ConnectWallet) component.
 
-`smartWallet()` also needs to be added in [ThirdwebProvider's supportedWallets](/react-native/v0/connecting-wallets#supported-wallets) if you want the wallet to auto-connect on next page load.
+`smartWallet()` also needs to be added in [EgiftcardProvider's supportedWallets](/react-native/v0/connecting-wallets#supported-wallets) if you want the wallet to auto-connect on next page load.
 
 ```tsx
-import { useSmartWallet, metamaskWallet } from "@thirdweb-dev/react-native";
+import { useSmartWallet, metamaskWallet } from "@egiftcard/react-native";
 
 function Example() {
 	// here we're using metamask as the personal wallet

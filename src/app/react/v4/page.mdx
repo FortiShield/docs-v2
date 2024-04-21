@@ -8,10 +8,10 @@ import { GraduationCap } from "lucide-react";
 
 export const metadata = createMetadata({
 	image: {
-		title: "thirdweb React SDK",
+		title: "egiftcard React SDK",
 		icon: "react",
 	},
-	title: "thirdweb React SDK",
+	title: "egiftcard React SDK",
 	description:
 		"A collection of 100+ React hooks and UI components for your web3 apps, for any EVM-compatible blockchain.",
 });
@@ -25,22 +25,22 @@ messages, and utilize common standards such as tokens, NFTs, marketplaces; all w
 
 <OpenSourceCard
 	title="React SDK"
-	href="https://github.com/thirdweb-dev/js/tree/main/legacy_packages/react"
+	href="https://github.com/egiftcard/js/tree/main/legacy_packages/react"
 />
 
 ## Installation
 
 <InstallTabs
-	thirdwebInstallSupported
-	npm="npm i @thirdweb-dev/react @thirdweb-dev/sdk ethers@^5"
-	yarn="yarn add @thirdweb-dev/react @thirdweb-dev/sdk ethers@^5"
-	pnpm="pnpm i @thirdweb-dev/react @thirdweb-dev/sdk ethers@^5"
+	egiftcardInstallSupported
+	npm="npm i @egiftcard/react @egiftcard/sdk ethers@^5"
+	yarn="yarn add @egiftcard/react @egiftcard/sdk ethers@^5"
+	pnpm="pnpm i @egiftcard/react @egiftcard/sdk ethers@^5"
 />
 
 <div className="flex gap-3">
-	[Starter Kits](https://github.com/thirdweb-example#starter-kits) •
-	[Templates](https://thirdweb.com/templates) •
-	[GitHub](https://github.com/thirdweb-dev/js)
+	[Starter Kits](https://github.com/egiftcard-example#starter-kits) •
+	[Templates](https://egiftcard.cc/templates) •
+	[GitHub](https://github.com/egiftcard/js)
 </div>
 
 ## Get Started
@@ -80,7 +80,7 @@ Each one comes with some helpful properties to create a powerful user experience
 - `error` - The error returned from the query, if any.
 
 ```tsx
-import { useContractRead, useContract } from "@thirdweb-dev/react";
+import { useContractRead, useContract } from "@egiftcard/react";
 
 function App() {
 	const { data: contract } = useContract("{{contract_address}}");
@@ -102,7 +102,7 @@ Each mutation comes with similar properties to queries:
 - `error` - The error returned from the mutation, if any.
 
 ```tsx
-import { useContractWrite, useContract, Web3Button } from "@thirdweb-dev/react";
+import { useContractWrite, useContract, Web3Button } from "@egiftcard/react";
 
 function App() {
 	const { data: contract } = useContract("{{contract_address}}");

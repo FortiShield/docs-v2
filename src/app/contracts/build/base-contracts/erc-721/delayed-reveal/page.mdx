@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC721DelayedReveal contract",
 		icon: "contract",
 	},
-	title: "ERC721DelayedReveal | thirdweb contracts",
+	title: "ERC721DelayedReveal | egiftcard contracts",
 	description:
 		"ERC721DelayedReveal adds the Delayed Reveal feature to the ERC721LazyMint base contract.",
 });
@@ -18,10 +18,10 @@ export const metadata = createMetadata({
 the [ERC721LazyMint](/contracts/build/base-contracts/erc-721/lazy-mint) base contract.
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC721DelayedReveal.sol";
+import "@egiftcard/contracts/base/ERC721DelayedReveal.sol";
 ```
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC721DelayedReveal.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC721DelayedReveal.sol" />
 
 ## Usage
 
@@ -31,7 +31,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721DelayedReveal.sol";
+import "@egiftcard/contracts/base/ERC721DelayedReveal.sol";
 
 contract MyNFT is ERC721DelayedReveal {
     constructor(

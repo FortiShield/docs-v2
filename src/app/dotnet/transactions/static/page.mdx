@@ -1,30 +1,30 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ThirdwebTransaction Static Methods | Thirdweb .NET SDK",
+	title: "EgiftcardTransaction Static Methods | Egiftcard .NET SDK",
 	description:
-		"Documentation of all static methods available on the ThirdwebTransaction class for the Thirdweb .NET SDK, providing tools for transaction management and execution.",
+		"Documentation of all static methods available on the EgiftcardTransaction class for the Egiftcard .NET SDK, providing tools for transaction management and execution.",
 });
 
-# ThirdwebTransaction Static Methods
+# EgiftcardTransaction Static Methods
 
-The `ThirdwebTransaction` class includes several static methods that provide functionality to estimate costs, simulate, send and poll transactions and user operations.
+The `EgiftcardTransaction` class includes several static methods that provide functionality to estimate costs, simulate, send and poll transactions and user operations.
 
 These methods are crucial for advanced transaction management and execution in blockchain applications.
 
-## ThirdwebTransaction.EstimateGasCosts
+## EgiftcardTransaction.EstimateGasCosts
 
 Estimate the gas costs of a transaction.
 
 ```csharp
-TotalCosts gasCosts = await ThirdwebTransaction.EstimateGasCosts(transaction);
+TotalCosts gasCosts = await EgiftcardTransaction.EstimateGasCosts(transaction);
 ```
 
 <Details summary="Parameters">
 
 ### transaction (required)
 
-An instance of `ThirdwebTransaction`. The transaction for which you are estimating the gas costs.
+An instance of `EgiftcardTransaction`. The transaction for which you are estimating the gas costs.
 
 </Details>
 
@@ -36,19 +36,19 @@ Returns the estimated gas costs as `TotalCosts`, including costs in both `ether`
 
 </Details>
 
-## ThirdwebTransaction.EstimateTotalCosts
+## EgiftcardTransaction.EstimateTotalCosts
 
 Calculate the total costs of a transaction, combining the gas costs and transaction value.
 
 ```csharp
-TotalCosts totalCosts = await ThirdwebTransaction.EstimateTotalCosts(transaction);
+TotalCosts totalCosts = await EgiftcardTransaction.EstimateTotalCosts(transaction);
 ```
 
 <Details summary="Parameters">
 
 ### transaction (required)
 
-An instance of `ThirdwebTransaction`. The transaction for which you are calculating total costs.
+An instance of `EgiftcardTransaction`. The transaction for which you are calculating total costs.
 
 </Details>
 
@@ -60,19 +60,19 @@ Returns the total costs of the transaction as `TotalCosts`, encompassing both th
 
 </Details>
 
-## ThirdwebTransaction.EstimateGasLimit
+## EgiftcardTransaction.EstimateGasLimit
 
 Estimate the gas limit of a transaction or user operation.
 
 ```csharp
-BigInteger estimatedGasLimit = await ThirdwebTransaction.EstimateGasLimit(transaction);
+BigInteger estimatedGasLimit = await EgiftcardTransaction.EstimateGasLimit(transaction);
 ```
 
 <Details summary="Parameters">
 
 ### transaction (required)
 
-An instance of `ThirdwebTransaction`. The transaction for which you are estimating the gas limit.
+An instance of `EgiftcardTransaction`. The transaction for which you are estimating the gas limit.
 
 </Details>
 
@@ -84,19 +84,19 @@ Returns the estimated gas limit as a `BigInteger`.
 
 </Details>
 
-## ThirdwebTransaction.EstimateGasPrice
+## EgiftcardTransaction.EstimateGasPrice
 
 Estimate the gas price for a transaction, optionally adjusting the estimate by a bump ratio.
 
 ```csharp
-BigInteger estimatedGasPrice = await ThirdwebTransaction.EstimateGasPrice(transaction, withBump);
+BigInteger estimatedGasPrice = await EgiftcardTransaction.EstimateGasPrice(transaction, withBump);
 ```
 
 <Details summary="Parameters">
 
 ### transaction (required)
 
-An instance of `ThirdwebTransaction`. The transaction for which you are estimating the gas price.
+An instance of `EgiftcardTransaction`. The transaction for which you are estimating the gas price.
 
 ### withBump (optional)
 
@@ -112,19 +112,19 @@ Returns the estimated gas price as a `BigInteger`.
 
 </Details>
 
-## ThirdwebTransaction.Simulate
+## EgiftcardTransaction.Simulate
 
 Simulate the execution of a transaction and return raw data.
 
 ```csharp
-string data = await ThirdwebTransaction.Simulate(transaction);
+string data = await EgiftcardTransaction.Simulate(transaction);
 ```
 
 <Details summary="Parameters">
 
 ### transaction (required)
 
-An instance of `ThirdwebTransaction`. The transaction you are simulating.
+An instance of `EgiftcardTransaction`. The transaction you are simulating.
 
 </Details>
 
@@ -136,19 +136,19 @@ Returns the raw data of the simulated transaction as a `string`.
 
 </Details>
 
-## ThirdwebTransaction.Sign
+## EgiftcardTransaction.Sign
 
 Sign a raw transaction and returns the signed transaction data or the signed user operation json.
 
 ```csharp
-string signedTx = await ThirdwebTransaction.Sign(transaction);
+string signedTx = await EgiftcardTransaction.Sign(transaction);
 ```
 
 <Details summary="Parameters">
 
 ### transaction (required)
 
-An instance of `ThirdwebTransaction`. The transaction you are signing.
+An instance of `EgiftcardTransaction`. The transaction you are signing.
 
 </Details>
 
@@ -160,19 +160,19 @@ Returns the signed transaction data as a `string` or the signed user operation j
 
 </Details>
 
-## ThirdwebTransaction.Send
+## EgiftcardTransaction.Send
 
 Send a transaction to the blockchain without waiting for confirmation.
 
 ```csharp
-string transactionHash = await ThirdwebTransaction.Send(transaction);
+string transactionHash = await EgiftcardTransaction.Send(transaction);
 ```
 
 <Details summary="Parameters">
 
 ### transaction (required)
 
-An instance of `ThirdwebTransaction`. The transaction you want to send to the blockchain.
+An instance of `EgiftcardTransaction`. The transaction you want to send to the blockchain.
 
 </Details>
 
@@ -184,19 +184,19 @@ Returns the hash of the transaction as a `string`.
 
 </Details>
 
-## ThirdwebTransaction.SendAndWaitForTransactionReceipt
+## EgiftcardTransaction.SendAndWaitForTransactionReceipt
 
 Send a transaction and wait for its receipt.
 
 ```csharp
-TransactionReceipt receipt = await ThirdwebTransaction.SendAndWaitForTransactionReceipt(transaction);
+TransactionReceipt receipt = await EgiftcardTransaction.SendAndWaitForTransactionReceipt(transaction);
 ```
 
 <Details summary="Parameters">
 
 ### transaction (required)
 
-An instance of `ThirdwebTransaction`. The transaction you are sending and waiting for a receipt.
+An instance of `EgiftcardTransaction`. The transaction you are sending and waiting for a receipt.
 
 </Details>
 
@@ -208,19 +208,19 @@ Returns the transaction receipt as a `TransactionReceipt`, which includes detail
 
 </Details>
 
-## ThirdwebTransaction.WaitForTransactionReceipt
+## EgiftcardTransaction.WaitForTransactionReceipt
 
 Wait for a transaction receipt to be available. Throws if reverted explicitly or silently and attempts to decode the revert reason.
 
 ```csharp
-TransactionReceipt receipt = await ThirdwebTransaction.WaitForTransactionReceipt(client, chainId, txHash);
+TransactionReceipt receipt = await EgiftcardTransaction.WaitForTransactionReceipt(client, chainId, txHash);
 ```
 
 <Details summary="Parameters">
 
 ### client (required)
 
-An instance of `ThirdwebClient`.
+An instance of `EgiftcardClient`.
 
 ### chainId (required)
 

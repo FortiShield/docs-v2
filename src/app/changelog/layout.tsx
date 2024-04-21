@@ -9,6 +9,6 @@ export default function Layout(props: { children: React.ReactNode }) {
 }
 
 export const metadata = createMetadata({
-	title: "thirdweb Changelog",
-	description: "Changelog for thirdweb products",
+	title: "egiftcard Changelog",
+	description: "Changelog for egiftcard products",
 });

@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC721Drop contract",
 		icon: "contract",
 	},
-	title: "ERC721Drop | thirdweb contracts",
+	title: "ERC721Drop | egiftcard contracts",
 	description:
 		"The ERC721Drop base contract allows you to create an NFT Drop that other wallets can claim.",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC721Drop
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
+import "@egiftcard/contracts/base/ERC721Drop.sol";
 ```
 
 The `ERC721Drop` base contract allows you to create an NFT Drop that other wallets can claim.
@@ -24,7 +24,7 @@ It implements the [ERC721A standard](/contracts/build/extensions/erc-721/ERC721)
 [Delayed Reveal](/contracts/build/extensions/general/DelayedReveal) and [Drop](/contracts/build/extensions/general/DropSinglePhase) extensions;
 allowing you to batch lazy-mint NFTs and allow other wallets to claim them under the criteria of claim conditions, with an optional delayed reveal.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC721Drop.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC721Drop.sol" />
 
 ## Usage
 
@@ -34,7 +34,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
+import "@egiftcard/contracts/base/ERC721Drop.sol";
 
 contract MyNFT is ERC721Drop {
     constructor(

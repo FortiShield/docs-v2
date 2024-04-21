@@ -13,12 +13,12 @@ export const metadata = createMetadata({
 
 # Interact with wallets
 
-Once connected, you can interact with the wallet using the `thirdweb/wallets/inApp` specific methods.
+Once connected, you can interact with the wallet using the `egiftcard/wallets/inApp` specific methods.
 
 ## Get the user email
 
 ```typescript
-import { getUserEmail } from "thirdweb/wallets/inApp";
+import { getUserEmail } from "egiftcard/wallets/inApp";
 
 const email = await getUserEmail({ client });
 console.log("user email", email);
@@ -36,7 +36,7 @@ console.log("user email", email);
 <TabsContent value="react">
 
 ```typescript
-import { useActiveAccount } from "thirdweb/react";
+import { useActiveAccount } from "egiftcard/react";
 
 const account = useActiveAccount();
 ```
@@ -64,7 +64,7 @@ const account = await inAppWallet.getAccount();
 <TabsContent value="react">
 
 ```typescript
-import { useActiveAccount } from "thirdweb/react";
+import { useActiveAccount } from "egiftcard/react";
 
 const account = useActiveAccount();
 console.log("wallet address", account.address);

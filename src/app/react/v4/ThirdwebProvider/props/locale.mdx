@@ -1,4 +1,4 @@
-locale object contains text used for all thirdweb components
+locale object contains text used for all egiftcard components
 
 it allows you to change the language used in UI components or override the texts used in the UI
 
@@ -9,43 +9,43 @@ React SDK comes out of the box with Spanish and Japanese locale functions, but y
 #### Using English locale ( default )
 
 ```tsx
-import { ThirdwebProvider, en } from "@thirdweb-dev/react";
+import { EgiftcardProvider, en } from "@egiftcard/react";
 
 const english = en();
 
-<ThirdwebProvider locale={english}>
+<EgiftcardProvider locale={english}>
 	<App />
-</ThirdwebProvider>;
+</EgiftcardProvider>;
 ```
 
 #### Using the Spanish locale
 
 ```tsx
-import { ThirdwebProvider, es } from "@thirdweb-dev/react";
+import { EgiftcardProvider, es } from "@egiftcard/react";
 
 const spanish = es();
 
-<ThirdwebProvider locale={spanish}>
+<EgiftcardProvider locale={spanish}>
 	<App />
-</ThirdwebProvider>;
+</EgiftcardProvider>;
 ```
 
 #### Using the Japanese locale
 
 ```tsx
-import { ThirdwebProvider, jp } from "@thirdweb-dev/react";
+import { EgiftcardProvider, jp } from "@egiftcard/react";
 
 const japanese = jp();
 
-<ThirdwebProvider locale={japanese}>
+<EgiftcardProvider locale={japanese}>
 	<App />
-</ThirdwebProvider>;
+</EgiftcardProvider>;
 ```
 
 #### Overriding the locale
 
 ```tsx
-import { ThirdwebProvider, en } from "@thirdweb-dev/react";
+import { EgiftcardProvider, en } from "@egiftcard/react";
 
 // override some texts
 const english = en({
@@ -62,17 +62,17 @@ const english = en({
 	},
 });
 
-<ThirdwebProvider locale={english}>
+<EgiftcardProvider locale={english}>
 	<App />
-</ThirdwebProvider>;
+</EgiftcardProvider>;
 ```
 
 ### Custom locale object
 
 ```tsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
-<ThirdwebProvider locale={{ .... }}>
+<EgiftcardProvider locale={{ .... }}>
   <App />
-</ThirdwebProvider>;
+</EgiftcardProvider>;
 ```

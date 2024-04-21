@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC721LazyMint contract",
 		icon: "contract",
 	},
-	title: "ERC721LazyMint | thirdweb contracts",
+	title: "ERC721LazyMint | egiftcard contracts",
 	description:
 		"ERC721LazyMint allows you to lazy-mint ERC-721 tokens, which allows any wallet to claim a lazy-minted NFT",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC721LazyMint
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC721LazyMint.sol";
+import "@egiftcard/contracts/base/ERC721LazyMint.sol";
 ```
 
 `ERC721LazyMint` allows you to lazy-mint ERC-721 tokens, which allows any wallet to claim a lazy-minted NFT.
@@ -25,7 +25,7 @@ Lazy minting allows you to define the metadata of NFTs without minting it to an 
 As a contract admin, this lets you prepare the metadata for NFTs that will be minted by other wallets,
 without paying the gas cost for actually minting the NFTs.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC721LazyMint.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC721LazyMint.sol" />
 
 ## Usage
 
@@ -35,7 +35,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721LazyMint.sol";
+import "@egiftcard/contracts/base/ERC721LazyMint.sol";
 
 contract MyNFT is ERC721LazyMint {
     constructor(

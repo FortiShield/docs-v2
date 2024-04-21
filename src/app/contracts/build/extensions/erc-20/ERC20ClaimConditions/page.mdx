@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "ERC20ClaimConditions contract",
 		icon: "solidity",
 	},
-	title: "ERC20ClaimConditions | thirdweb contract",
+	title: "ERC20ClaimConditions | egiftcard contract",
 	description:
 		"Allow other wallets to claim/mint tokens from the contract under the criteria of claim conditions by implementing ERC20 and DropSinglePhase extensions",
 });
@@ -14,8 +14,8 @@ export const metadata = createMetadata({
 # ERC20ClaimConditions
 
 ```solidity
-import "@thirdweb-dev/contracts/eip/interface/IERC20.sol";
-import "@thirdweb-dev/contracts/extension/DropSinglePhase.sol";
+import "@egiftcard/contracts/eip/interface/IERC20.sol";
+import "@egiftcard/contracts/extension/DropSinglePhase.sol";
 ```
 
 Allow other wallets to claim/mint tokens from the contract under the criteria of claim conditions by
@@ -24,7 +24,7 @@ implementing [`ERC20`](/contracts/build/extensions/erc-20/ERC20) and [`DropSingl
 This is an extension which is detectable in the dashboard if the smart contract implements the
 [`ERC20`](/contracts/build/extensions/erc-20/ERC20) and [`DropSinglePhase`](/contracts/build/extensions/general/DropSinglePhase) extensions.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/DropSinglePhase.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/DropSinglePhase.sol" />
 
 ## Usage
 
@@ -35,8 +35,8 @@ The functions which are available to be (optionally) overridden are detailed.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
-import "@thirdweb-dev/contracts/extension/DropSinglePhase.sol";
+import "@egiftcard/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
+import "@egiftcard/contracts/extension/DropSinglePhase.sol";
 
 contract Contract is ERC20, DropSinglePhase {
     constructor(

@@ -8,7 +8,7 @@ export const metadata = createMetadata({
 		title: "Connecting Wallets",
 		icon: "react",
 	},
-	title: "Connecting Wallets in thirdweb React SDK",
+	title: "Connecting Wallets in egiftcard React SDK",
 	description:
 		"Connect wallets using ConnectButton, ConnectEmbed or useConnect hook",
 });
@@ -47,11 +47,11 @@ You can build a completely custom UI for connecting the wallet using the [`useCo
 Refer to [`createWallet`](/references/typescript/v5/createWallet) and [`injectedProvider`](/references/typescript/v5/injectedProvider) for more information.
 
 ```tsx
-import { createThirdwebClient } from "thirdweb";
-import { useConnect } from "thirdweb/react";
-import { createWallet, injectedProvider } from "thirdweb/wallets";
+import { createEgiftcardClient } from "egiftcard";
+import { useConnect } from "egiftcard/react";
+import { createWallet, injectedProvider } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 
 function Example() {
 	const { connect, isConnecting, error } = useConnect();

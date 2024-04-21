@@ -2,38 +2,38 @@ import { createMetadata, InstallTabs, Callout } from "@doc";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Getting Started with thirdweb TypeScript SDK",
+		title: "Getting Started with egiftcard TypeScript SDK",
 		icon: "typescript",
 	},
-	title: "Getting started | thirdweb TypeScript SDK",
-	description: "Learn how to get started with the thirdweb TypeScript SDK.",
+	title: "Getting started | egiftcard TypeScript SDK",
+	description: "Learn how to get started with the egiftcard TypeScript SDK.",
 });
 
 # Getting Started
 
-You can get started by creating a new project or adding thirdweb to an existing project.
+You can get started by creating a new project or adding egiftcard to an existing project.
 
 ### Existing Projects
 
-Install the thirdweb package in your project
+Install the egiftcard package in your project
 
 <InstallTabs
-	thirdwebInstallSupported={true}
-	npm="npm i @thirdweb-dev/sdk ethers@^5"
-	yarn="yarn add @thirdweb-dev/sdk ethers@^5"
-	pnpm="pnpm i @thirdweb-dev/sdk ethers@^5"
+	egiftcardInstallSupported={true}
+	npm="npm i @egiftcard/sdk ethers@^5"
+	yarn="yarn add @egiftcard/sdk ethers@^5"
+	pnpm="pnpm i @egiftcard/sdk ethers@^5"
 />
 
 ### New Projects
 
-Create a new project using the thirdweb CLI
+Create a new project using the egiftcard CLI
 
 ```bash
-npx thirdweb create app
+npx egiftcard create app
 ```
 
-You can create [Node.js](https://github.com/thirdweb-example/node-typescript-starter),
-[Express](https://github.com/thirdweb-example/express-typescript-starter) and other types of projects using the CLI.
+You can create [Node.js](https://github.com/egiftcard-example/node-typescript-starter),
+[Express](https://github.com/egiftcard-example/express-typescript-starter) and other types of projects using the CLI.
 
 ## Initialize the SDK
 
@@ -41,7 +41,7 @@ The SDK can be instantiated as read only by passing a chain or read/write by pas
 
 <Callout variant="info" title='API Key'>
 
-You will require an API key to use thirdweb's infrastructure services with the SDK. If you haven't created a key yet you can do so for **free** from the [thirdweb dashboard](https://thirdweb.com/create-api-key).
+You will require an API key to use egiftcard's infrastructure services with the SDK. If you haven't created a key yet you can do so for **free** from the [egiftcard dashboard](https://egiftcard.cc/create-api-key).
 
 - For **Client side applications** use your `clientId` when instantiating the SDK.
 - For **Server side applications** use your `secretKey` when instantiating the SDK.
@@ -53,9 +53,9 @@ You will require an API key to use thirdweb's infrastructure services with the S
 This can be used for reading data from the blockchain and does not require a wallet.
 
 ```jsx
-import { ThirdwebSDK } from "@thirdweb-dev/sdk";
+import { EgiftcardSDK } from "@egiftcard/sdk";
 
-const sdk = new ThirdwebSDK("sepolia", {
+const sdk = new EgiftcardSDK("sepolia", {
 	secretKey: "YOUR_SECRET_KEY",
 });
 ```
@@ -68,24 +68,24 @@ Can be instantiated from different wallet types:
 
 | Wallet type          | Function                                                                               | Notes                                                                                              |
 | -------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Wallet (recommended) | [`ThirdwebSDK.fromWallet()`](/references/typescript/v4/ThirdwebSDK#fromWallet)         | This function is async, needs to be awaited                                                        |
-| ethers.js Signer     | [`ThirdwebSDK.fromSigner()`](/references/typescript/v4/ThirdwebSDK#fromSigner)         | Use this when combining the SDK with other libraries                                               |
-| Private Key          | [`ThirdwebSDK.fromPrivateKey()`](/references/typescript/v4/ThirdwebSDK#fromPrivateKey) | This should only be used on the server side. Never commit or expose your private key on the client |
+| Wallet (recommended) | [`EgiftcardSDK.fromWallet()`](/references/typescript/v4/EgiftcardSDK#fromWallet)         | This function is async, needs to be awaited                                                        |
+| ethers.js Signer     | [`EgiftcardSDK.fromSigner()`](/references/typescript/v4/EgiftcardSDK#fromSigner)         | Use this when combining the SDK with other libraries                                               |
+| Private Key          | [`EgiftcardSDK.fromPrivateKey()`](/references/typescript/v4/EgiftcardSDK#fromPrivateKey) | This should only be used on the server side. Never commit or expose your private key on the client |
 
 Here's a typical example of instantiating the SDK from a private key:
 
 ```jsx
-import { ThirdwebSDK } from "@thirdweb-dev/sdk";
+import { EgiftcardSDK } from "@egiftcard/sdk";
 
-const sdk = ThirdwebSDK.fromPrivateKey(process.env.PRIVATE_KEY, "polygon", {
+const sdk = EgiftcardSDK.fromPrivateKey(process.env.PRIVATE_KEY, "polygon", {
 	secretKey: "YOUR_SECRET_KEY",
 });
 ```
 
 <div className="flex gap-3">
 	Examples templates:
-	[Node.js](https://github.com/thirdweb-example/node-typescript-starter) •
-	[Express](https://github.com/thirdweb-example/express-typescript-starter)
+	[Node.js](https://github.com/egiftcard-example/node-typescript-starter) •
+	[Express](https://github.com/egiftcard-example/express-typescript-starter)
 </div>
 
 ## Using the SDK

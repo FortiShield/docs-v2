@@ -1,7 +1,7 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "GetBuyWithCryptoQuote | thirdweb Unity SDK",
+	title: "GetBuyWithCryptoQuote | egiftcard Unity SDK",
 	description:
 		"Get a quote containing a TransactionRequest for swapping any token pair.",
 });
@@ -13,11 +13,11 @@ Get a quote containing a TransactionRequest for swapping any token pair.
 ## Usage
 
 ```csharp
-using Thirdweb.Pay;
+using Egiftcard.Pay;
 
 public async void GetQuote()
 {
-	string connectedAddress = await ThirdwebManager.Instance.SDK.Wallet.GetAddress();
+	string connectedAddress = await EgiftcardManager.Instance.SDK.Wallet.GetAddress();
 
 	BuyWithCryptoQuoteParams swapQuoteParams = new BuyWithCryptoQuoteParams(
 		fromAddress: connectedAddress,
@@ -27,8 +27,8 @@ public async void GetQuote()
 		toAmount: "2" // I want to buy 2 WMATIC
 	);
 
-	BuyWithCryptoQuoteResult quote = await ThirdwebPay.GetBuyWithCryptoQuote(swapQuoteParams);
-	ThirdwebDebug.Log($"Quote: {JsonConvert.SerializeObject(_quote, Formatting.Indented)}");
+	BuyWithCryptoQuoteResult quote = await EgiftcardPay.GetBuyWithCryptoQuote(swapQuoteParams);
+	EgiftcardDebug.Log($"Quote: {JsonConvert.SerializeObject(_quote, Formatting.Indented)}");
 }
 ```
 

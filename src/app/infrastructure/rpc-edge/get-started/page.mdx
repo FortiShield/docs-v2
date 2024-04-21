@@ -6,20 +6,20 @@ import usageDashboardImage from "./assets/usage-dashboard.png";
 import apiKeyImage from "./assets/api-key.png";
 
 export const metadata = createMetadata({
-	title: "Add RPC Edge to your application | thirdweb",
+	title: "Add RPC Edge to your application | egiftcard",
 	description:
-		"To enable RPC Edge usage in an application, obtain a thirdweb Client ID & Secret Key with RPC Edge enabled and pass it into the app's configuration.",
+		"To enable RPC Edge usage in an application, obtain a egiftcard Client ID & Secret Key with RPC Edge enabled and pass it into the app's configuration.",
 });
 
 # Add RPC Edge to your application
 
-To enable RPC Edge usage in an application, obtain a thirdweb Client ID & Secret Key with RPC Edge enabled and pass it into the app's configuration.
+To enable RPC Edge usage in an application, obtain a egiftcard Client ID & Secret Key with RPC Edge enabled and pass it into the app's configuration.
 
 Obtain a Client ID & Secret Key by navigating to Settings > API Keys > `Create API Key`.
 
 <DocImage
 	src={apiKeyImage}
-	alt="Screenshot of API key creation page on thirdweb's dashboard"
+	alt="Screenshot of API key creation page on egiftcard's dashboard"
 />
 
 Pass in the Client ID and Secret Keys into the application’s configuration.
@@ -36,13 +36,13 @@ Pass in the Client ID and Secret Keys into the application’s configuration.
 <TabsContent value="react">
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 function MyApp() {
 	return (
-		<ThirdwebProvider activeChain="ethereum" clientId="your-client-id">
+		<EgiftcardProvider activeChain="ethereum" clientId="your-client-id">
 			<YourApp />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
@@ -52,13 +52,13 @@ function MyApp() {
 <TabsContent value="react-native">
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react-native";
+import { EgiftcardProvider } from "@egiftcard/react-native";
 
 function MyApp() {
 	return (
-		<ThirdwebProvider activeChain="ethereum" clientId="your-client-id">
+		<EgiftcardProvider activeChain="ethereum" clientId="your-client-id">
 			<YourApp />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
@@ -68,7 +68,7 @@ function MyApp() {
 <TabsContent value="typescript">
 ```ts
   // Read-only mode
-  const readOnlySdk = new ThirdwebSDK("<chain_id>", {
+  const readOnlySdk = new EgiftcardSDK("<chain_id>", {
     secretKey: "<your_secret_key>",
   });
 ```
@@ -76,7 +76,7 @@ function MyApp() {
 When using the Typescript SDK for frontend applications, use the client id:
 
 ```ts
-const readOnlySdk = new ThirdwebSDK("<chain_id>", {
+const readOnlySdk = new EgiftcardSDK("<chain_id>", {
 	clientId: "<your_client_id>",
 });
 ```
@@ -87,7 +87,7 @@ const readOnlySdk = new ThirdwebSDK("<chain_id>", {
   When using the Python SDK, use the secret key to instantiate the SDK:
 
 ```python
-sdk = ThirdwebSDK.from_private_key(
+sdk = EgiftcardSDK.from_private_key(
     <private_key>,
     "<chain_id>",
     SDKOptions(secret_key=<your_secret_key>)
@@ -101,9 +101,9 @@ When using the GO SDK, you can use the secret key to instantiate the SDK:
 
 ```go
 func main() {
-	// Your secret key from the thirdweb api keys dashboard
+	// Your secret key from the egiftcard api keys dashboard
 	secretKey := "<your_secret_key"
-	sdk, err := thirdweb.NewThirdwebSDK("<chain_id>", &thirdweb.SDKOptions{
+	sdk, err := egiftcard.NewEgiftcardSDK("<chain_id>", &egiftcard.SDKOptions{
 		SecretKey: <your_secret_key>,
 	})
 }
@@ -116,7 +116,7 @@ func main() {
 When using the Unity SDK, you can use the client id to instantiate the SDK:
 
 ```csharp
-ThirdwebSDK sdk = new ThirdwebSDK("<chain_id>", 5, new ThirdwebSDK.Options()
+EgiftcardSDK sdk = new EgiftcardSDK("<chain_id>", 5, new EgiftcardSDK.Options()
 {
   clientId = "<your_client_id>",
 });
@@ -140,17 +140,17 @@ To override the default RPC for any given chain:
 <TabsContent value="react">
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 const App = () => {
 	return (
-		<ThirdwebProvider
+		<EgiftcardProvider
 			activeChain={{
 				rpc: ["https://<your-rpc-to-use>.com"],
 			}}
 		>
 			<YourApp />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 };
 ```
@@ -160,9 +160,9 @@ const App = () => {
 <TabsContent value="typescript">
 
 ```ts
-import { ThirdwebSDK } from "@thirdweb-dev/sdk";
+import { EgiftcardSDK } from "@egiftcard/sdk";
 
-const sdk = new ThirdwebSDK({
+const sdk = new EgiftcardSDK({
 	rpc: ["https://<your-rpc-to-use>.com"],
 });
 ```
@@ -173,11 +173,11 @@ const sdk = new ThirdwebSDK({
 
 <Callout title="Public RPCs" variant="info">
 	Public RPCs can be used without an API Key. Refer to the [configured chains
-	page](https://thirdweb.com/dashboard/infrastructure/rpc-edge).
+	page](https://egiftcard.cc/dashboard/infrastructure/rpc-edge).
 </Callout>
 
 ## View RPC usage
 
-[View RPC request usage](https://thirdweb.com/dashboard/settings/usage) in the dashboard settings.
+[View RPC request usage](https://egiftcard.cc/dashboard/settings/usage) in the dashboard settings.
 
 <DocImage src={usageDashboardImage} alt="Usage dashboard" />

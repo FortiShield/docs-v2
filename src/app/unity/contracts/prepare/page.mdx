@@ -1,7 +1,7 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Transaction Builder | thirdweb Unity SDK",
+	title: "Transaction Builder | egiftcard Unity SDK",
 	description:
 		"Transaction Builder provides more granular control over the transaction process with a Prepare function ",
 });
@@ -15,7 +15,7 @@ To gain more granular control over the transaction process, all Contract objects
 ## Usage
 
 ```csharp
-string connectedAddress = await ThirdwebManager.Instance.SDK.Wallet.GetAddress();
+string connectedAddress = await EgiftcardManager.Instance.SDK.Wallet.GetAddress();
 Transaction transaction = await contract.Prepare(
     functionName: "claim",
     from: connectedAddress, // optional, defaults to connected address
@@ -453,7 +453,7 @@ Returns the data as a `string`.
 
 ### Sign
 
-Signs the transaction asynchronously, if the wallet supports it. Useful for smart wallet user op delayed broadcasting through thirdweb Engine. Otherwise not recommended.
+Signs the transaction asynchronously, if the wallet supports it. Useful for smart wallet user op delayed broadcasting through egiftcard Engine. Otherwise not recommended.
 
 ```csharp
 await tx.Sign();

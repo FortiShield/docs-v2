@@ -42,12 +42,12 @@ This guide will show you how to create your own Auth Server that is compatible w
 
 <Step title="Step 1">
 	Navigate to Wallets > [In-App
-	Wallets](https://thirdweb.com/dashboard/wallets/embedded) in the thirdweb
+	Wallets](https://egiftcard.cc/dashboard/wallets/embedded) in the egiftcard
 	dashboard.
 </Step>
 
 <Step title="Step 2">
-	Create a thirdweb API key if you don't have one or select an existing key to
+	Create a egiftcard API key if you don't have one or select an existing key to
 	use for this project. [Learn more about API
 	keys.](/api-keys)
 
@@ -68,7 +68,7 @@ This guide will show you how to create your own Auth Server that is compatible w
 
 <Step title="Step 5">
 	Set the Auth Endpoint URL to
-	`https://embedded-wallet.thirdweb.com/api/2023-11-30/embedded-wallet/auth/test-custom-auth-endpoint`
+	`https://embedded-wallet.egiftcard.cc/api/2023-11-30/embedded-wallet/auth/test-custom-auth-endpoint`
 	for testing purposes. You will replace this later with your own auth server
 	endpoint to verify the `payload`.
 </Step>
@@ -78,7 +78,7 @@ This guide will show you how to create your own Auth Server that is compatible w
 <Step title="Step 7">Copy the client ID.</Step>
 
 <Step title="Step 8">
-	In your preferred thirdweb client SDK, pass the payload you retrieved from
+	In your preferred egiftcard client SDK, pass the payload you retrieved from
 	logging in to the server.
 </Step>
 
@@ -95,8 +95,8 @@ You can now auth into the wallet and use it to sign transactions like so (see [u
 <TabsContent value="react">
 
 ```typescript
-import { inAppWallet } from "thirdweb/wallets";
-import { useConnect } from "thirdweb/react";
+import { inAppWallet } from "egiftcard/wallets";
+import { useConnect } from "egiftcard/react";
 
 const { connect } = useConnect();
 
@@ -119,7 +119,7 @@ const handlePostLogin = async (jwt: string) => {
 <TabsContent value="typescript">
 
 ```typescript
-import { inAppWallet } from "thirdweb/wallets";
+import { inAppWallet } from "egiftcard/wallets";
 
 const wallet = inAppWallet();
 
@@ -156,7 +156,7 @@ At a high level, the auth server will:
 
 Steps 1 and 2 are up to you to implement. You can use any auth strategy you want.
 
-The endpoint in step 3 is what you register as your auth endpoint on the thirdweb dashboard.
+The endpoint in step 3 is what you register as your auth endpoint on the egiftcard dashboard.
 
 Here's a high-level diagram:
 
@@ -217,8 +217,8 @@ app.post("/login", (req, res) => {
 	res.send({ payload: user.id });
 });
 
-// This is a sample endpoint that you would register on the thirdweb dashboard for us to verify the payload
-app.post("/thirdweb-will-call-this", (req, res) => {
+// This is a sample endpoint that you would register on the egiftcard dashboard for us to verify the payload
+app.post("/egiftcard-will-call-this", (req, res) => {
 	const { payload } = req.body;
 	if (!payload) return res.status(401).send({ message: "Invalid credentials" });
 

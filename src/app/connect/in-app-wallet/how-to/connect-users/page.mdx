@@ -34,17 +34,17 @@ If you're building a [React website](/typescript/v5/react/components/ConnectButt
 
 <TabsContent value="react">
 ```jsx
-import { ThirdwebProvider, ConnectButton } from "thirdweb/react";
-import { inAppWallet } from "thirdweb/wallets";
+import { EgiftcardProvider, ConnectButton } from "egiftcard/react";
+import { inAppWallet } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 const wallets = [inAppWallet()];
 
 export default function App() {
 	return (
-		<ThirdwebProvider>
+		<EgiftcardProvider>
 			<ConnectButton client={client} wallets={wallets} />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
@@ -65,19 +65,19 @@ By default, the connect UI supports Google, Apple, Facebook and email/password a
 
 <TabsContent value="react">
 ```tsx
-import { ThirdwebProvider, ConnectButton } from "thirdweb/react";
-import { inAppWallet } from "thirdweb/wallets";
+import { EgiftcardProvider, ConnectButton } from "egiftcard/react";
+import { inAppWallet } from "egiftcard/wallets";
 
-const client = createThirdwebClient({ clientId });
+const client = createEgiftcardClient({ clientId });
 const wallets = [inAppWallet({
 providers: ["email", "facebook", "apple", "google"]
 })];
 
 export default function App() {
 	return (
-		<ThirdwebProvider>
+		<EgiftcardProvider>
 			<ConnectButton client={client} wallets={wallets} />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

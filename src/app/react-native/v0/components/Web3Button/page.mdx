@@ -14,7 +14,7 @@ export const metadata = createMetadata({
 		title: "Web3Button component",
 		icon: "react",
 	},
-	title: "Web3Button | thirdweb React Native SDK",
+	title: "Web3Button | egiftcard React Native SDK",
 	description: "API Reference for the Web3Button component",
 });
 
@@ -40,10 +40,10 @@ It ensures the following criteria before attempting to call the contract functio
 1. There is a **connected wallet**
    (if there is not, it renders a [ConnectWallet Button](/react-native/v0/components/ConnectWallet) instead).
 2. The connected wallet is on the **correct network**
-   as specified in the `activeChain` prop of [ThirdwebProvider](/react-native/v0/ThirdwebProvider). if wallet is connected to any other network, it renders a switch network button instead.
+   as specified in the `activeChain` prop of [EgiftcardProvider](/react-native/v0/EgiftcardProvider). if wallet is connected to any other network, it renders a switch network button instead.
 
 ```jsx
-import { Web3Button } from "@thirdweb-dev/react-native";
+import { Web3Button } from "@egiftcard/react-native";
 ```
 
 ## Usage
@@ -54,7 +54,7 @@ Render the `Web3Button` component with two required props to display the button:
 2. `action`: The logic to execute when the button is clicked.
 
 ```jsx
-import { Web3Button } from "@thirdweb-dev/react-native";
+import { Web3Button } from "@egiftcard/react-native";
 
 function App() {
 	return (

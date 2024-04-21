@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC721Base contract",
 		icon: "contract",
 	},
-	title: "ERC721Base | thirdweb contracts",
+	title: "ERC721Base | egiftcard contracts",
 	description:
 		"The ERC721Base smart contract implements the ERC721 NFT standard, along with the ERC721A optimization to the standard",
 });
@@ -19,10 +19,10 @@ along with the [ERC721A](https://www.erc721a.org/) optimization to the standard.
 It allows you to mint NFTs to yourself (or to someone else) and selling those NFTs on a marketplace.
 
 ```solidity
-import "@thirdweb-dev/contracts/base/ERC721Base.sol";
+import "@egiftcard/contracts/base/ERC721Base.sol";
 ```
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC721Base.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/base/ERC721Base.sol" />
 
 ## Usage
 
@@ -32,7 +32,7 @@ Import the contract and inherit from it.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721Base.sol";
+import "@egiftcard/contracts/base/ERC721Base.sol";
 
 contract MyNFT is ERC721Base {
 

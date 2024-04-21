@@ -3,10 +3,10 @@ import { V4SDKbanner } from "@/components/others/V4SDKBanner";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Integrate thirdweb Auth with Supabase",
+		title: "Integrate egiftcard Auth with Supabase",
 		icon: "wallets",
 	},
-	title: "Supabase | thirdweb",
+	title: "Supabase | egiftcard",
 	description:
 		"how to integrate Auth with the Supabase BaaS solution to let your users securely link their wallets to their Supabase accounts",
 });
@@ -22,12 +22,12 @@ Supabase doesn't yet support custom authentication methods, so you can't yet hav
 If you want to interact with the code for the Auth + Supabase integration that we'll be building in this guide, you can checkout the following GitHub repository, or clone it with the command below:
 
 ```
-npx thirdweb create app --template thirdweb-auth-supabase
+npx egiftcard create app --template egiftcard-auth-supabase
 ```
 
 <OpenSourceCard
-	title="thirdweb-auth-supabase"
-	href="https://github.com/thirdweb-example/thirdweb-auth-supabase"
+	title="egiftcard-auth-supabase"
+	href="https://github.com/egiftcard-example/egiftcard-auth-supabase"
 	description="A working example of Auth + Supabase"
 />
 
@@ -43,16 +43,16 @@ Note that to set up Google Authentication, you'll need to create a new project w
 
 Once you've created your Supabase app and set up Google authentication, you'll be ready to start integrating Auth into your application.
 
-To begin with, let's create a new Next.js project with thirdweb configured:
+To begin with, let's create a new Next.js project with egiftcard configured:
 
 ```bash
-npx thirdweb create --app --next --ts
+npx egiftcard create --app --next --ts
 ```
 
-From within the created project, we'll need to install the `@thirdweb-dev/auth` and `@supabase/supabase-js` packages:
+From within the created project, we'll need to install the `@egiftcard/auth` and `@supabase/supabase-js` packages:
 
 ```bash npm2yarn
-npm install @thirdweb-dev/auth @supabase/supabase-js
+npm install @egiftcard/auth @supabase/supabase-js
 ```
 
 ### Configure Supabase
@@ -69,39 +69,39 @@ SUPABASE_SERVICE_ROLE=<supabase-service-role>
 
 Create a new directory called `lib` and create two helper scripts to initialize Supabase in the browser and server:
 
-- [lib/createSupabase.ts](https://github.com/thirdweb-example/thirdweb-auth-supabase/blob/main/lib/createSupabase.ts)
-- [lib/createSupabaseAdmin.ts](https://github.com/thirdweb-example/thirdweb-auth-supabase/blob/main/lib/createSupabaseAdmin.ts)
+- [lib/createSupabase.ts](https://github.com/egiftcard-example/egiftcard-auth-supabase/blob/main/lib/createSupabase.ts)
+- [lib/createSupabaseAdmin.ts](https://github.com/egiftcard-example/egiftcard-auth-supabase/blob/main/lib/createSupabaseAdmin.ts)
 
 Now we have an easy way to access Supabase Auth and Database in both client and server environments!
 
-### Configure thirdweb Auth
+### Configure egiftcard Auth
 
-Finally, to configure thirdweb Auth, we just need to add the `NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN` environment variable to the `.env.local` file as follows:
+Finally, to configure egiftcard Auth, we just need to add the `NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN` environment variable to the `.env.local` file as follows:
 
 ```
-NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN=<thirdweb-auth-domain>
+NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN=<egiftcard-auth-domain>
 ```
 
-The `NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN` is used to prevent phishing attacks - and is usually set to the domain of your project like `example.com`. You can read more about it in the [thirdweb Auth Documentation](/connect/auth/how-it-works/siwe#domain).
+The `NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN` is used to prevent phishing attacks - and is usually set to the domain of your project like `example.com`. You can read more about it in the [egiftcard Auth Documentation](/connect/auth/how-it-works/siwe#domain).
 
-### ThirdwebProvider
+### EgiftcardProvider
 
 Inside the `pages/_app.tsx` file, configure the `authConfig` option with your domain:
 
 ```ts title="pages/_app.tsx"
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <ThirdwebProvider
+    <EgiftcardProvider
       authConfig={{
         // Set this to your domain to prevent signature malleability attacks.
-        domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN,
+        domain: process.env.NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN,
       }}
       clientId="your-client-id"
     >
       <Component {...pageProps} />
-    </ThirdwebProvider>
+    </EgiftcardProvider>
   );
 }
 ```
@@ -184,7 +184,7 @@ We can accomplish this with the following code:
 
 ```ts title="pages/api/link.ts"
 import { NextApiRequest, NextApiResponse } from "next";
-import { verifyLogin } from "@thirdweb-dev/auth/evm";
+import { verifyLogin } from "@egiftcard/auth/evm";
 import { createSupabaseServer } from "../../lib/createSupabaseAdmin";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -200,7 +200,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
 	// Verify that the signed login payload is valid
 	const { address, error: verifyErr } = await verifyLogin(
-		process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN as string,
+		process.env.NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN as string,
 		payload,
 	);
 	if (!address) {
@@ -221,21 +221,21 @@ Here, we use the `verifyLogin` function to ensure that the user has sent a valid
 
 Finally, with everything set up, we're ready to actually implement the client-side flow of prompting the user to sign a sign-in with a wallet message, sending it to the backend, and then linking the user's wallet address to their Supabase account.
 
-Here, we use the `useAuth` hook to call the `thirdwebAuth.login` function and prompt the user to sign a login message. Then, we post this payload, along with the user's current session access token to the `/api/link` endpoint we created to finish linking the user's wallet address.
+Here, we use the `useAuth` hook to call the `egiftcardAuth.login` function and prompt the user to sign a login message. Then, we post this payload, along with the user's current session access token to the `/api/link` endpoint we created to finish linking the user's wallet address.
 
 ```ts title="pages/index.tsx"
-import { useAddress, useMetaMask, useAuth } from "@thirdweb-dev/react";
+import { useAddress, useMetaMask, useAuth } from "@egiftcard/react";
 
 export default function Home() {
   const address = useAddress();
   const connect = useMetaMask();
-  const thirdwebAuth = useAuth();
+  const egiftcardAuth = useAuth();
   const { auth } = createSupabaseClient();
   const { user, session, refresh } = useSupabaseUser();
 
   // Link verified wallet address to our Supabase account
   async function linkWallet() {
-    const payload = await thirdwebAuth?.login();
+    const payload = await egiftcardAuth?.login();
     await fetch("/api/link", {
       method: "POST",
       headers: {

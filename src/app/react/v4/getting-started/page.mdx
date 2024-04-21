@@ -2,26 +2,26 @@ import { Details, InstallTabs, Callout, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Getting started with thirdweb React SDK",
+		title: "Getting started with egiftcard React SDK",
 		icon: "react",
 	},
-	title: "Getting started with thirdweb React SDK",
+	title: "Getting started with egiftcard React SDK",
 	description:
-		"Install thirdweb react SDK in your existing project or create a new project using the thirdweb CLI.",
+		"Install egiftcard react SDK in your existing project or create a new project using the egiftcard CLI.",
 });
 
 # Getting Started
 
-You can get started by creating a new project or adding thirdweb to an existing project.
+You can get started by creating a new project or adding egiftcard to an existing project.
 
 ## Existing Projects
 
-Install the thirdweb packages in your project
+Install the egiftcard packages in your project
 
 <InstallTabs
-	npm="npm i @thirdweb-dev/react @thirdweb-dev/sdk ethers@^5"
-	yarn="yarn add @thirdweb-dev/react @thirdweb-dev/sdk ethers@^5"
-	pnpm="pnpm i @thirdweb-dev/react @thirdweb-dev/sdk ethers@^5"
+	npm="npm i @egiftcard/react @egiftcard/sdk ethers@^5"
+	yarn="yarn add @egiftcard/react @egiftcard/sdk ethers@^5"
+	pnpm="pnpm i @egiftcard/react @egiftcard/sdk ethers@^5"
 />
 
 And follow the framework specific instructions below.
@@ -61,25 +61,25 @@ No additional configuration is required if you are using the [pages router](http
 
 ### App Router
 
-If you are using the new [app router](https://nextjs.org/docs/app), and If you import a component such as `ThirdwebProvider` in a server component, Next.js will throw an error saying that the component is not marked with `"use client"` directive.
+If you are using the new [app router](https://nextjs.org/docs/app), and If you import a component such as `EgiftcardProvider` in a server component, Next.js will throw an error saying that the component is not marked with `"use client"` directive.
 
-You will need to create an alias for that component in a separate file with `"use client"` directive on top (before all the imports) and import that instead of using the component directly from `@thirdweb-dev/react` in server components.
+You will need to create an alias for that component in a separate file with `"use client"` directive on top (before all the imports) and import that instead of using the component directly from `@egiftcard/react` in server components.
 
 #### Example
 
 ```tsx
 "use client";
 
-export { ThirdwebProvider } from "@thirdweb-dev/react";
+export { EgiftcardProvider } from "@egiftcard/react";
 
-// app/components/ThirdwebProvider.tsx
+// app/components/EgiftcardProvider.tsx
 ```
 
 ```tsx
-import { ThirdwebProvider } from "./components/ThirdwebProvider";
+import { EgiftcardProvider } from "./components/EgiftcardProvider";
 
 export default function Home() {
-	return <ThirdwebProvider> ... </ThirdwebProvider>;
+	return <EgiftcardProvider> ... </EgiftcardProvider>;
 }
 
 // app/page.tsx
@@ -123,30 +123,30 @@ GENERATE_SOURCEMAP=false
 
 ## New Projects
 
-Create a new project using the thirdweb CLI
+Create a new project using the egiftcard CLI
 
 ```bash
-npx thirdweb create app
+npx egiftcard create app
 ```
 
 <Callout variant="info" title='API Key'>
 
-You will require an API key to use thirdweb's infrastructure services with the SDK. If you haven't created a key yet you can do so for **free** from the [thirdweb dashboard](https://thirdweb.com/create-api-key).
+You will require an API key to use egiftcard's infrastructure services with the SDK. If you haven't created a key yet you can do so for **free** from the [egiftcard dashboard](https://egiftcard.cc/create-api-key).
 
 </Callout>
 
-## Wrap your application in ThirdwebProvider
+## Wrap your application in EgiftcardProvider
 
-Wrap your application in the [`ThirdwebProvider`](/react/v4/ThirdwebProvider) component to start using the SDK.
+Wrap your application in the [`EgiftcardProvider`](/react/v4/EgiftcardProvider) component to start using the SDK.
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 const App = () => {
 	return (
-		<ThirdwebProvider activeChain="ethereum" clientId="your-client-id">
+		<EgiftcardProvider activeChain="ethereum" clientId="your-client-id">
 			<YourApp />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 };
 ```
@@ -156,7 +156,7 @@ With the provider set up, all of the SDK&rsquo;s hooks and components work out o
 Now you can connect to the user&rsquo;s wallet and start calling functions on your smart contracts like so:
 
 ```jsx
-import { Web3Button } from "@thirdweb-dev/react";
+import { Web3Button } from "@egiftcard/react";
 
 const Home = () => {
 	return (

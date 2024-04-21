@@ -1,14 +1,14 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Marketplaces | thirdweb NFT Checkout",
+	title: "Marketplaces | egiftcard NFT Checkout",
 	description:
-		"thirdweb supports marketplace contracts where a user can list an NFT and receive funds when a buyer purchases it.",
+		"egiftcard supports marketplace contracts where a user can list an NFT and receive funds when a buyer purchases it.",
 });
 
 # Marketplaces
 
-thirdweb supports marketplace contracts where a user can list an NFT and receive funds when a buyer purchases it.
+egiftcard supports marketplace contracts where a user can list an NFT and receive funds when a buyer purchases it.
 
 Integration is identical to a checkout using a `CUSTOM_CONTRACT` contract type. Follow the guide on integrating [custom contracts](custom-contracts), and ensure the `mintMethod` identifies the method on your smart contract that purchases the NFT (a "buy" method).
 
@@ -16,7 +16,7 @@ Your contract method should do the following:
 
 - Accepts the wallet address where the NFT should be delivered.
 - Accepts payment in the chain's native coin or [USDC / ERC-20 tokens](erc20-pricing) from the caller (`msg.sender`) of the method.
-- Transfers the NFT from the seller to the recipient's wallet address. Remember: `msg.sender` is thirdweb's minter wallet and not the buyer's wallet address. Your function needs to ensure the recipient is specified in the argument list.
+- Transfers the NFT from the seller to the recipient's wallet address. Remember: `msg.sender` is egiftcard's minter wallet and not the buyer's wallet address. Your function needs to ensure the recipient is specified in the argument list.
 
 ## Third-party marketplaces
 
@@ -46,10 +46,10 @@ const body = {
   },
 };
 
-const resp = await fetch("https://payments.thirdweb.com/api/2022-08-12/checkout-link-intent", {
+const resp = await fetch("https://payments.egiftcard.cc/api/2022-08-12/checkout-link-intent", {
   method: "POST",
   headers: [
-    "Authorization": "Bearer MY_THIRDWEB_API_SECRET_KEY",
+    "Authorization": "Bearer MY_EGIFTCARD_API_SECRET_KEY",
     "Content-Type": "application/json",
   ]
   body: JSON.stringify(body);
@@ -65,6 +65,6 @@ Please update the following variables:
 - `REGISTERED_CONTRACT_ID`: The Contract ID from Step 1.
 - `COLLECTION_CONTRACT_ADDRESS`: The contract address of the NFT collection.
 - `TOKEN_ID`: The token ID of the NFT from the listing. This listing must exist on one of Reservoir's supported marketplaces.
-- `MY_THIRDWEB_API_SECRET_KEY` found on your API Keys dashboard page.
+- `MY_EGIFTCARD_API_SECRET_KEY` found on your API Keys dashboard page.
 
 For a more embedded and branded checkout experience, you may also sell marketplace NFTs with [Checkout Elements](elements).

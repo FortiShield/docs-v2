@@ -16,7 +16,7 @@ export default async function Layout(props: { children: React.ReactNode }) {
 }
 
 export const metadata = createMetadata({
-	title: "thirdweb React SDK",
+	title: "egiftcard React SDK",
 	description:
 		"A collection of 100+ React hooks and UI components for your web3 apps, for any EVM-compatible blockchain.",
 });

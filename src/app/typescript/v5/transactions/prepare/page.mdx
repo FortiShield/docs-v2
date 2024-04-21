@@ -9,7 +9,7 @@ All transactions sent with the SDK need to be prepared first. Preparing a transa
 The recommended way to prepare a contract call is to pass the Solidity method signature and the params. This is type-safe based on the Solidity method signature you define. You can get your desired contract method signature from the solidity code directly.
 
 ```ts
-import { prepareContractCall, toWei } from "thirdweb";
+import { prepareContractCall, toWei } from "egiftcard";
 
 const tx = prepareContractCall({
 	contract,
@@ -28,7 +28,7 @@ This will return a prepared transaction object that is ready to be sent to the b
 You can also create a raw transaction directly. This is useful when you want to send ether to an address for example, or when you already have encoded data.
 
 ```ts
-import { prepareTransaction, toWei } from "thirdweb";
+import { prepareTransaction, toWei } from "egiftcard";
 
 const transaction = prepareTransaction({
 	// The account that will be the receiver
@@ -47,7 +47,7 @@ There are few other ways to prepare a contract call, all of these return the sam
 Using the CLI, you can generate optimized functions for all the possible calls to a contract. This saves you time and precomputes all the necessary encoding.
 
 ```shell
-npx thirdweb generate <contractId>/<contractAddress>
+npx egiftcard generate <contractId>/<contractAddress>
 ```
 
 Read more on how to [generate extension functions using the CLI](/cli).
@@ -57,7 +57,7 @@ Read more on how to [generate extension functions using the CLI](/cli).
 Another way to get type safety is to pass the full contract ABI to `getContract`. This will give you autocompletion for all methods declared in the ABI. There is a slight extract cost of having the full ABI in your code which can be pretty large.
 
 ```ts
-import { getContract, prepareContractCall, toWei } from "thirdweb";
+import { getContract, prepareContractCall, toWei } from "egiftcard";
 
 const contract = getContract({
   client,
@@ -97,7 +97,7 @@ const tx = prepareContractCall({
 As an alternative to passing the full ABI, you can pass a snippet of the ABI for the method you want to call. This is useful when you only want to call a single method and don't want to have the full ABI in your code.
 
 ```ts
-import { prepareContractCall, toWei } from "thirdweb";
+import { prepareContractCall, toWei } from "egiftcard";
 
 const tx = prepareContractCall({
 	contract,
@@ -126,7 +126,7 @@ const tx = prepareContractCall({
 Finally, you can dynamically resolve contract methods at runtime using the `resolveMethod` function. This is the best way to handle contracts you don't know the ABI of in advance but it is also less performant and not type-safe.
 
 ```ts
-import { prepareContractCall, resolveMethod, toWei } from "thirdweb";
+import { prepareContractCall, resolveMethod, toWei } from "egiftcard";
 const tx = prepareContractCall({
 	contract,
 	// in this case we only pass the name of the method we want to call

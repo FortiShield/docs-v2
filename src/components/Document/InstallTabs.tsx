@@ -6,12 +6,12 @@ export function InstallTabs(props: {
 	yarn: string;
 	pnpm: string;
 	bun?: string;
-	thirdwebInstallSupported?: boolean;
+	egiftcardInstallSupported?: boolean;
 }) {
 	return (
-		<Tabs defaultValue={props.thirdwebInstallSupported ? "npx" : "npm"}>
+		<Tabs defaultValue={props.egiftcardInstallSupported ? "npx" : "npm"}>
 			<TabsList>
-				{props.thirdwebInstallSupported && (
+				{props.egiftcardInstallSupported && (
 					<TabsTrigger value="npx">npx</TabsTrigger>
 				)}
 				<TabsTrigger value="npm">npm</TabsTrigger>
@@ -19,9 +19,9 @@ export function InstallTabs(props: {
 				<TabsTrigger value="pnpm">pnpm</TabsTrigger>
 				{props.bun && <TabsTrigger value="bun">bun</TabsTrigger>}
 			</TabsList>
-			{props.thirdwebInstallSupported && (
+			{props.egiftcardInstallSupported && (
 				<TabsContent value="npx">
-					<CodeBlock code={`npx thirdweb install`} lang="bash" />
+					<CodeBlock code={`npx egiftcard install`} lang="bash" />
 				</TabsContent>
 			)}
 			<TabsContent value="npm">

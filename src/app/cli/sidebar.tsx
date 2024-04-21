@@ -1,7 +1,7 @@
 import { SideBar } from "@/components/Layouts/DocLayout";
 
 export const sidebar: SideBar = {
-	name: "thirdweb CLI",
+	name: "egiftcard CLI",
 	links: [
 		{
 			name: "Overview",

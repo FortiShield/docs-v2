@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "BatchMintMetadata contract",
 		icon: "solidity",
 	},
-	title: "BatchMintMetadata | thirdweb contract",
+	title: "BatchMintMetadata | egiftcard contract",
 	description:
 		"The BatchMintMetadata smart contract is an extension for any NFT contract. It lets the smart contract using this extension set the metadata for n number of NFTs in one transaction",
 });
@@ -13,12 +13,12 @@ export const metadata = createMetadata({
 # BatchMintMetadata (ERC1155 & ERC721)
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/BatchMintMetadata.sol";
+import "@egiftcard/contracts/extension/BatchMintMetadata.sol";
 ```
 
 The `BatchMintMetadata` smart contract is an extension for any NFT contract. It lets the smart contract using this extension set the metadata for `n` number of NFTs in one transaction. A single base URI for a batch of `n` NFTs is defined, where the metadata URI for each NFT in a relevant batch is `baseURI/tokenId`.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/BatchMintMetadata.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/BatchMintMetadata.sol" />
 
 ## Usage
 
@@ -28,7 +28,7 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/BatchMintMetadata.sol";
+import "@egiftcard/contracts/extension/BatchMintMetadata.sol";
 
 contract MyContract is BatchMintMetadata {}
 ```

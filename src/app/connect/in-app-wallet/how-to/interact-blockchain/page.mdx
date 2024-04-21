@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 		title: "Interact with the blockchain with In-App Wallet",
 		icon: "wallets",
 	},
-	title: "Interact with the blockchain | thirdweb In-App Wallet",
+	title: "Interact with the blockchain | egiftcard In-App Wallet",
 	description:
 		"One connected, in-app wallets can be used alongside the Contract SDK to interact with the blockchain",
 });
@@ -34,7 +34,7 @@ One connected, in-app wallets can be used alongside the [Contract SDK](/contract
 </TabsList>
 
 <TabsContent value="react">
-The `ThirdwebProvider` handles maintaining the connection state, and allows using all the hooks in the SDK to interact with the blockchain as the connected user.
+The `EgiftcardProvider` handles maintaining the connection state, and allows using all the hooks in the SDK to interact with the blockchain as the connected user.
 
 Here's an example using the `TransactionButton` component to claim an NFT on a smart contract:
 
@@ -65,9 +65,9 @@ export default function App() {
 You can pass the connected account to any of the transaction actions:
 
 ```typescript
-import { createThirdwebClient, getContract, sendTransaction } from "thirdweb";
-import { sepolia } from "thirdweb/chains";
-import { inAppWallet } from "thirdweb/wallets";
+import { createEgiftcardClient, getContract, sendTransaction } from "egiftcard";
+import { sepolia } from "egiftcard/chains";
+import { inAppWallet } from "egiftcard/wallets";
 
 const wallet = inAppWallet();
 const account = await wallet.connect({

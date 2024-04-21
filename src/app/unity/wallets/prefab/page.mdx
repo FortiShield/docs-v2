@@ -3,7 +3,7 @@ import connectWallet from "./connectwallet.png";
 import connectWalletInspector from "./connectwalletinspector.png";
 
 export const metadata = createMetadata({
-	title: "ConnectWallet Prefab | thirdweb Unity SDK",
+	title: "ConnectWallet Prefab | egiftcard Unity SDK",
 	description:
 		"ConnectWallet prefab allows users to connect their wallet to your game",
 });
@@ -12,15 +12,15 @@ export const metadata = createMetadata({
 
 The `Prefab_ConnectWallet` prefab allows users to connect their wallet to your game.
 
-It uses the [ThirdwebManager](/unity/thirdwebmanager) to determine which networks to display as well as the secondary UI related to certain providers such as WalletConnect.
+It uses the [EgiftcardManager](/unity/egiftcardmanager) to determine which networks to display as well as the secondary UI related to certain providers such as WalletConnect.
 
 You can set up which wallets you want to support from the Prefab_ConnectWallet Inspector directly.
 
 When a user clicks the button, a dropdown of [supported wallets](#supported-wallets) will appear. The user can then
 select their preferred wallet to connect to the game; once connected, the button will show the user&rsquo;s balance and an option to
-switch networks if multiple networks are set up through the ThirdwebManager.
+switch networks if multiple networks are set up through the EgiftcardManager.
 
-The prefab is located at: `Assets/Thirdweb/Examples/Prefabs/Prefab_ConnectWallet.prefab`.
+The prefab is located at: `Assets/Egiftcard/Examples/Prefabs/Prefab_ConnectWallet.prefab`.
 
 <DocImage src={connectWallet} />
 

@@ -23,7 +23,7 @@ You can get a quote by using the [`getBuyWithCryptoQuote`](/references/typescrip
 
 This function takes an object with the following properties:
 
-- **client:** The Thirdweb client instance.
+- **client:** The Egiftcard client instance.
 - **fromAddress:** The address of the wallet initiating the transaction.
 - **toTokenAddress:** The contract address of the destination token. This is the token the user wants to purchase.
 - **fromTokenAddress:** The contract address of the source token. This is the token the user wants will use to purchase the destination token.
@@ -34,10 +34,10 @@ This function takes an object with the following properties:
 Since you need to pass the `fromAddress` to function, you need to connect a wallet. Refer to [Connecting Wallets](/typescript/v5/wallets) guide to see how you can connect various wallets.
 
 ```tsx
-import { NATIVE_TOKEN_ADDRESS, createThirdwebClient } from "thirdweb";
-import { createWallet } from "thirdweb/wallets";
+import { NATIVE_TOKEN_ADDRESS, createEgiftcardClient } from "egiftcard";
+import { createWallet } from "egiftcard/wallets";
 
-const client = createThirdwebClient({
+const client = createEgiftcardClient({
 	clientId: "YOUR_CLIENT_ID",
 });
 

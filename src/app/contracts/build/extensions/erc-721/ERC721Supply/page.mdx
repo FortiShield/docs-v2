@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC721Supply contract",
 		icon: "solidity",
 	},
-	title: "ERC721Supply | thirdweb contract",
+	title: "ERC721Supply | egiftcard contract",
 	description:
 		"View all of the NFTs from the collection by implementing the totalSupply function on your ERC721(A) contract",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC721Supply
 
 ```solidity
-import "@thirdweb-dev/contracts/eip/interface/IERC721Supply.sol"
+import "@egiftcard/contracts/eip/interface/IERC721Supply.sol"
 ```
 
 View all of the NFTs from the collection by implementing the `totalSupply` function on your ERC721(A) contract.
@@ -28,7 +28,7 @@ This extension is an interface and requires all of the functions to be implement
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/eip/interface/IERC721Supply.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/eip/interface/IERC721Supply.sol" />
 
 ## Usage
 
@@ -45,7 +45,7 @@ You can optionally override the functionality of this function as outlined below
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/ERC721A.sol";
+import "@egiftcard/contracts/eip/ERC721A.sol";
 
 contract Contract is ERC721A {
     constructor(

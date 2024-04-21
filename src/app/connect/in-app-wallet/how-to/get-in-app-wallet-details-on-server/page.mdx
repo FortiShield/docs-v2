@@ -1,11 +1,11 @@
 # Getting User Details on the server
 
-If you want to get the user details for a given thirdweb In-App Wallet on the server, you can make a `GET` request on `https://embedded-wallet.thirdweb.com/api/2023-11-30/embedded-wallet/user-details`
+If you want to get the user details for a given egiftcard In-App Wallet on the server, you can make a `GET` request on `https://embedded-wallet.egiftcard.cc/api/2023-11-30/embedded-wallet/user-details`
 
 Here's an example function on how you might perform the query:
 
 ```ts
-export async function fetchInAppWalletMetadataFromThirdweb(
+export async function fetchInAppWalletMetadataFromEgiftcard(
 	args:
 		| {
 				queryBy: "walletAddress";
@@ -17,7 +17,7 @@ export async function fetchInAppWalletMetadataFromThirdweb(
 		  },
 ) {
 	const url = new URL(
-		"https://embedded-wallet.thirdweb.com/api/2023-11-30/embedded-wallet/user-details",
+		"https://embedded-wallet.egiftcard.cc/api/2023-11-30/embedded-wallet/user-details",
 	);
 	if (args.queryBy === "walletAddress") {
 		url.searchParams.set("queryBy", "walletAddress");

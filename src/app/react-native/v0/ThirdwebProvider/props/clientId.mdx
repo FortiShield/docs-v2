@@ -1,13 +1,13 @@
-The `clientId` prop is required to use the thirdweb infrastructure services with the SDK. You can get a client ID by creating an API key [on thirdweb dashboard](https://thirdweb.com/create-api-key).
+The `clientId` prop is required to use the egiftcard infrastructure services with the SDK. You can get a client ID by creating an API key [on egiftcard dashboard](https://egiftcard.cc/create-api-key).
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react-native";
+import { EgiftcardProvider } from "@egiftcard/react-native";
 
 function MyApp() {
 	return (
-		<ThirdwebProvider activeChain="ethereum" clientId="your-client-id">
+		<EgiftcardProvider activeChain="ethereum" clientId="your-client-id">
 			<YourApp />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

@@ -7,20 +7,20 @@ import {
 	createMetadata,
 } from "@doc";
 import prefabScene from "./scene-prefabs.png";
-import sdkInstaller from "./thirdweb-unity-sdk-setup.png";
+import sdkInstaller from "./egiftcard-unity-sdk-setup.png";
 import { GraduationCap } from "lucide-react";
 
 export const metadata = createMetadata({
-	title: "Interacting with Contracts | thirdweb Unity SDK",
+	title: "Interacting with Contracts | egiftcard Unity SDK",
 	description:
-		"Learn how to interact with smart contracts using the thirdweb Unity SDK.",
+		"Learn how to interact with smart contracts using the egiftcard Unity SDK.",
 });
 
 # Getting Started
 
 <Callout variant='info' title="Recommendation">
 
-We recommend using an API key to use thirdweb’s default infrastructure services with the SDK such as RPC, Storage and Account Abstraction. If you haven’t created a key yet you can do so for free from the [thirdweb dashboard](https://thirdweb.com/create-api-key).
+We recommend using an API key to use egiftcard’s default infrastructure services with the SDK such as RPC, Storage and Account Abstraction. If you haven’t created a key yet you can do so for free from the [egiftcard dashboard](https://egiftcard.cc/create-api-key).
 
 </Callout>
 
@@ -34,7 +34,7 @@ We recommend using the 2022 LTS version of Unity.
 
 <Step title="Unity Package Download" >
 
-Download the latest thirdweb Unity SDK package from the [releases page](https://github.com/thirdweb-dev/unity-sdk/releases).
+Download the latest egiftcard Unity SDK package from the [releases page](https://github.com/egiftcard/unity-sdk/releases).
 
 </Step>
 
@@ -54,7 +54,7 @@ Play around in our example `Scene_Prefabs` to test out the SDK!
 
 <Step title="Build it!" >
 
-Refer to the [Build Settings](https://github.com/thirdweb-dev/unity-sdk#build), pick a target platform and build your scene!
+Refer to the [Build Settings](https://github.com/egiftcard/unity-sdk#build), pick a target platform and build your scene!
 
 We support all platforms.
 
@@ -62,28 +62,28 @@ We support all platforms.
 
 </Steps>
 
-## Thirdweb Manager
+## Egiftcard Manager
 
 Now you're ready to use the SDK in your own scene!
 
-The only requirement is to have a [ThirdwebManager](/unity/thirdwebmanager) prefab present in your scene.
+The only requirement is to have a [EgiftcardManager](/unity/egiftcardmanager) prefab present in your scene.
 
-Navigate to `Thirdweb` > `Core` > `Prefabs` > `ThirdwebManager` drag it into your scene.
+Navigate to `Egiftcard` > `Core` > `Prefabs` > `EgiftcardManager` drag it into your scene.
 
-Alternatively, use our handy quickstart installer from the top level `Tools > Thirdweb` menu.
+Alternatively, use our handy quickstart installer from the top level `Tools > Egiftcard` menu.
 
 <DocImage src={sdkInstaller} className="w-96" />
 
 <Callout variant='info' title="How It Works">
 
-The [ThirdwebManager](/unity/thirdwebmanager) represents your Thirdweb SDK singleton, providing a convenient interface for setting up and controlling SDK parameters directly from inspector.
+The [EgiftcardManager](/unity/egiftcardmanager) represents your Egiftcard SDK singleton, providing a convenient interface for setting up and controlling SDK parameters directly from inspector.
 
-Access the SDK from anywhere in your code using `ThirdwebManager.Instance.SDK`.
+Access the SDK from anywhere in your code using `EgiftcardManager.Instance.SDK`.
 
 </Callout>
 
 <ArticleIconCard
-	href="/unity/thirdwebmanager"
+	href="/unity/egiftcardmanager"
 	icon={GraduationCap}
-	title="Learn more about the ThirdwebManager"
+	title="Learn more about the EgiftcardManager"
 />

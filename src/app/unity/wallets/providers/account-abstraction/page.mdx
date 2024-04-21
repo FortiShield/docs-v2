@@ -1,8 +1,8 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Account Abstraction | thirdweb Unity SDK",
-	description: "Connect to Smart account with thirdweb Unity SDK",
+	title: "Account Abstraction | egiftcard Unity SDK",
+	description: "Connect to Smart account with egiftcard Unity SDK",
 });
 
 # Account Abstraction
@@ -13,12 +13,12 @@ For more information about Account Abstration, see the [glossary](/glossary/smar
 ## Usage
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
 public async void ConnectWallet()
 {
-    // Reference to your Thirdweb SDK
-    var sdk = ThirdwebManager.Instance.SDK;
+    // Reference to your Egiftcard SDK
+    var sdk = EgiftcardManager.Instance.SDK;
 
     // Configure the connection
     var connection = new WalletConnection(
@@ -60,10 +60,10 @@ You can also create session keys (revokable), allowing new signers to interact w
 You may also add/remove admins.
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
-// Reference to your Thirdweb SDK
-var sdk = ThirdwebManager.Instance.SDK;
+// Reference to your Egiftcard SDK
+var sdk = EgiftcardManager.Instance.SDK;
 
 // Create a session key
 string signerAddress = "0xSignerAddress";
@@ -107,7 +107,7 @@ var address = await sdk.Wallet.Connect(connection);
 ## Additional Options
 
 Smart accounts, through paymasters, can be seen as a "plugin" to your user wallets, whereby all gas fees can be sponsored onchain.
-To enable this, simply set the `gasless` option to true in your [ThirdwebManager](/unity/thirdwebmanager) prefab.
+To enable this, simply set the `gasless` option to true in your [EgiftcardManager](/unity/egiftcardmanager) prefab.
 
-All smart accounts are deployed through an [Account Factory](https://thirdweb.com/thirdweb.eth/AccountFactory), which is a contract that deploys smart accounts on behalf of your users.
-You would need to set this address in your [ThirdwebManager](/unity/thirdwebmanager) prefab's settings as well.
+All smart accounts are deployed through an [Account Factory](https://egiftcard.cc/egiftcard.eth/AccountFactory), which is a contract that deploys smart accounts on behalf of your users.
+You would need to set this address in your [EgiftcardManager](/unity/egiftcardmanager) prefab's settings as well.

@@ -6,7 +6,7 @@ import stroageUploadImage from "./assets/storage-upload.png";
 import storageUrlsImage from "./assets/storage-urls.png";
 
 export const metadata = createMetadata({
-	title: "Upload Files to IPFS | thirdweb Storage",
+	title: "Upload Files to IPFS | egiftcard Storage",
 	description:
 		"Upload and pin files and directories directly to IPFS using the dashboard, CLI or via a client or server environment using SDKs",
 });
@@ -26,7 +26,7 @@ To upload files using dashboard:
 </Step>
 
 <Step title="Storage Dashboard">
-Navigate to the [storage dashboard](https://thirdweb.com/dashboard/infrastructure/storage)
+Navigate to the [storage dashboard](https://egiftcard.cc/dashboard/infrastructure/storage)
 
 <DocImage src={storageDashboardImage} alt="storage diagram" />
 
@@ -60,7 +60,7 @@ alt="storage diagram"
 To upload files using the CLI, use the `upload` command and specify the relative path to the file name.
 
 ```bash
-npx thirdweb@latest upload path/to/file.extension
+npx egiftcard@latest upload path/to/file.extension
 ```
 
 ### Upload multiple files
@@ -68,7 +68,7 @@ npx thirdweb@latest upload path/to/file.extension
 To upload multiple files, specify all the file names separated with spaces:
 
 ```bash
-npx thirdweb upload image1.png image2.png image3.png
+npx egiftcard upload image1.png image2.png image3.png
 ```
 
 ### Upload entire directory
@@ -76,7 +76,7 @@ npx thirdweb upload image1.png image2.png image3.png
 To upload an entire directory, specify the relative directory name:
 
 ```bash
-npx thirdweb upload directory_name
+npx egiftcard upload directory_name
 ```
 
 <hr />
@@ -93,21 +93,21 @@ npx thirdweb upload directory_name
 	<TabsContent value="react">
     ```jsx
         // Initialize your provider
-        import { ThirdwebProvider } from "@thirdweb-dev/react";
+        import { EgiftcardProvider } from "@egiftcard/react";
 
         function Provider() {
         return (
-            <ThirdwebProvider
+            <EgiftcardProvider
             clientId="YOUR_CLIENT_ID" // You can get a client id from dashboard settings
             activeChain="goerli"
             >
             ...
-            </ThirdwebProvider>
+            </EgiftcardProvider>
         );
         }
 
         // Upload files to IPFS
-        import { useStorageUpload } from "@thirdweb-dev/react";
+        import { useStorageUpload } from "@egiftcard/react";
 
         function App() {
         const { mutateAsync: upload } = useStorageUpload();
@@ -123,7 +123,7 @@ npx thirdweb upload directory_name
         }
 
         // Render files from IPFS
-        import { MediaRenderer } from "@thirdweb-dev/react";
+        import { MediaRenderer } from "@egiftcard/react";
 
         function App() {
         return (
@@ -136,21 +136,21 @@ npx thirdweb upload directory_name
     <TabsContent value="react-native">
     ```jsx
         // Initialize your provider
-        import { ThirdwebProvider } from "@thirdweb-dev/react";
+        import { EgiftcardProvider } from "@egiftcard/react";
 
         function Provider() {
         return (
-            <ThirdwebProvider
+            <EgiftcardProvider
             clientId="YOUR_CLIENT_ID" // You can get a client id from dashboard settings
             activeChain="goerli"
             >
             ...
-            </ThirdwebProvider>
+            </EgiftcardProvider>
         );
         }
 
         // Upload files to IPFS
-        import { useStorageUpload } from "@thirdweb-dev/react";
+        import { useStorageUpload } from "@egiftcard/react";
 
         function App() {
         const { mutateAsync: upload } = useStorageUpload();
@@ -166,7 +166,7 @@ npx thirdweb upload directory_name
         }
 
         // Render files from IPFS
-        import { MediaRenderer } from "@thirdweb-dev/react";
+        import { MediaRenderer } from "@egiftcard/react";
 
         function App() {
         return (
@@ -178,10 +178,10 @@ npx thirdweb upload directory_name
     </TabsContent>
     <TabsContent value="typescript">
     ```jsx
-        import { ThirdwebStorage } from "@thirdweb-dev/storage";
+        import { EgiftcardStorage } from "@egiftcard/storage";
 
-        // First, instantiate the thirdweb IPFS storage
-        const storage = new ThirdwebStorage({
+        // First, instantiate the egiftcard IPFS storage
+        const storage = new EgiftcardStorage({
         secretKey: "YOUR_SECRET_KEY", // You can get one from dashboard settings
         });
 
@@ -192,7 +192,7 @@ npx thirdweb upload directory_name
 
         // Here we a URL with a gateway that we can look at in the browser
         const url = await storage.resolveScheme(uri);
-        // This will log a URL like https://ipfs.thirdwebstorage.com/ipfs/QmWgbcjKWCXhaLzMz4gNBxQpAHktQK6MkLvBkKXbsoWEEy/0
+        // This will log a URL like https://ipfs.egiftcardstorage.com/ipfs/QmWgbcjKWCXhaLzMz4gNBxQpAHktQK6MkLvBkKXbsoWEEy/0
         console.info(url);
 
         // You can also download the data from the uri
@@ -201,8 +201,8 @@ npx thirdweb upload directory_name
     </TabsContent>
      <TabsContent value="python">
      ```python
-        from thirdweb import ThirdwebSDK
-        sdk = ThirdwebSDK("goerli")
+        from egiftcard import EgiftcardSDK
+        sdk = EgiftcardSDK("goerli")
         metadata = {
         "name": "NFT",
         "image": "ipfs://..."
@@ -217,11 +217,11 @@ npx thirdweb upload directory_name
 
         import (
             "context"
-            "github.com/thirdweb-dev/go-sdk/v2/thirdweb"
+            "github.com/egiftcard/go-sdk/v2/egiftcard"
         )
 
         func main() {
-            sdk, _ := thirdweb.NewThirdwebSDK("goerli", nil)
+            sdk, _ := egiftcard.NewEgiftcardSDK("goerli", nil)
 
             metadata := map[string]interface{}{
             "name": "NFT",

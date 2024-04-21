@@ -1,29 +1,29 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ThirdwebContract.Write | Thirdweb .NET SDK",
+	title: "EgiftcardContract.Write | Egiftcard .NET SDK",
 	description: "Execute state-changing transactions on a smart contract.",
 });
 
-# ThirdwebContract.Write
+# EgiftcardContract.Write
 
-The `ThirdwebContract.Write` method allows you to execute transactions that alter the state of the blockchain via a smart contract. This is typically used for functions that create, modify, or delete data on the blockchain.
+The `EgiftcardContract.Write` method allows you to execute transactions that alter the state of the blockchain via a smart contract. This is typically used for functions that create, modify, or delete data on the blockchain.
 
 ## Usage
 
 ```csharp
-var transactionReceipt = await ThirdwebContract.Write(wallet, contract, "methodName", weiValue, parameters);
+var transactionReceipt = await EgiftcardContract.Write(wallet, contract, "methodName", weiValue, parameters);
 ```
 
 <Details summary="Parameters">
 
 ### wallet (required)
 
-An instance of `IThirdwebWallet`. This represents the signer of the transaction, which can be any type of wallet provider.
+An instance of `IEgiftcardWallet`. This represents the signer of the transaction, which can be any type of wallet provider.
 
 ### contract (required)
 
-An instance of `ThirdwebContract`. Represents the smart contract you wish to interact with.
+An instance of `EgiftcardContract`. Represents the smart contract you wish to interact with.
 
 ### methodName (required)
 
@@ -49,13 +49,13 @@ Returns the transaction receipt as a `TransactionReceipt` object, which contains
 
 ## Example
 
-Let's say you have a smart contract with a `transfer` method that transfers ERC20 tokens from the caller's address to another address. Here's how you could execute a transaction to transfer tokens using `ThirdwebContract.Write`:
+Let's say you have a smart contract with a `transfer` method that transfers ERC20 tokens from the caller's address to another address. Here's how you could execute a transaction to transfer tokens using `EgiftcardContract.Write`:
 
 ```csharp
 BigInteger chainId = 1; // Ethereum mainnet
 string contractAddress = "0x..."; // Your contract address
-var client = ThirdwebClient.Create(secretKey: "yourSecretKey");
-var contract = await ThirdwebContract.Create(client, contractAddress, chainId);
+var client = EgiftcardClient.Create(secretKey: "yourSecretKey");
+var contract = await EgiftcardContract.Create(client, contractAddress, chainId);
 
 // The wallet that signs and sends the transaction
 var wallet = await PrivateKeyWallet.Create(client, "yourPrivateKeyHex");
@@ -68,7 +68,7 @@ BigInteger amount = new BigInteger(1000); // The amount to transfer
 BigInteger weiValue = BigInteger.Zero;
 
 // Executing the transfer
-var receipt = await ThirdwebContract.Write(wallet, contract, "transfer", weiValue, toAddress, amount);
+var receipt = await EgiftcardContract.Write(wallet, contract, "transfer", weiValue, toAddress, amount);
 Console.WriteLine($"Transaction receipt: {receipt}");
 ```
 

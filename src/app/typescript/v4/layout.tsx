@@ -36,10 +36,10 @@ export default async function Layout(props: { children: React.ReactNode }) {
 
 export const metadata = createMetadata({
 	image: {
-		title: "thirdweb TypeScript Alpha SDK",
+		title: "egiftcard TypeScript Alpha SDK",
 		icon: "typescript",
 	},
-	title: "thirdweb TypeScript SDK",
+	title: "egiftcard TypeScript SDK",
 	description:
 		"A type-safe library to interact with any EVM-compatible blockchain in both Node.js and the browser.",
 });

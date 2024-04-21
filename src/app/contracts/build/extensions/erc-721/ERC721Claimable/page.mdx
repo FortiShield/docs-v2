@@ -7,14 +7,14 @@ export const metadata = createMetadata({
 		title: "ERC721Claimable contract",
 		icon: "solidity",
 	},
-	title: "ERC721Claimable | thirdweb contract",
+	title: "ERC721Claimable | egiftcard contract",
 	description: "Allow other wallets to claim NFTs that you have lazy-minted",
 });
 
 # ERC721Claimable
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/interface/IClaimableERC721.sol";
+import "@egiftcard/contracts/extension/interface/IClaimableERC721.sol";
 ```
 
 Allow other wallets to **claim** NFTs that you have lazy-minted.
@@ -31,7 +31,7 @@ This extension is an interface and requires all of the functions to be implement
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/interface/IClaimableERC721.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/interface/IClaimableERC721.sol" />
 
 ## Usage
 
@@ -41,8 +41,8 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/ERC721A.sol";
-import "@thirdweb-dev/contracts/extension/interface/IClaimableERC721.sol";
+import "@egiftcard/contracts/eip/ERC721A.sol";
+import "@egiftcard/contracts/extension/interface/IClaimableERC721.sol";
 
 contract Contract is ERC721A, IClaimableERC721 {
     constructor(

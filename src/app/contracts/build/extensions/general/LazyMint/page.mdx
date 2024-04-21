@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "LazyMint contract",
 		icon: "solidity",
 	},
-	title: "LazyMint | thirdweb contract",
+	title: "LazyMint | egiftcard contract",
 	description:
 		"The LazyMint smart contract is an extension for any base NFT contract. It lets you 'lazy mint' any number of NFTs at once.",
 });
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 # LazyMint
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/LazyMint.sol";
+import "@egiftcard/contracts/extension/LazyMint.sol";
 ```
 
 The `LazyMint` smart contract is an extension for any base NFT contract. It lets you 'lazy mint' any number of NFTs at once.
@@ -30,7 +30,7 @@ the `LazyMint` extension.
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/LazyMint.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/LazyMint.sol" />
 
 ## Usage
 
@@ -46,7 +46,7 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/LazyMint.sol";
+import "@egiftcard/contracts/extension/LazyMint.sol";
 
 contract MyContract is LazyMint {
     /**

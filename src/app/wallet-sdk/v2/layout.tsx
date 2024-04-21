@@ -4,9 +4,9 @@ import { typescriptV4Sidebar } from "../../typescript/v4/sidebar";
 import { TypeScriptVersionSelector } from "../../../components/others/VersionSelector";
 
 export const metadata = createMetadata({
-	title: "thirdweb Wallet SDK",
+	title: "egiftcard Wallet SDK",
 	description:
-		"The Wallet SDK allows you to build a fully featured wallet solution or integrate an existing wallet provider with thirdweb's Typescript, React, React Native, and Unity SDKs.",
+		"The Wallet SDK allows you to build a fully featured wallet solution or integrate an existing wallet provider with egiftcard's Typescript, React, React Native, and Unity SDKs.",
 });
 
 export default async function Layout(props: { children: React.ReactNode }) {

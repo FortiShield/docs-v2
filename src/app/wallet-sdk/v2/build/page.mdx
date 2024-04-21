@@ -2,15 +2,15 @@ import { ArticleIconCard, createMetadata } from "@doc";
 import { WrenchIcon, BlocksIcon } from "lucide-react";
 
 export const metadata = createMetadata({
-	title: "Integrate a wallet provider | thirdweb Wallet SDK",
-	description: "Integrate a wallet provider using thirdweb's Wallet SDK",
+	title: "Integrate a wallet provider | egiftcard Wallet SDK",
+	description: "Integrate a wallet provider using egiftcard's Wallet SDK",
 });
 
 # Integrate a wallet provider
 
 ## Build a Wallet interface
 
-To use a wallet provider with thirdweb's TypeScript SDK, you have to create a wallet class which extends `AbstractClientWallet` class
+To use a wallet provider with egiftcard's TypeScript SDK, you have to create a wallet class which extends `AbstractClientWallet` class
 
 ```javascript
 export class MyWallet extends AbstractClientWallet {
@@ -28,7 +28,7 @@ export class MyWallet extends AbstractClientWallet {
 
 ## Integrate with ConnectWallet
 
-If you also want to integrate this wallet with [`ConnectWallet`](/connect/connect/ConnectWallet) component in [React SDK](/react/v4) or [React Native SDK](/react-native/v0), You have to create a Wallet Configurator function which can be passed to `ThirdwebProvider` component
+If you also want to integrate this wallet with [`ConnectWallet`](/connect/connect/ConnectWallet) component in [React SDK](/react/v4) or [React Native SDK](/react-native/v0), You have to create a Wallet Configurator function which can be passed to `EgiftcardProvider` component
 
 ```ts
 function myWallet(): WalletConfig<MyWallet> {
@@ -37,9 +37,9 @@ function myWallet(): WalletConfig<MyWallet> {
 ```
 
 ```tsx
-<ThirdwebProvider supportedWallets={[myWallet()]}>
+<EgiftcardProvider supportedWallets={[myWallet()]}>
 	<App />
-</ThirdwebProvider>
+</EgiftcardProvider>
 ```
 
 <ArticleIconCard

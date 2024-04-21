@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "ERC20SignatureMint contract",
 		icon: "solidity",
 	},
-	title: "ERC20SignatureMint | thirdweb contract",
+	title: "ERC20SignatureMint | egiftcard contract",
 	description:
 		"The SignatureMintERC20 smart contract is an extension meant for distributing ERC20 tokens",
 });
@@ -14,14 +14,14 @@ export const metadata = createMetadata({
 # ERC20SignatureMint
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/SignatureMintERC20.sol";
+import "@egiftcard/contracts/extension/SignatureMintERC20.sol";
 ```
 
 The `SignatureMintERC20` smart contract is an extension meant for distributing ERC20 tokens.
 
 The ['signature minting'](/glossary/signature-based-minting) mechanism in the `SignatureMintERC20` extension uses [EIP-712](https://eips.ethereum.org/EIPS/eip-712), and is a way for a contract admin to authorize an external party's request to mint tokens on the admin's contract. At a high level, this means you can authorize some external party to mint tokens on your contract and specify what exactly will be minted by that external party.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/SignatureMintERC20.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/SignatureMintERC20.sol" />
 
 ## Usage
 
@@ -38,9 +38,9 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC20Base.sol";
-import "@thirdweb-dev/contracts/extension/SignatureMintERC20.sol";
-import "@thirdweb-dev/contracts/lib/CurrencyTransferLib.sol";
+import "@egiftcard/contracts/base/ERC20Base.sol";
+import "@egiftcard/contracts/extension/SignatureMintERC20.sol";
+import "@egiftcard/contracts/lib/CurrencyTransferLib.sol";
 
 contract ERC20SignatureMint is ERC20Base, SignatureMintERC20 {
     /*//////////////////////////////////////////////////////////////

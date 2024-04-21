@@ -14,38 +14,38 @@ import ThemeMDX from "./props/theme.mdx";
 import DefaultChainsMDX from "../common/defaultChains.mdx";
 
 export const metadata = createMetadata({
-	title: "ThirdwebProvider | thirdweb React SDK",
-	description: "API Reference for the ThirdwebProvider component",
+	title: "EgiftcardProvider | egiftcard React SDK",
+	description: "API Reference for the EgiftcardProvider component",
 });
 
-# ThirdwebProvider
+# EgiftcardProvider
 
-The `ThirdwebProvider` is a wrapper component that provides access to all of the SDK&rsquo;s hooks and UI components.
+The `EgiftcardProvider` is a wrapper component that provides access to all of the SDK&rsquo;s hooks and UI components.
 
 <Callout variant='info' title="API Key">
 
-You will require an API key to use thirdweb's infrastructure services with the SDK.
+You will require an API key to use egiftcard's infrastructure services with the SDK.
 
-you need to first obtain an API key from the [dashboard](https://thirdweb.com/dashboard) and then copy the "Client ID" and pass it to the `ThirdwebProvider` as the `clientId` prop.
+you need to first obtain an API key from the [dashboard](https://egiftcard.cc/dashboard) and then copy the "Client ID" and pass it to the `EgiftcardProvider` as the `clientId` prop.
 
 </Callout>
 
 ## Usage
 
-Wrap your app in the `ThirdwebProvider` to access the SDK&rsquo;s functionality from anywhere in your app.
+Wrap your app in the `EgiftcardProvider` to access the SDK&rsquo;s functionality from anywhere in your app.
 
 If you are using one of [default supported chains](#default-chains), provide the name of the chain as a `string` to the `activeChain` prop.
 
 <DefaultChainsMDX />
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 function Example() {
 	return (
-		<ThirdwebProvider activeChain="ethereum" clientId="your-client-id">
+		<EgiftcardProvider activeChain="ethereum" clientId="your-client-id">
 			<App />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

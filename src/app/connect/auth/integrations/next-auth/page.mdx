@@ -3,10 +3,10 @@ import { V4SDKbanner } from "@/components/others/V4SDKBanner";
 
 export const metadata = createMetadata({
 	image: {
-		title: "Integrate thirdweb Auth with Next-Auth",
+		title: "Integrate egiftcard Auth with Next-Auth",
 		icon: "wallets",
 	},
-	title: "Next Auth | thirdweb",
+	title: "Next Auth | egiftcard",
 	description:
 		"how to integrate Auth with NextAuth to let your users login with their wallets",
 });
@@ -17,42 +17,42 @@ export const metadata = createMetadata({
 
 This page will show you how to integrate Auth with [NextAuth](https://next-auth.js.org/) to let your users login with their wallets.
 
-More specifically, we'll show you how to use our `ThirdwebAuthProvider` which is fully compatible with standard [NextAuth providers](https://next-auth.js.org/providers/) to add support for thirdweb Auth to your apps.
+More specifically, we'll show you how to use our `EgiftcardAuthProvider` which is fully compatible with standard [NextAuth providers](https://next-auth.js.org/providers/) to add support for egiftcard Auth to your apps.
 
 If you want to interact with a working version of the Auth + NextAuth integration that we'll be building in this guide, you can checkout the following GitHub repository, or clone it with the command below:
 
 ```
-npx thirdweb create app --template thirdweb-auth-next-auth
+npx egiftcard create app --template egiftcard-auth-next-auth
 ```
 
 <OpenSourceCard
-	title="thirdweb-auth-next-auth"
-	href="https://github.com/thirdweb-example/thirdweb-auth-next-auth"
+	title="egiftcard-auth-next-auth"
+	href="https://github.com/egiftcard-example/egiftcard-auth-next-auth"
 	description="A working example of Auth + Next Auth"
 />
 
 ## Getting Started
 
-To add Auth + NextAuth to your application, you'll need to install the `@thirdweb-dev/auth` and `@thirdweb-dev/react` packages and the `ethers` peer dependency, along with the actual `next-auth` package itself:
+To add Auth + NextAuth to your application, you'll need to install the `@egiftcard/auth` and `@egiftcard/react` packages and the `ethers` peer dependency, along with the actual `next-auth` package itself:
 
 ```bash npm2yarn
-npm install next-auth @thirdweb-dev/auth @thirdweb-dev/react ethers@5
+npm install next-auth @egiftcard/auth @egiftcard/react ethers@5
 ```
 
-Now, we can configure the `ThirdwebAuthProvider` on our [NextAuth API routes](https://next-auth.js.org/getting-started/example#add-api-route) to add support for wallet based login, in addition to all other existing authentication methods. The `ThirdwebAuthProvider` uses NextAuth's [Credentials Provider](https://next-auth.js.org/configuration/providers/credentials) underneath to enable custom wallet based authentication (for those curious to dig deeper, you can take a look at the [`ThirdwebAuthProvider` implementation](https://github.com/thirdweb-dev/js/blob/b5c6eedb38aa3c52eb97f3d25ad83e38c55afe61/packages/auth/src/next-auth/index.ts#L9)).
+Now, we can configure the `EgiftcardAuthProvider` on our [NextAuth API routes](https://next-auth.js.org/getting-started/example#add-api-route) to add support for wallet based login, in addition to all other existing authentication methods. The `EgiftcardAuthProvider` uses NextAuth's [Credentials Provider](https://next-auth.js.org/configuration/providers/credentials) underneath to enable custom wallet based authentication (for those curious to dig deeper, you can take a look at the [`EgiftcardAuthProvider` implementation](https://github.com/egiftcard/js/blob/b5c6eedb38aa3c52eb97f3d25ad83e38c55afe61/packages/auth/src/next-auth/index.ts#L9)).
 
 ```ts title="pages/api/auth/[...nextauth].ts"
 import {
-	ThirdwebAuthProvider,
+	EgiftcardAuthProvider,
 	authSession,
-} from "@thirdweb-dev/auth/next-auth";
+} from "@egiftcard/auth/next-auth";
 import NextAuth from "next-auth";
 
 export const authOptions: NextAuthOptions = {
 	providers: [
-		// Add the thirdweb auth provider to the providers configuration
-		ThirdwebAuthProvider({
-			domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN || "",
+		// Add the egiftcard auth provider to the providers configuration
+		EgiftcardAuthProvider({
+			domain: process.env.NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN || "",
 		}),
 		// other providers...
 	],
@@ -65,10 +65,10 @@ export const authOptions: NextAuthOptions = {
 export default NextAuth(authOptions);
 ```
 
-Here, we configure the `ThirdwebAuthProvider` with a `domain` coming from `NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN` environment variable, which we can set in the `.env.local` file as follows:
+Here, we configure the `EgiftcardAuthProvider` with a `domain` coming from `NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN` environment variable, which we can set in the `.env.local` file as follows:
 
 ```bash title=".env.local"
-NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN=example.com
+NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN=example.com
 ```
 
 The `domain` is used to prevent phishing attacks when your users login with their wallets - you can learn more about this in the [how auth works documentation](/connect/auth/how-it-works/siwe#domain).
@@ -77,10 +77,10 @@ It's important to note that we created the `authOptions` as a separate object wh
 
 Additionally, we pass the `authSession` callback function to the `session` callback of NextAuth. This is used to ensure that we always extract the wallet address of the logged-in user to expose it on the session object for the client and server to access. We'll discuss custom usage of this function more in later sections.
 
-Then, on the frontend, we first need to configure the necessary `SessionProvider` and `ThirdwebProvider` in our `pages/_app.tsx` file to be able to use Auth:
+Then, on the frontend, we first need to configure the necessary `SessionProvider` and `EgiftcardProvider` in our `pages/_app.tsx` file to be able to use Auth:
 
 ```tsx title="pages/_app.tsx"
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 import { SessionProvider } from "next-auth/react";
 
 export default function MyApp({
@@ -89,16 +89,16 @@ export default function MyApp({
 }) {
 	return (
 		<SessionProvider session={session}>
-			<ThirdwebProvider
+			<EgiftcardProvider
 				clientId="your-client-id"
 				authConfig={{
 					// Here we specify the domain, which should match the domain
 					// configured on the backend
-					domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN || "",
+					domain: process.env.NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN || "",
 				}}
 			>
 				<Component {...pageProps} />
-			</ThirdwebProvider>
+			</EgiftcardProvider>
 		</SessionProvider>
 	);
 }
@@ -108,7 +108,7 @@ With this setup, we can now use the `useAuth` hook and NextAuth's `signIn` funct
 
 ```tsx title="pages/index.tsx"
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useAuth, useAddress, useMetaMask } from "@thirdweb-dev/react";
+import { useAuth, useAddress, useMetaMask } from "@egiftcard/react";
 
 export default function Home() {
 	const address = useAddress();
@@ -157,7 +157,7 @@ In order to use this function, we need to pass in the incoming request and respo
 
 It can be used in any server-side context, including in Next.js API routes, as well as server-side functions like `getServerSideProps` and `getStaticProps`.
 
-If the user is logged in with their wallet (via the `ThirdwebAuthProvider`), then the `session.user.address` value will be exposed to read the wallet address of the logged-in user:
+If the user is logged in with their wallet (via the `EgiftcardAuthProvider`), then the `session.user.address` value will be exposed to read the wallet address of the logged-in user:
 
 ```ts title="pages/api/secret.ts"
 import { getServerSession } from "next-auth";
@@ -186,13 +186,13 @@ export default async (req, res) => {
 
 By default, the Auth API will validate the login request by checking that the user requesting to login successfully signed a valid [sign-in with wallet](/connect/auth/how-it-works/siwe) message. However, this doesn't perform specific checks on the exact contents of the payload, aside from the domain used for anti-phishing.
 
-If you want to add specific checks to enforce the exact data on the login payload signed by users, you can use the `authOptions` configuration on the `ThirdwebAuthProvider`:
+If you want to add specific checks to enforce the exact data on the login payload signed by users, you can use the `authOptions` configuration on the `EgiftcardAuthProvider`:
 
-```ts title="pages/api/auth/[...thirdweb].ts"
+```ts title="pages/api/auth/[...egiftcard].ts"
 export default NextAuth({
   providers: [
-    ThirdwebAuthProvider({
-      domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN || "",
+    EgiftcardAuthProvider({
+      domain: process.env.NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN || "",
       // Enforce that the user's login message has these exact values
       authOptions: {
         statement: "I agree to the terms of service",
@@ -215,11 +215,11 @@ Since the sign-in with wallet payload is used to login to your server, it's impo
 
 Luckily, all sign-in with wallet payloads include a `nonce` field which is a random string generated when the request was created. If you are using a database, or have somewhere to store nonces, you can ensure that each nonce is only used once:
 
-```ts title="pages/api/auth/[...thirdweb].ts"
+```ts title="pages/api/auth/[...egiftcard].ts"
 export default NextAuth({
   providers: [
-    ThirdwebAuthProvider({
-      domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN || "",
+    EgiftcardAuthProvider({
+      domain: process.env.NEXT_PUBLIC_EGIFTCARD_AUTH_DOMAIN || "",
       // Enforce that the user's login message has these exact values
       authOptions: {
         validateNonce: async (nonce: string) => {

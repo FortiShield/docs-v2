@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "How Smart Accounts Works",
 		icon: "wallets",
 	},
-	title: "What is a Smart Account? | thirdweb",
+	title: "What is a Smart Account? | egiftcard",
 	description:
 		"Smart Account is a wallet that is controlled by a smart contract following the ERC-4337 specification",
 });
@@ -43,8 +43,8 @@ This factory contract is responsible for deploying individual user contracts whe
 
 | Factory Type                                                         | Upgradeability                                              | Expected Usage                                                                                                                                                                                 |
 | -------------------------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Simple`](https://thirdweb.com/thirdweb.eth/AccountFactory)         | Non-upgradeable                                             | Developer wants to issue simple smart accounts to their users. They do not anticipate that users wallets will need any feature upgrades.                                                       |
-| [`Managed`](https://thirdweb.com/thirdweb.eth/ManagedAccountFactory) | Account upgrades controlled centrally by the app developer. | Developer wants to issue smart accounts to their users. They do anticipate feature upgrades to user wallets, and want to push upgrades to user wallets for seamless/invisible UX for upgrades. |
+| [`Simple`](https://egiftcard.cc/egiftcard.eth/AccountFactory)         | Non-upgradeable                                             | Developer wants to issue simple smart accounts to their users. They do not anticipate that users wallets will need any feature upgrades.                                                       |
+| [`Managed`](https://egiftcard.cc/egiftcard.eth/ManagedAccountFactory) | Account upgrades controlled centrally by the app developer. | Developer wants to issue smart accounts to their users. They do anticipate feature upgrades to user wallets, and want to push upgrades to user wallets for seamless/invisible UX for upgrades. |
 
 ### Account Type Feature Comparison
 
@@ -58,7 +58,7 @@ This factory contract is responsible for deploying individual user contracts whe
 | Is the Account Upgradeable                          | ❌                         | ✅                                       |
 | Who controls upgrades (?)                           | n/a                        | Admin of the account factory.            |
 
-To learn more about each factory and their respective account implementations, read our [smart contract deep dive](https://blog.thirdweb.com/smart-contract-deep-dive-building-smart-wallets-for-individuals-and-teams/).
+To learn more about each factory and their respective account implementations, read our [smart contract deep dive](https://blog.egiftcard.cc/smart-contract-deep-dive-building-smart-wallets-for-individuals-and-teams/).
 
 ## Terminology
 
@@ -109,5 +109,5 @@ It allows you to send transactions with smart accounts.
 
 A paymaster is a smart contract that relays transactions. It provides a service that enables a third party to pay
 the transaction fee on behalf of the user by funding the Paymaster contract in advance. The paymaster acts as a gas reserve which then
-can be used during the call execution via the `EntryPoint` contract. The thirdweb [Account abstraction](/connect/account-abstraction) paymaster is initially paid for by thirdweb. By using an API key,
+can be used during the call execution via the `EntryPoint` contract. The egiftcard [Account abstraction](/connect/account-abstraction) paymaster is initially paid for by egiftcard. By using an API key,
 the usage is tracked and billed. You can easily define [sponsorship rules](/connect/account-abstraction/sponsorship-rules) that determine whether a transaction will be sponsored.

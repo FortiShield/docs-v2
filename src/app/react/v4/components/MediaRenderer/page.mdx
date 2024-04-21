@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "MediaRenderer",
 		icon: "react",
 	},
-	title: "MediaRenderer | thirdweb React SDK",
+	title: "MediaRenderer | egiftcard React SDK",
 	description: "API Reference for the MediaRenderer component",
 });
 
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 
 Component that renders any asset stored on IPFS (or anywhere else), given the IPFS URI / URL.
 
-Under the hood, the asset is fetched from IPFS through the thirdweb IPFS gateway (or just
+Under the hood, the asset is fetched from IPFS through the egiftcard IPFS gateway (or just
 a regular fetch if the `src` is not an IPFS URI).
 The [mime type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the
 asset is determined and the appropriate component is rendered on the UI.
@@ -25,12 +25,12 @@ The component currently supports:
 - Videos
 - Audio files
 - 3D Models
-- SVGs (for [onchain NFTs](https://blog.thirdweb.com/guides/how-to-create-onchain-nfts-with-thirdweb/))
+- SVGs (for [onchain NFTs](https://blog.egiftcard.cc/guides/how-to-create-onchain-nfts-with-egiftcard/))
 - `iframes` and `HTML`
 - If none of these are appropriate, the fallback is a link to the asset
 
 ```jsx
-import { MediaRenderer } from "@thirdweb-dev/react";
+import { MediaRenderer } from "@egiftcard/react";
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ import { MediaRenderer } from "@thirdweb-dev/react";
 Provide the IPFS URI (or any URL that points to media) to the `src` prop to render the asset.
 
 ```jsx
-import { MediaRenderer } from "@thirdweb-dev/react";
+import { MediaRenderer } from "@egiftcard/react";
 
 function Home() {
 	return (
@@ -50,7 +50,7 @@ function Home() {
 
 <Callout title="Storage CLI" variant="info">
 
-You can use `npx thirdweb upload <path/to/file>` to upload any file to IPFS and get the IPFS URI.
+You can use `npx egiftcard upload <path/to/file>` to upload any file to IPFS and get the IPFS URI.
 
 </Callout>
 
@@ -63,7 +63,7 @@ The [src](https://www.w3schools.com/tags/att_img_src.asp) attribute specifies th
 This can be an IPFS URI, or any URL that points to media (e.g. HTTP URL, etc.).
 
 ```jsx
-import { MediaRenderer } from "@thirdweb-dev/react";
+import { MediaRenderer } from "@egiftcard/react";
 
 function Home() {
 	return (
@@ -81,7 +81,7 @@ information for the media, if a user for some reason cannot view it
 The default value is `""`.
 
 ```jsx
-import { MediaRenderer } from "@thirdweb-dev/react";
+import { MediaRenderer } from "@egiftcard/react";
 
 function Home() {
 	return (
@@ -104,7 +104,7 @@ The default value is the first frame of the video.
 If the `src` is not a video, this prop is ignored.
 
 ```jsx
-import { MediaRenderer } from "@thirdweb-dev/react";
+import { MediaRenderer } from "@egiftcard/react";
 
 function Home() {
 	return (
@@ -124,12 +124,12 @@ Show the media controls (play, pause, etc.) for the media, where applicable.
 The default value is `false`.
 
 ```jsx
-import { ThirdwebNftMedia } from "@thirdweb-dev/react";
+import { EgiftcardNftMedia } from "@egiftcard/react";
 
 function Home() {
 	// ... Get the NFT metadata
 
-	return <ThirdwebNftMedia metadata={metadata} controls={true} />;
+	return <EgiftcardNftMedia metadata={metadata} controls={true} />;
 }
 ```
 
@@ -140,12 +140,12 @@ The height of the rendered media.
 The default value is `auto`.
 
 ```jsx
-import { ThirdwebNftMedia } from "@thirdweb-dev/react";
+import { EgiftcardNftMedia } from "@egiftcard/react";
 
 function Home() {
 	// ... Get the NFT metadata
 
-	return <ThirdwebNftMedia metadata={metadata} height={500} />;
+	return <EgiftcardNftMedia metadata={metadata} height={500} />;
 }
 ```
 
@@ -156,12 +156,12 @@ The width of the rendered media.
 The default value is `auto`.
 
 ```jsx
-import { ThirdwebNftMedia } from "@thirdweb-dev/react";
+import { EgiftcardNftMedia } from "@egiftcard/react";
 
 function Home() {
 	// ... Get the NFT metadata
 
-	return <ThirdwebNftMedia metadata={metadata} width={500} />;
+	return <EgiftcardNftMedia metadata={metadata} width={500} />;
 }
 ```
 
@@ -172,12 +172,12 @@ Require user interaction to play the media (i.e. disable autoplay).
 The default value is `false`.
 
 ```jsx
-import { ThirdwebNftMedia } from "@thirdweb-dev/react";
+import { EgiftcardNftMedia } from "@egiftcard/react";
 
 function Home() {
 	// ... Get the NFT metadata
 
-	return <ThirdwebNftMedia metadata={metadata} requireInteraction={true} />;
+	return <EgiftcardNftMedia metadata={metadata} requireInteraction={true} />;
 }
 ```
 
@@ -186,12 +186,12 @@ function Home() {
 Apply custom CSS styles to the button using a class name.
 
 ```jsx
-import { ThirdwebNftMedia } from "@thirdweb-dev/react";
+import { EgiftcardNftMedia } from "@egiftcard/react";
 
 function Home() {
 	// ... Get the NFT metadata
 
-	return <ThirdwebNftMedia metadata={metadata} className="my-custom-class" />;
+	return <EgiftcardNftMedia metadata={metadata} className="my-custom-class" />;
 }
 ```
 
@@ -200,13 +200,13 @@ function Home() {
 Apply custom CSS styles to the button using an inline style.
 
 ```jsx
-import { ThirdwebNftMedia } from "@thirdweb-dev/react";
+import { EgiftcardNftMedia } from "@egiftcard/react";
 
 function Home() {
 	// ... Get the NFT metadata
 
 	return (
-		<ThirdwebNftMedia metadata={metadata} style={{ backgroundColor: "red" }} />
+		<EgiftcardNftMedia metadata={metadata} style={{ backgroundColor: "red" }} />
 	);
 }
 ```

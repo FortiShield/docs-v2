@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "ERC1155Revealable contract",
 		icon: "solidity",
 	},
-	title: "ERC1155Revealable | thirdweb contract",
+	title: "ERC1155Revealable | egiftcard contract",
 	description:
 		"Create batches of 'delayed-reveal' NFTs that can be revealed at a later date after they have been minted and claimed",
 });
@@ -14,8 +14,8 @@ export const metadata = createMetadata({
 # ERC1155Revealable
 
 ```solidity
-import "@thirdweb-dev/contracts/eip/ERC1155.sol";
-import "@thirdweb-dev/contracts/extension/DelayedReveal.sol";
+import "@egiftcard/contracts/eip/ERC1155.sol";
+import "@egiftcard/contracts/extension/DelayedReveal.sol";
 ```
 
 Create batches of ['delayed-reveal'](/glossary/delayed-reveal) NFTs that can be revealed at a later date after they have been minted and claimed.
@@ -23,7 +23,7 @@ Create batches of ['delayed-reveal'](/glossary/delayed-reveal) NFTs that can be 
 This is an extension which is detectable in the dashboard if the smart contract implements the
 [`ERC1155`](/contracts/build/extensions/erc-1155/ERC1155) and [`DelayedReveal`](/contracts/build/extensions/general/DelayedReveal) extensions.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/DelayedReveal.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/DelayedReveal.sol" />
 
 ## Usage
 
@@ -33,9 +33,9 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/ERC1155.sol";
-import "@thirdweb-dev/contracts/extension/LazyMint.sol";
-import "@thirdweb-dev/contracts/extension/DelayedReveal.sol";
+import "@egiftcard/contracts/eip/ERC1155.sol";
+import "@egiftcard/contracts/extension/LazyMint.sol";
+import "@egiftcard/contracts/extension/DelayedReveal.sol";
 
 contract Contract is ERC1155, LazyMint, DelayedReveal {
     constructor(

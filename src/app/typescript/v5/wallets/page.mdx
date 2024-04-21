@@ -6,13 +6,13 @@ export const metadata = createMetadata({
 		title: "Accounts & Wallets",
 		icon: "typescript",
 	},
-	title: "Accounts & Wallets | thirdweb SDK",
-	description: "Learn about accounts and wallets in the thirdweb SDK.",
+	title: "Accounts & Wallets | egiftcard SDK",
+	description: "Learn about accounts and wallets in the egiftcard SDK.",
 });
 
 # Accounts & Wallets
 
-We have decided to distinguish between "accounts" and "wallets" in the thirdweb SDK. We believe this ultimately provides a more predictable and flexible API for developers.
+We have decided to distinguish between "accounts" and "wallets" in the egiftcard SDK. We believe this ultimately provides a more predictable and flexible API for developers.
 
 ## What is an Account?
 
@@ -31,9 +31,9 @@ See also: [Account (ethereum.org)](https://ethereum.org/en/glossary/#account)
 ## Example: Connect a wallet and access an account to send a transaction.
 
 ```ts
-import { sendTransaction } from "thirdweb";
+import { sendTransaction } from "egiftcard";
 // We use MetaMask wallet as an example, the pattern is the same for all wallets
-import { createWallet } from "thirdweb/wallets";
+import { createWallet } from "egiftcard/wallets";
 
 // initialize the wallet, you can pick any of the 300+ wallet connectors supported
 // wallet ids are typed, let your TS editor autocomplete them for you
@@ -42,7 +42,7 @@ const wallet = createWallet("io.metamask");
 
 // connect the wallet, this returns a promise that resolves to the connected account
 const account = await wallet.connect({
-	// pass the client you created with `createThirdwebClient()`
+	// pass the client you created with `createEgiftcardClient()`
 	client,
 });
 

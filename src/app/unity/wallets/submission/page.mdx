@@ -1,13 +1,13 @@
 import { OpenSourceCard, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Submit Your Wallet | thirdweb Unity SDK",
-	description: "Learn how to add your own wallet to the thirdweb Unity SDK",
+	title: "Submit Your Wallet | egiftcard Unity SDK",
+	description: "Learn how to add your own wallet to the egiftcard Unity SDK",
 });
 
 # Submit Your Wallet
 
-The Thirdweb Unity SDK comes with many built-in wallets, but you can add your own wallet to the SDK by following these steps.
+The Egiftcard Unity SDK comes with many built-in wallets, but you can add your own wallet to the SDK by following these steps.
 
 ## Step 1 - WalletProvider
 
@@ -21,9 +21,9 @@ public enum WalletProvider
 }
 ```
 
-## Step 2 - Implement IThirdwebWallet
+## Step 2 - Implement IEgiftcardWallet
 
-Implement the IThirdwebWallet interface for your wallet. This interface defines the methods and properties required for wallet integration.
+Implement the IEgiftcardWallet interface for your wallet. This interface defines the methods and properties required for wallet integration.
 
 ```csharp
 using System.Numerics;
@@ -31,12 +31,12 @@ using System.Threading.Tasks;
 using Nethereum.Web3;
 using Nethereum.Web3.Accounts;
 
-namespace Thirdweb.Wallets
+namespace Egiftcard.Wallets
 {
     /// <summary>
-    /// Interface for interacting with a Thirdweb wallet.
+    /// Interface for interacting with a Egiftcard wallet.
     /// </summary>
-    public interface IThirdwebWallet
+    public interface IEgiftcardWallet
     {
         /// <summary>
         /// Main Connect call - should fully connect to the wallet and return the address.
@@ -128,9 +128,9 @@ namespace Thirdweb.Wallets
 }
 ```
 
-## Step 3 - Instantiate Your Wallet in ThirdwebSession.Connect
+## Step 3 - Instantiate Your Wallet in EgiftcardSession.Connect
 
-In the ThirdwebSession.cs file, instantiate your wallet in the Connect method.
+In the EgiftcardSession.cs file, instantiate your wallet in the Connect method.
 
 ```csharp
 switch (walletConnection.provider)
@@ -178,7 +178,7 @@ using Nethereum.RPC.AccountSigning;
 using Nethereum.RPC.NonceServices;
 using Nethereum.RPC.TransactionManagers;
 
-namespace Thirdweb.AccountAbstraction
+namespace Egiftcard.AccountAbstraction
 {
     public class SmartWalletAccount : IAccount
     {
@@ -220,7 +220,7 @@ using System.Threading.Tasks;
 using Nethereum.JsonRpc.Client;
 using Nethereum.JsonRpc.Client.RpcMessages;
 
-namespace Thirdweb.AccountAbstraction
+namespace Egiftcard.AccountAbstraction
 {
     public class SmartWalletClient : ClientBase
     {
@@ -258,7 +258,7 @@ namespace Thirdweb.AccountAbstraction
 Extending `TransactionManagerBase` (not used in practice)
 
 ```csharp
-namespace Thirdweb.AccountAbstraction
+namespace Egiftcard.AccountAbstraction
 {
     public class SmartWalletTransactionManager : Nethereum.RPC.TransactionManagers.TransactionManager
     {
@@ -276,7 +276,7 @@ Finally, an extension to create a `Web3` provider
 ```csharp
 using Nethereum.Web3;
 
-namespace Thirdweb.AccountAbstraction
+namespace Egiftcard.AccountAbstraction
 {
     public static class SmartWalletNEthereumExtensions
     {
@@ -292,10 +292,10 @@ namespace Thirdweb.AccountAbstraction
 
 ## Submitting Your Wallet
 
-If you think your wallet implementation would be useful to others, please consider sharing it by opening a PR to the `thirdweb-dev/unity-sdk` repository.
+If you think your wallet implementation would be useful to others, please consider sharing it by opening a PR to the `egiftcard/unity-sdk` repository.
 
 <OpenSourceCard
 	title="Unity SDK"
-	href="https://github.com/thirdweb-dev/unity-sdk"
+	href="https://github.com/egiftcard/unity-sdk"
 	isLibrary={false}
 />

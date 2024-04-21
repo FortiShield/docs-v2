@@ -23,7 +23,7 @@ import { useState } from "react";
 import { DocSearch } from "@/components/others/DocSearch";
 import { ContextAIBotButton } from "@/components/others/ContextAIButton";
 import { ThemeSwitcher } from "../components/others/theme/ThemeSwitcher";
-import { ThirdwebIcon } from "../icons/thirdweb";
+import { EgiftcardIcon } from "../icons/egiftcard";
 import { FaGithub } from "react-icons/fa";
 
 const links = [
@@ -86,11 +86,11 @@ const sdkLinks = [
 const supportLinks = [
 	{
 		name: "Support Site",
-		href: "https://thirdweb.com/support",
+		href: "https://egiftcard.cc/support",
 	},
 	{
 		name: "Contact Sales",
-		href: "https://thirdweb.com/contact-us",
+		href: "https://egiftcard.cc/contact-us",
 	},
 ];
 
@@ -107,10 +107,10 @@ export function Header() {
 				<Link
 					className="flex items-center gap-2"
 					href="/"
-					aria-label="thirdweb Docs"
-					title="thirdweb Docs"
+					aria-label="egiftcard Docs"
+					title="egiftcard Docs"
 				>
-					<ThirdwebIcon className="size-8" />
+					<EgiftcardIcon className="size-8" />
 					<span className="text-[23px] font-bold leading-none tracking-tight text-f-100">
 						Docs
 					</span>
@@ -122,7 +122,7 @@ export function Header() {
 					<DocSearch variant="icon" />
 
 					<Link
-						href="https://github.com/thirdweb-dev"
+						href="https://github.com/egiftcard"
 						target="_blank"
 						className="text-f-100"
 					>
@@ -204,7 +204,7 @@ export function Header() {
 						/>
 
 						<Link
-							href="https://github.com/thirdweb-dev"
+							href="https://github.com/egiftcard"
 							target="_blank"
 							className="hidden text-f-300 transition-colors hover:text-f-100 xl:block"
 						>

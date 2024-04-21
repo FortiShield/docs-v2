@@ -34,7 +34,7 @@ This article covers the steps of integrating Firebase Auth for a React Native ap
 Create a react native app with the tool of your choice and install the required packages:
 
 ```shell
-npm i thirdweb
+npm i egiftcard
 ```
 
 2. Note that we assume this is a simple app with a single screen `App.tsx`.
@@ -53,7 +53,7 @@ npm i thirdweb
 
 <Step title="Set up the custom JSON Web Keys link through dashboard">
 
-1. Navigate to Wallets > [In-App Wallets](https://thirdweb.com/dashboard/wallets/embedded)
+1. Navigate to Wallets > [In-App Wallets](https://egiftcard.cc/dashboard/wallets/embedded)
 2. To use in-app wallets, choose an existing API key or create a new one. Learn more about API keys.
 
    <DocImage src={ewCreateKey} />
@@ -141,8 +141,8 @@ async function getFirebaseJWT() {
 Pass the JWT to the In-App Wallet config in your `App.tsx` file:
 
 ```jsx
-import { inAppWallet } from "thirdweb/wallets";
-import { useConnect } from "thirdweb/react";
+import { inAppWallet } from "egiftcard/wallets";
+import { useConnect } from "egiftcard/react";
 
 const { connect } = useConnect();
 
@@ -164,7 +164,7 @@ You can set your `encryptionKey` in either a secret env variable or ask the user
 
 ** Do not hardcode the `encryptionKey` in your code. **
 
-After the connectInApp function returns, the ThirdwebProvider will have connected a wallet thereby granting access to all hooks and functionalities.
+After the connectInApp function returns, the EgiftcardProvider will have connected a wallet thereby granting access to all hooks and functionalities.
 
 </Step>
 
@@ -172,7 +172,7 @@ After the connectInApp function returns, the ThirdwebProvider will have connecte
 To access the connected account, use the `useActiveAccount()` hook:
 
 ```jsx
-import { useActiveAccount } from "thirdweb/react";
+import { useActiveAccount } from "egiftcard/react";
 
 const activeWallet = useActiveAccount();
 ```

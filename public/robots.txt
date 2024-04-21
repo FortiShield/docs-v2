@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://portal.thirdweb.com
+Host: https://portal.egiftcard.cc
 
 # Sitemaps
-Sitemap: https://portal.thirdweb.com/sitemap.xml
+Sitemap: https://portal.egiftcard.cc/sitemap.xml

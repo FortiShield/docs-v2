@@ -1,26 +1,26 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ThirdwebContract.Create | Thirdweb .NET SDK",
+	title: "EgiftcardContract.Create | Egiftcard .NET SDK",
 	description:
-		"Instantiate a ThirdwebContract to interact with smart contracts.",
+		"Instantiate a EgiftcardContract to interact with smart contracts.",
 });
 
-# ThirdwebContract.Create
+# EgiftcardContract.Create
 
-Create an instance of `ThirdwebContract` to start interacting with a deployed smart contract. You can read data from and write data to the blockchain using this contract instance. If the ABI is not provided, it will attempt to fetch it automatically if available.
+Create an instance of `EgiftcardContract` to start interacting with a deployed smart contract. You can read data from and write data to the blockchain using this contract instance. If the ABI is not provided, it will attempt to fetch it automatically if available.
 
 ## Usage
 
 ```csharp
-var contract = await ThirdwebContract.Create(client, "contractAddress", chainId, "optionalAbi");
+var contract = await EgiftcardContract.Create(client, "contractAddress", chainId, "optionalAbi");
 ```
 
 <Details summary="Parameters">
 
 ### client (required)
 
-An instance of `ThirdwebClient`.
+An instance of `EgiftcardClient`.
 
 ### address (required)
 
@@ -38,8 +38,8 @@ The ABI of the contract. If not provided, it will attempt to fetch the ABI autom
 
 <Details summary="Return Value">
 
-### ThirdwebContract
+### EgiftcardContract
 
-Returns an instance of `ThirdwebContract` configured with the provided parameters, ready to interact with the blockchain.
+Returns an instance of `EgiftcardContract` configured with the provided parameters, ready to interact with the blockchain.
 
 </Details>

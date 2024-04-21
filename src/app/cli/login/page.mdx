@@ -10,11 +10,11 @@ import removeImage from "./revoke-access-cli-auth.png";
 	command prompt.
 </Callout>
 
-Authenticate your device and link it to your thirdweb account with the thirdweb CLI.
-By logging in, you can access the thirdweb infrastructure and services which the CLI commands use under the hood such as storage.
+Authenticate your device and link it to your egiftcard account with the egiftcard CLI.
+By logging in, you can access the egiftcard infrastructure and services which the CLI commands use under the hood such as storage.
 
 ```bash
-npx thirdweb login [options]
+npx egiftcard login [options]
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ Once you've logged in, your devices will be authorized for future use.
 To create a new device to link to your account, use the `--new` flag.
 
 ```bash
-npx thirdweb login --new
+npx egiftcard login --new
 ```
 
 ## Options
@@ -45,7 +45,7 @@ npx thirdweb login --new
 
 ## Login with the dashboard
 
-1. Run the `login` command, this will open the dashboard to allow you to link your device to your thirdweb account.
+1. Run the `login` command, this will open the dashboard to allow you to link your device to your egiftcard account.
 2. Choose a Device name to identify the device from the devices linked to your account.
 3. Click the `Authorize device` button.
 4. Sign the message with your wallet (this step is gasless) to authorize the device.
@@ -68,7 +68,7 @@ If you want to login with an API secret key, e.g. you are using continuous integ
 For example, if you are running the `generate` command with CI:
 
 ```bash
-npx thirdweb generate --key <secret-key>
+npx egiftcard generate --key <secret-key>
 ```
 
 ## Revoking Access

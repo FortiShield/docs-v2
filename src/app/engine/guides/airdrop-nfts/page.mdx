@@ -7,7 +7,7 @@ import DemoImage4 from "../../assets/airdrop-nfts-4.png";
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Airdrop NFTs | thirdweb Engine",
+	title: "Airdrop NFTs | egiftcard Engine",
 	description:
 		"Engine makes it effortless for any developer to airdrop NFTs at scale. You sponsor the gas so your users only need a wallet address!",
 });
@@ -27,7 +27,7 @@ Engine makes it effortless for any developer to airdrop NFTs at scale. You spons
 - An Engine instance
 - A [backend wallet](/engine/features/backend-wallets) with currency to pay for gas
 - A deployed NFT contract that can be claimed by the backend wallet
-- A client ID and secret key from the [API Keys page](https://thirdweb.com/dashboard/settings/api-keys)
+- A client ID and secret key from the [API Keys page](https://egiftcard.cc/dashboard/settings/api-keys)
 
 ## Frontend: Add Connect Wallet and Claim buttons
 
@@ -56,14 +56,14 @@ function ClaimPage() {
 
 function Example() {
 	return (
-		<ThirdwebProvider activeChain="<chain_id>" clientId="<thirdweb_client_id>">
+		<EgiftcardProvider activeChain="<chain_id>" clientId="<egiftcard_client_id>">
 			<ClaimPage />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```
 
-_Replace `<thirdweb_client_id>`_.
+_Replace `<egiftcard_client_id>`_.
 
 ## Backend: Call Engine to mint an NFT
 
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				Authorization: "Bearer <thirdweb_secret_key>",
+				Authorization: "Bearer <egiftcard_secret_key>",
 				"x-backend-wallet-address": "<backend_wallet_address>",
 			},
 			body: JSON.stringify({
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
 				metadataWithSupply: {
 					metadata: {
 						name: "Acme Inc. Superfan",
-						description: "Created with thirdweb Engine",
+						description: "Created with egiftcard Engine",
 						image:
 							"ipfs://QmciR3WLJsf2BgzTSjbG5zCxsrEQ8PqsHK7JWGWsDSNo46/nft.png",
 					},
@@ -127,4 +127,4 @@ They'll receive the NFT in their wallet shortly!
 
 ## Full code example
 
-The code above is simplified for readability. [View the full source code &rarr;](https://github.com/thirdweb-example/engine-minting-api)
+The code above is simplified for readability. [View the full source code &rarr;](https://github.com/egiftcard-example/engine-minting-api)

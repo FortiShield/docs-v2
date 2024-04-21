@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC721Permit contract",
 		icon: "solidity",
 	},
-	title: "ERC721Permit | thirdweb contract",
+	title: "ERC721Permit | egiftcard contract",
 	description:
 		"Implementing the ERC20Permit extensions allows approvals to be made via signatures, as defined in EIP-2612",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC721Permit
 
 ```solidity
-import "@thirdweb-dev/contracts/eip/interface/IERC20Permit.sol";
+import "@egiftcard/contracts/eip/interface/IERC20Permit.sol";
 ```
 
 Implementing the `ERC20Permit` extensions allows approvals to be made via signatures, as defined in
@@ -33,7 +33,7 @@ This extension is an interface and requires all of the functions to be implement
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/eip/interface/IERC20Permit.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/eip/interface/IERC20Permit.sol" />
 
 ## Usage
 
@@ -50,8 +50,8 @@ You can optionally override the functionality of this function as outlined below
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
-import "@thirdweb-dev/contracts/eip/interface/IERC20Permit.sol";
+import "@egiftcard/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
+import "@egiftcard/contracts/eip/interface/IERC20Permit.sol";
 
 contract Contract is ERC20, IERC20Permit {
     constructor(

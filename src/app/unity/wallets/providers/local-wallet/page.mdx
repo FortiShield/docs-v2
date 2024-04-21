@@ -1,8 +1,8 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Local wallet | thirdweb Unity SDK",
-	description: "Connect to Local wallet with thirdweb Unity SDK",
+	title: "Local wallet | egiftcard Unity SDK",
+	description: "Connect to Local wallet with egiftcard Unity SDK",
 });
 
 # Local Wallet
@@ -14,12 +14,12 @@ It is meant to be used as a guest wallet, and is not recommended for long-term s
 ## Usage
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
 public async void ConnectWallet()
 {
-    // Reference to your Thirdweb SDK
-    var sdk = ThirdwebManager.Instance.SDK;
+    // Reference to your Egiftcard SDK
+    var sdk = EgiftcardManager.Instance.SDK;
 
     // Configure the connection
     var connection = new WalletConnection(

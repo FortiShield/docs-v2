@@ -22,12 +22,12 @@ function getReactSideBar(): SidebarLink {
 				href: `${sdkSlug}/getting-started`,
 			},
 			{
-				name: "ThirdwebProvider",
-				href: `${sdkSlug}/ThirdwebProvider`,
+				name: "EgiftcardProvider",
+				href: `${sdkSlug}/EgiftcardProvider`,
 			},
 			{
-				name: "ThirdwebSDKProvider",
-				href: `${sdkSlug}/ThirdwebSDKProvider`,
+				name: "EgiftcardSDKProvider",
+				href: `${sdkSlug}/EgiftcardSDKProvider`,
 			},
 			{
 				name: "Connecting Wallets",
@@ -59,8 +59,8 @@ function getReactSideBar(): SidebarLink {
 						href: `${componentsSlug}/Web3Button`,
 					},
 					{
-						name: "ThirdwebNftMedia",
-						href: `${componentsSlug}/ThirdwebNftMedia`,
+						name: "EgiftcardNftMedia",
+						href: `${componentsSlug}/EgiftcardNftMedia`,
 					},
 					{
 						name: "MediaRenderer",
@@ -103,12 +103,12 @@ function getReactNativeSidebar(): SidebarLink {
 				href: `${sdkSlug}/getting-started`,
 			},
 			{
-				name: "ThirdwebProvider",
-				href: `${sdkSlug}/ThirdwebProvider`,
+				name: "EgiftcardProvider",
+				href: `${sdkSlug}/EgiftcardProvider`,
 			},
 			{
-				name: "ThirdwebSDKProvider",
-				href: `${sdkSlug}/ThirdwebSDKProvider`,
+				name: "EgiftcardSDKProvider",
+				href: `${sdkSlug}/EgiftcardSDKProvider`,
 			},
 			{
 				name: "Connecting Wallets",

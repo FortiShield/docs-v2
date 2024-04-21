@@ -1,35 +1,35 @@
 import { Details, Callout, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ThirdwebTransaction.Create | Thirdweb .NET SDK",
+	title: "EgiftcardTransaction.Create | Egiftcard .NET SDK",
 	description:
-		"Instantiate a low level ThirdwebTransaction object to manipulate, simulate and execute transactions using specific wallet credentials and transaction inputs.",
+		"Instantiate a low level EgiftcardTransaction object to manipulate, simulate and execute transactions using specific wallet credentials and transaction inputs.",
 });
 
-# ThirdwebTransaction.Create
+# EgiftcardTransaction.Create
 
 <Callout variant="warning" title="Advanced Use Case">
 	If you are interacting with a contract, it is best to use
-	[ThirdwebContract.Prepare](/dotnet/contracts/prepare) to create a transaction.
+	[EgiftcardContract.Prepare](/dotnet/contracts/prepare) to create a transaction.
 </Callout>
 
-The `ThirdwebTransaction.Create` method allows advanced users to manually create transactions using specific wallet credentials and transaction inputs. This method is ideal for users who need precise control over the transaction details.
+The `EgiftcardTransaction.Create` method allows advanced users to manually create transactions using specific wallet credentials and transaction inputs. This method is ideal for users who need precise control over the transaction details.
 
 ## Usage
 
 ```csharp
-ThirdwebTransaction transaction = await ThirdwebTransaction.Create(client, wallet, txInput, chainId);
+EgiftcardTransaction transaction = await EgiftcardTransaction.Create(client, wallet, txInput, chainId);
 ```
 
 <Details summary="Parameters">
 
 ### client (required)
 
-An instance of `ThirdwebClient`. This is the client through which all blockchain interactions are managed.
+An instance of `EgiftcardClient`. This is the client through which all blockchain interactions are managed.
 
 ### wallet (required)
 
-An instance of `IThirdwebWallet`. This represents the wallet that will be used to perform the transaction. The wallet's address must match the from address specified in txInput, if provided.
+An instance of `IEgiftcardWallet`. This represents the wallet that will be used to perform the transaction. The wallet's address must match the from address specified in txInput, if provided.
 
 ### txInput (required)
 
@@ -45,8 +45,8 @@ The blockchain network's chain ID as a `BigInteger`. This ID specifies which net
 
 <Details summary="Return Value">
 
-### ThirdwebTransaction
+### EgiftcardTransaction
 
-Returns an instance of `ThirdwebTransaction` configured with the provided parameters, ready to interact with the blockchain.
+Returns an instance of `EgiftcardTransaction` configured with the provided parameters, ready to interact with the blockchain.
 
 </Details>

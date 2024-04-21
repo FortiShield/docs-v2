@@ -6,7 +6,7 @@ export const metadata = createMetadata({
 		title: "ERC721Staking contract",
 		icon: "solidity",
 	},
-	title: "ERC721Staking | thirdweb contract",
+	title: "ERC721Staking | egiftcard contract",
 	description:
 		"The Staking721 smart contract extension implements NFT staking mechanism. With this extension you can setup a staking contract for NFT holders of your ERC721 Collection",
 });
@@ -14,12 +14,12 @@ export const metadata = createMetadata({
 # ERC721Staking
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/Staking721.sol";
+import "@egiftcard/contracts/extension/Staking721.sol";
 ```
 
 The `Staking721` smart contract extension implements NFT staking mechanism. With this extension you can setup a staking contract for NFT holders of your ERC721 Collection. Users can stake their NFTs and earn ERC20 tokens as rewards.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/Staking721.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/Staking721.sol" />
 
 ## Usage
 
@@ -29,8 +29,8 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/Staking721.sol";
-import "@thirdweb-dev/contracts/eip/interface/IERC20.sol";
+import "@egiftcard/contracts/extension/Staking721.sol";
+import "@egiftcard/contracts/eip/interface/IERC20.sol";
 
 contract MyContract is Staking721 {
     // ERC20 Reward Token address. See {_mintRewards}.

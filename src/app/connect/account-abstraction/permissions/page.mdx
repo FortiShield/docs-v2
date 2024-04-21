@@ -5,16 +5,16 @@ import { V4SDKbanner } from "@/components/others/V4SDKBanner";
 export const metadata = createMetadata({
 	image: {
 		title: "Account Permissions & Session Keys",
-		icon: "thirdweb",
+		icon: "egiftcard",
 	},
-	title: "Account Permissions & Session Keys | thirdweb",
+	title: "Account Permissions & Session Keys | egiftcard",
 	description:
 		"All of the account contracts - Simple and Managed - share the same permission model. In this section, we'll describe this permission model in detail",
 });
 
 # Account Permissions & Session Keys
 
-All of the account contracts - [Simple](https://thirdweb.com/thirdweb.eth/AccountFactory) and [Managed](https://thirdweb.com/thirdweb.eth/ManagedAccountFactory) - share the same permission model. In this section, we'll describe this permission model in detail.
+All of the account contracts - [Simple](https://egiftcard.cc/egiftcard.eth/AccountFactory) and [Managed](https://egiftcard.cc/egiftcard.eth/ManagedAccountFactory) - share the same permission model. In this section, we'll describe this permission model in detail.
 
 An account recognizes only two types of actors: _Session Keys_ and _Admins_.
 
@@ -36,9 +36,9 @@ Existing admins on the account can add new admins, remove existing admins or ren
 <TabsContent value="react">
 
 ```tsx
-import { addAdmin } from "thirdweb/extensions/erc4337";
-import { useSendTransaction, useActiveAccount } from "thirdweb/react";
-import { getContract } from "thirdweb";
+import { addAdmin } from "egiftcard/extensions/erc4337";
+import { useSendTransaction, useActiveAccount } from "egiftcard/react";
+import { getContract } from "egiftcard";
 
 const { mutate: sendTransaction } = useSendTransaction();
 const smartAccount = useActiveAccount();
@@ -62,9 +62,9 @@ const onClick = () => {
 <TabsContent value="typescript">
 
 ```typescript
-import { addAdmin } from "thirdweb/extensions/erc4337";
-import { smartWallet } from "thirdweb/wallets";
-import { sendTransaction, getContract } from "thirdweb";
+import { addAdmin } from "egiftcard/extensions/erc4337";
+import { smartWallet } from "egiftcard/wallets";
+import { sendTransaction, getContract } from "egiftcard";
 
 const smartWallet = new smartWallet(config);
 const smartAccount = await smartWallet.connect({
@@ -118,9 +118,9 @@ To set the permissions for a given signer, the `setPermissionsForSigner` functio
   <TabsContent value="react">
 
 ```tsx
-import { addSessionKey } from "thirdweb/extensions/erc4337";
-import { useSendTransaction, useActiveAccount } from "thirdweb/react";
-import { getContract } from "thirdweb";
+import { addSessionKey } from "egiftcard/extensions/erc4337";
+import { useSendTransaction, useActiveAccount } from "egiftcard/react";
+import { getContract } from "egiftcard";
 
 const { mutate: sendTransaction } = useSendTransaction();
 const smartAccount = useActiveAccount();
@@ -151,9 +151,9 @@ const onClick = () => {
 <TabsContent value="typescript">
 
 ```ts
-import { addAdmin } from "thirdweb/extensions/erc4337";
-import { smartWallet } from "thirdweb/wallets";
-import { sendTransaction, getContract } from "thirdweb";
+import { addAdmin } from "egiftcard/extensions/erc4337";
+import { smartWallet } from "egiftcard/wallets";
+import { sendTransaction, getContract } from "egiftcard";
 
 const smartWallet = new smartWallet(config);
 const smartAccount = await smartWallet.connect({
@@ -186,10 +186,10 @@ await sendTransaction({
 <TabsContent value="unity">
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
-// Reference to your Thirdweb SDK
-var sdk = ThirdwebManager.Instance.SDK;
+// Reference to your Egiftcard SDK
+var sdk = EgiftcardManager.Instance.SDK;
 
 // Create a session key
 string signerAddress = "0xSignerAddress";

@@ -3,7 +3,7 @@ import { GithubButtonLink } from "@doc";
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ERC20 | thirdweb contract",
+	title: "ERC20 | egiftcard contract",
 	description:
 		"ERC20 is the standard for representing fungible tokens; where each token is of equal valuable and interchangeable",
 	image: {
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC20
 
 ```solidity
-import "@thirdweb-dev/contracts/eip/interface/IERC20.sol";
+import "@egiftcard/contracts/eip/interface/IERC20.sol";
 ```
 
 ERC20 is the standard for representing fungible tokens; where each token is of equal valuable and interchangeable.
@@ -27,7 +27,7 @@ ERC20 is the standard for representing fungible tokens; where each token is of e
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/eip/interface/IERC20.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/eip/interface/IERC20.sol" />
 
 ## Usage
 
@@ -38,7 +38,7 @@ and override the functions to add (optional) custom functionality.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/eip/interface/IERC20.sol";
+import "@egiftcard/contracts/eip/interface/IERC20.sol";
 
 contract Contract is IERC20 {
     constructor(
@@ -76,7 +76,7 @@ contract Contract is IERC20 {
 }
 ```
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/openzeppelin-presets/token/ERC20/ERC20.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/openzeppelin-presets/token/ERC20/ERC20.sol" />
 
 ## Base Contracts Implementing This Extension
 

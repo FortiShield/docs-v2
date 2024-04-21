@@ -27,11 +27,11 @@ const monoFont = Fira_Code({
 });
 
 export const metadata = createMetadata({
-	title: "thirdweb docs",
-	description: "thirdweb developer portal",
+	title: "egiftcard docs",
+	description: "egiftcard developer portal",
 	image: {
 		title: "Build apps and games on any EVM chain",
-		icon: "thirdweb",
+		icon: "egiftcard",
 	},
 });
 
@@ -45,10 +45,10 @@ export default function RootLayout({
 			<head>
 				<PosthogHeadSetup />
 				<Script
-					src="https://thirdweb.com/js/pl.js"
+					src="https://egiftcard.cc/js/pl.js"
 					defer
-					data-domain="portal.thirdweb.com"
-					data-api="https://pl.thirdweb.com/api/event"
+					data-domain="portal.egiftcard.cc"
+					data-api="https://pl.egiftcard.cc/api/event"
 				/>
 				<ContextAIBotScript />
 			</head>
@@ -75,7 +75,7 @@ export default function RootLayout({
 						<Banner
 							id="v5-stable"
 							text="Connect SDK v5 has been released. See documentation."
-							href="https://portal.thirdweb.com/typescript/v5"
+							href="https://portal.egiftcard.cc/typescript/v5"
 						/>
 						<Header />
 					</StickyTopContainer>

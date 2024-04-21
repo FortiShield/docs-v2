@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "Managed Account Factory",
 		icon: "contract",
 	},
-	title: "Managed Account Factory | thirdweb",
+	title: "Managed Account Factory | egiftcard",
 	description: `The Managed Account Factory contract is used to deploy upgradeable ERC-4337 smart wallets with role based permission control.`,
 });
 
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 
 The **Managed Account Factory** contract is used to deploy upgradeable [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337s) smart wallets with role based permission control.
 
-The `ManagedAccount` smart wallet is an **upgradeable** smart contract written in the [dynamic contract pattern](https://github.com/thirdweb-dev/dynamic-contracts).
+The `ManagedAccount` smart wallet is an **upgradeable** smart contract written in the [dynamic contract pattern](https://github.com/egiftcard/dynamic-contracts).
 
 App developers can issue `ManagedAccount` smart wallets programmatically by deploying a `ManagedAccountFactory` smart contract.
 
@@ -21,7 +21,7 @@ The admin of the `ManagedAccountFactory` contract can push upgrades to all `Mana
 An upgrade to the features of `ManagedAccount` applies to all `ManagedAccount` smart wallets created by the factory.
 This is the right wallet for developers who anticipate pushing upgrades to their users' wallets.
 
-thirdweb's smart wallets have the following features by default:
+egiftcard's smart wallets have the following features by default:
 
 - Have multiple signers with different permissions
 - Execute transactions (single and batched).
@@ -38,7 +38,7 @@ This contract includes the following extensions:
 - [PermissionsEnumerable](/contracts/build/extensions/general/PermissionsEnumerable)
 - [ContractMetadata](/contracts/build/extensions/general/ContractMetadata)
 - [AccountFactory](/contracts/build/extensions/erc-4337/SmartWallet-factory)
-- [DynamicContract](https://github.com/thirdweb-dev/dynamic-contracts)
+- [DynamicContract](https://github.com/egiftcard/dynamic-contracts)
 
 ## Use Cases & Examples
 

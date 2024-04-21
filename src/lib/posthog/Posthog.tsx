@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import posthog from "posthog-js";
 
-const posthogHost = "https://a.thirdweb.com";
+const posthogHost = "https://a.egiftcard.cc";
 const apiKey = "phc_hKK4bo8cHZrKuAVXfXGpfNSLSJuucUnguAgt2j6dgSV";
 
 // Check that PostHog is client-side (used to handle Next.js SSR)

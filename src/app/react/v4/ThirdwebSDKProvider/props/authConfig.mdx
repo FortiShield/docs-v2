@@ -9,18 +9,18 @@ The configuration object for setting up [Auth](/connect/auth), allowing users to
 #### Example
 
 ```tsx
-import { ThirdwebSDKProvider } from "@thirdweb-dev/react";
+import { EgiftcardSDKProvider } from "@egiftcard/react";
 
 function MyApp() {
 	return (
-		<ThirdwebSDKProvider
+		<EgiftcardSDKProvider
 			authConfig={{
 				authUrl: "/api/auth",
 				domain: "https://example.com",
 			}}
 		>
 			<YourApp />
-		</ThirdwebSDKProvider>
+		</EgiftcardSDKProvider>
 	);
 }
 ```

@@ -14,7 +14,7 @@ export const metadata = createMetadata({
 		title: "Enable Gasless Transactions with In-App Wallet",
 		icon: "wallets",
 	},
-	title: "Enable Gasless Transactions | thirdweb In-App Wallet",
+	title: "Enable Gasless Transactions | egiftcard In-App Wallet",
 	description:
 		"By using account abstraction you can create a truly seamless user experience with gasless transactions, batched transactions, and full account recovery.",
 });
@@ -45,28 +45,28 @@ View a fully functioning project on GitHub:
 
 <OpenSourceCard
 	title="Source Code"
-	href="https://github.com/thirdweb-example/embedded-smart-wallet"
+	href="https://github.com/egiftcard-example/embedded-smart-wallet"
 	tag="v4 SDK"
 />
 
 ## 1. Deploy an Account Factory
 
-Deployable via the [explore page](https://thirdweb.com/explore/smart-wallet) or build your own [ERC 4337](https://eips.ethereum.org/EIPS/eip-4337) compatible factory contract using the [Solidity SDK](/contracts/build/base-contracts/erc-4337).
+Deployable via the [explore page](https://egiftcard.cc/explore/smart-wallet) or build your own [ERC 4337](https://eips.ethereum.org/EIPS/eip-4337) compatible factory contract using the [Solidity SDK](/contracts/build/base-contracts/erc-4337).
 
-Select the appropriate thirdweb account factory type for your app:
+Select the appropriate egiftcard account factory type for your app:
 
 <Stack>
 
 <ArticleIconCard
 	icon={Layers2Icon}
 	title="Account Factory"
-	href={"https://thirdweb.com/thirdweb.eth/AccountFactory"}
+	href={"https://egiftcard.cc/egiftcard.eth/AccountFactory"}
 />
 
 <ArticleIconCard
 	icon={Layers2Icon}
 	title="Managed Account Factory"
-	href={"https://thirdweb.com/thirdweb.eth/ManagedAccountFactory"}
+	href={"https://egiftcard.cc/egiftcard.eth/ManagedAccountFactory"}
 />
 
 </Stack>
@@ -78,14 +78,14 @@ Select the appropriate thirdweb account factory type for your app:
 To enable account abstraction in your app, you need to add the `accountAbstraction` prop to the `ConnectButton` or `ConnectEmbed` component.
 
 ```jsx
-import { ConnectButton } from "thirdweb/react";
-import { inAppWallet } from "thirdweb/wallets";
+import { ConnectButton } from "egiftcard/react";
+import { inAppWallet } from "egiftcard/wallets";
 
 const wallets = [inAppWallet()];
 
 export default function App() {
 	return (
-		<ThirdwebProvider>
+		<EgiftcardProvider>
 			<ConnectButton
 				client={client}
 				wallets={wallets}
@@ -95,7 +95,7 @@ export default function App() {
 					gasless: true,
 				}}
 			/>
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

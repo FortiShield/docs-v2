@@ -5,9 +5,9 @@ export const metadata = createMetadata({
 		title: "Interacting With Contracts",
 		icon: "typescript",
 	},
-	title: "Interacting With Contracts | thirdweb TypeScript SDK",
+	title: "Interacting With Contracts | egiftcard TypeScript SDK",
 	description:
-		"Read and write to smart contracts on the blockchain using the thirdweb TypeScript SDK.",
+		"Read and write to smart contracts on the blockchain using the egiftcard TypeScript SDK.",
 });
 
 # Interacting With Contracts
@@ -23,7 +23,7 @@ After initializing the SDK on a given chain, you can obtain instances of a targe
 To get a contract instance, you only need the contract's address. The contract ABI will be automatically resolved from the onchain contract metadata.
 
 ```ts
-const sdk = new ThirdwebSDK("sepolia");
+const sdk = new EgiftcardSDK("sepolia");
 const contract = await sdk.getContract("0x...");
 ```
 

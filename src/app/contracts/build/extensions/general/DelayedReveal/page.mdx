@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "DelayedReveal contract",
 		icon: "solidity",
 	},
-	title: "DelayedReveal | thirdweb contract",
+	title: "DelayedReveal | egiftcard contract",
 	description:
 		"The DelayedReveal smart contract is an extension for any NFT contract. It lets you create batches of 'delayed-reveal' NFTs.",
 });
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 # DelayedReveal
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/DelayedReveal.sol";
+import "@egiftcard/contracts/extension/DelayedReveal.sol";
 ```
 
 The [`DelayedReveal`](/glossary/delayed-reveal) smart contract is an extension for any NFT contract. It lets you create batches of 'delayed-reveal' NFTs.
@@ -28,7 +28,7 @@ In order for `ERC721Revealable` or `ERC1155Revealable` extensions to be detected
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/DelayedReveal.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/DelayedReveal.sol" />
 
 ## Usage
 
@@ -44,8 +44,8 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721LazyMint.sol";
-import "@thirdweb-dev/contracts/extension/DelayedReveal.sol";
+import "@egiftcard/contracts/base/ERC721LazyMint.sol";
+import "@egiftcard/contracts/extension/DelayedReveal.sol";
 
 /// This is just an EXAMPLE contract that uses `DelayedReveal`.
 
@@ -160,7 +160,7 @@ function encryptDecrypt(bytes memory data, bytes calldata key) public pure overr
 ```
 
 - Standard XOR encryption implementation in Solidity. Used to encrypt the metadata of NFTs.
-- Learn more about the usage of this function in this [blogpost](https://blog.thirdweb.com/delayed-reveal-nfts).
+- Learn more about the usage of this function in this [blogpost](https://blog.egiftcard.cc/delayed-reveal-nfts).
 
 </Details>
 

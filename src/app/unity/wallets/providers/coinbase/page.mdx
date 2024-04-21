@@ -1,8 +1,8 @@
 import { createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "Coinbase Wallet | thirdweb Unity SDK",
-	description: "Connect to Coinbase Wallet with thirdweb Unity SDK",
+	title: "Coinbase Wallet | egiftcard Unity SDK",
+	description: "Connect to Coinbase Wallet with egiftcard Unity SDK",
 });
 
 # Coinbase
@@ -12,12 +12,12 @@ Prompt users to connect to your app with their [Coinbase](https://www.coinbase.c
 ## Usage
 
 ```csharp
-using Thirdweb;
+using Egiftcard;
 
 public async void ConnectWallet()
 {
-    // Reference to your Thirdweb SDK
-    var sdk = ThirdwebManager.Instance.SDK;
+    // Reference to your Egiftcard SDK
+    var sdk = EgiftcardManager.Instance.SDK;
 
     // Configure the connection
     var connection = new WalletConnection(

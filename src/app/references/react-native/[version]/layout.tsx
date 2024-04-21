@@ -10,11 +10,11 @@ export default getTDocLayout({
 
 export const metadata = createMetadata({
 	image: {
-		title: "thirdweb React Native SDK Reference",
+		title: "egiftcard React Native SDK Reference",
 		icon: "react",
 	},
-	title: "References | thirdweb React Native SDK ",
-	description: "Full Reference for thirdweb React Native SDK.",
+	title: "References | egiftcard React Native SDK ",
+	description: "Full Reference for egiftcard React Native SDK.",
 });
 
 export const revalidate = 3600; // revalidate at most every hour

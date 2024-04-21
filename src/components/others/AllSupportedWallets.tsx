@@ -1,4 +1,4 @@
-import { getAllWalletsList, getWalletInfo, WalletId } from "thirdweb/wallets";
+import { getAllWalletsList, getWalletInfo, WalletId } from "egiftcard/wallets";
 import Image from "next/image";
 import { Table, Tr, Td, TBody, Th } from "../Document/Table";
 import { DocLink, InlineCode } from "../Document";

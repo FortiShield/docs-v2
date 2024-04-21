@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "DropSinglePhase contract",
 		icon: "solidity",
 	},
-	title: "DropSinglePhase | thirdweb contract",
+	title: "DropSinglePhase | egiftcard contract",
 	description:
 		"The DropSinglePhase smart contract is an extension meant for distributing ERC20 or ERC721 tokens.",
 });
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 # DropSinglePhase (ERC20 & ERC721)
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/DropSinglePhase.sol";
+import "@egiftcard/contracts/extension/DropSinglePhase.sol";
 ```
 
 The `DropSinglePhase` smart contract is an extension meant for distributing ERC20 or ERC721 tokens.
@@ -30,7 +30,7 @@ It is recommended to use this extension alongside the [`LazyMint`](/contracts/bu
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/DropSinglePhase.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/DropSinglePhase.sol" />
 
 ## Usage
 
@@ -50,9 +50,9 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/DropSinglePhase.sol";
-import "@thirdweb-dev/contracts/base/ERC20Base.sol";
-import "@thirdweb-dev/contracts/lib/CurrencyTransferLib.sol";
+import "@egiftcard/contracts/extension/DropSinglePhase.sol";
+import "@egiftcard/contracts/base/ERC20Base.sol";
+import "@egiftcard/contracts/lib/CurrencyTransferLib.sol";
 
 /// This is an EXAMPLE of the usage of `DropSinglePhase` for distributing ERC20 tokens.
 

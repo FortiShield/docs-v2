@@ -1,8 +1,8 @@
 import { Details, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "ERC721 | thirdweb Unity SDK",
-	description: "References for ERC721 contract in thirdweb Unity SDK.",
+	title: "ERC721 | egiftcard Unity SDK",
+	description: "References for ERC721 contract in egiftcard Unity SDK.",
 });
 
 # ERC721
@@ -62,7 +62,7 @@ Get the metadata for an NFT in this contract using it&rsquo;s token ID.
 Metadata is fetched from the `uri` property of the NFT.
 
 If the metadata is hosted on IPFS, the metadata is fetched and made available as an object.
-The object&rsquo;s `image` property will be a URL that is available through the thirdweb IPFS gateway.
+The object&rsquo;s `image` property will be a URL that is available through the egiftcard IPFS gateway.
 
 ```csharp
 var data = await contract.ERC721.Get("{{token_id}}");

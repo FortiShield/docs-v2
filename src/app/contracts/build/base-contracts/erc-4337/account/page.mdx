@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "Account contract",
 		icon: "contract",
 	},
-	title: "Account | thirdweb contracts",
+	title: "Account | egiftcard contracts",
 	description:
 		"The Account smart contract is a non-upgradable, simple smart account that comes with all the basic benefits of account abstraction",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # Account
 
 ```solidity
-import "@thirdweb-dev/contracts/smart-wallet/non-upgradeable/Account.sol";
+import "@egiftcard/contracts/smart-wallet/non-upgradeable/Account.sol";
 ```
 
 This contract inherits from the [`BaseAccount`](/contracts/build/extensions/erc-4337/SmartWallet) contract
@@ -34,7 +34,7 @@ Developers should use this wallet if they do not anticipate making any future up
 
 App developers can issue `Account` smart accounts programmatically by deploying an [`AccountFactory`](/contracts/build/base-contracts/erc-4337/account-factory) smart contract.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/prebuilts/account/non-upgradeable/Account.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/prebuilts/account/non-upgradeable/Account.sol" />
 
 <br />
 
@@ -44,7 +44,7 @@ If you intend to issue accounts programmatically using a custom factory contract
 
 - Create a new factory contract by extending the [BaseAccountFactory](/contracts/build/extensions/erc-4337/SmartWallet-factory) extension.
 
-- Override the `_initializeAccount` function on the factory to create a new wallet. ([reference](https://github.com/thirdweb-dev/contracts/blob/main/contracts/smart-wallet/non-upgradeable/AccountFactory.sol#L36))
+- Override the `_initializeAccount` function on the factory to create a new wallet. ([reference](https://github.com/egiftcard/contracts/blob/main/contracts/smart-wallet/non-upgradeable/AccountFactory.sol#L36))
 
 </Callout>
 
@@ -62,8 +62,8 @@ Click on each feature to learn more about what functions are available.
 Import the contract and inherit from it. This is an example contract demonstrating one way that you could override the functionality to create a token bound account.
 
 ```solidity
-import "@thirdweb-dev/contracts/smart-wallet/non-upgradable/Account.sol";
-import "@thirdweb-dev/contracts/eip/interface/IERC721.sol";
+import "@egiftcard/contracts/smart-wallet/non-upgradable/Account.sol";
+import "@egiftcard/contracts/eip/interface/IERC721.sol";
 
 contract TokenBoundAccount is Account {
     uint256 chainId;

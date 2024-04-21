@@ -8,9 +8,9 @@ import { createMetadata } from "@doc";
 export const metadata = createMetadata({
 	title: "Changelog",
 	description:
-		"View the latest updates and changes in thirdweb SDKs and services",
+		"View the latest updates and changes in egiftcard SDKs and services",
 	image: {
-		title: "thirdweb Changelog",
+		title: "egiftcard Changelog",
 		icon: "changelog",
 	},
 });

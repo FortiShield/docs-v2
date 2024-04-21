@@ -1,7 +1,7 @@
 import { Details, Callout, createMetadata } from "@doc";
 
 export const metadata = createMetadata({
-	title: "PrivateKeyWallet.Create | Thirdweb .NET SDK",
+	title: "PrivateKeyWallet.Create | Egiftcard .NET SDK",
 	description:
 		"Instantiate a PrivateKeyWallet to sign transactions and messages.",
 });
@@ -27,7 +27,7 @@ var wallet = await PrivateKeyWallet.Create(client, "yourPrivateKeyHex");
 
 ### client (required)
 
-An instance of `ThirdwebClient`.
+An instance of `EgiftcardClient`.
 
 ### privateKeyHex (required)
 
@@ -44,17 +44,17 @@ Returns an instance of `PrivateKeyWallet`, ready to sign transactions and messag
 
 ## Example
 
-Here is an example of creating a PrivateKeyWallet to sign a simple message. This example assumes you have a ThirdwebClient instance already created:
+Here is an example of creating a PrivateKeyWallet to sign a simple message. This example assumes you have a EgiftcardClient instance already created:
 
 ```csharp
-var client = ThirdwebClient.Create("yourClientId");
+var client = EgiftcardClient.Create("yourClientId");
 var privateKeyHex = "yourPrivateKeyHex"; // Should be securely stored and accessed
 var wallet = await PrivateKeyWallet.Create(client, privateKeyHex);
 
 Console.WriteLine($"PrivateKeyWallet address: {await wallet.GetAddress()}");
 
 // Sign a message
-var message = "Hello, Thirdweb!";
+var message = "Hello, Egiftcard!";
 var signature = await wallet.PersonalSign(message);
 Console.WriteLine($"Signature: {signature}");
 ```

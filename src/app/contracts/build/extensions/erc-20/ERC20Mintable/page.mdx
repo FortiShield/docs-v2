@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC20Mintable contract",
 		icon: "solidity",
 	},
-	title: "ERC20Mintable | thirdweb contract",
+	title: "ERC20Mintable | egiftcard contract",
 	description:
 		"Enable the minting of new tokens by implementing the IMintableERC20 interface",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC20Mintable
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/interface/IMintableERC20.sol";
+import "@egiftcard/contracts/extension/interface/IMintableERC20.sol";
 ```
 
 Enable the minting of new tokens by implementing the `IMintableERC20` interface.
@@ -28,7 +28,7 @@ This extension is an interface and requires all of the functions to be implement
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/interface/IMintableERC20.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/interface/IMintableERC20.sol" />
 
 ## Usage
 
@@ -38,8 +38,8 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
-import "@thirdweb-dev/contracts/extension/interface/IMintableERC20.sol";
+import "@egiftcard/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
+import "@egiftcard/contracts/extension/interface/IMintableERC20.sol";
 
 contract Contract is ERC20, IMintableERC20 {
     constructor(

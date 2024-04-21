@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "PermissionsEnumerable contract",
 		icon: "solidity",
 	},
-	title: "PermissionsEnumerable | thirdweb contract",
+	title: "PermissionsEnumerable | egiftcard contract",
 	description:
 		"The PermissionsEnumerable extension provides role-based access control: you can create roles and write custom logic in your smart contract that depends on whether a given wallet holds a given role",
 });
@@ -13,13 +13,13 @@ export const metadata = createMetadata({
 # PermissionsEnumerable
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/PermissionsEnumerable.sol";
+import "@egiftcard/contracts/extension/PermissionsEnumerable.sol";
 ```
 
 The `PermissionsEnumerable` extension provides role-based access control: you can create roles and write custom logic in your smart contract that depends on whether a given wallet holds a given role.
 The `Enumerable` part provides the capability to view all the addresses holding a specific role.
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/PermissionsEnumerable.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/PermissionsEnumerable.sol" />
 
 ## Usage
 
@@ -29,7 +29,7 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/PermissionsEnumerable.sol";
+import "@egiftcard/contracts/extension/PermissionsEnumerable.sol";
 
 contract MyContract is PermissionsEnumerable {
     // Any `bytes32` value is a valid role. You can create roles by defining them like this.

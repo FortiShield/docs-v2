@@ -1,21 +1,21 @@
 import { DocImage, createMetadata } from "@doc";
-import thirdwebManager from "./thirdwebmanager.png";
+import egiftcardManager from "./egiftcardmanager.png";
 
 export const metadata = createMetadata({
-	title: "Thirdweb Manager | thirdweb Unity SDK",
+	title: "Egiftcard Manager | egiftcard Unity SDK",
 	description:
-		"ThirdwebManager is a MonoBehaviour that provides a convenient and customizable way to instantiate and manage the ThirdwebSDK. Add the prefab to your scene and the SDK will persist throughout your game's lifecycle",
+		"EgiftcardManager is a MonoBehaviour that provides a convenient and customizable way to instantiate and manage the EgiftcardSDK. Add the prefab to your scene and the SDK will persist throughout your game's lifecycle",
 });
 
-# Thirdweb Manager
+# Egiftcard Manager
 
-The `ThirdwebManager` is a MonoBehaviour that provides a convenient and customizable way to instantiate and manage the ThirdwebSDK. Add the prefab to your scene and the SDK will persist throughout your game's lifecycle. It can be found at `Thirdweb/Core/Prefabs/ThirdwebManager`.
+The `EgiftcardManager` is a MonoBehaviour that provides a convenient and customizable way to instantiate and manage the EgiftcardSDK. Add the prefab to your scene and the SDK will persist throughout your game's lifecycle. It can be found at `Egiftcard/Core/Prefabs/EgiftcardManager`.
 
-<DocImage src={thirdwebManager} className="w-[600px]" />
+<DocImage src={egiftcardManager} className="w-[600px]" />
 
 ## Configuration
 
-Configure `ThirdwebManager` through the Unity Inspector window.
+Configure `EgiftcardManager` through the Unity Inspector window.
 
 Below is a list of all the settings you can adjust.
 
@@ -25,11 +25,11 @@ This section involves the basic blockchain configurations. Adjust the following 
 
 - `Active Chain`: The identifier for the default blockchain to use.
 - `Supported Chains`: A list of all blockchains your game supports. For each chain, provide an identifier, a chain ID, and optionally, an RPC override.
-- `Client ID`: Thirdweb [API Key](https://thirdweb.com/create-api-key). Used for default thirdweb services such as Storage and Account Abstraction.
-- `Bundle ID Override`: Optional override for the bundle ID used by thirdweb services. Defaults to Application Identifier and can be fetched using `Utils.GetBundleId()`.
-- `Initialize On Awake`: Whether the SDK should initialize on awake or not. If not, you can call `ThirdwebManager.Instance.Initialize("chain-identifier")` to initialize it manually.
-- `Show Debug Logs`: Whether to show thirdweb sdk debug logs.
-- `Thirdweb Config`: SciptableObject for additional Thirdweb configuration. Generated automatically. Mainly used to set custom schemes for google login.
+- `Client ID`: Egiftcard [API Key](https://egiftcard.cc/create-api-key). Used for default egiftcard services such as Storage and Account Abstraction.
+- `Bundle ID Override`: Optional override for the bundle ID used by egiftcard services. Defaults to Application Identifier and can be fetched using `Utils.GetBundleId()`.
+- `Initialize On Awake`: Whether the SDK should initialize on awake or not. If not, you can call `EgiftcardManager.Instance.Initialize("chain-identifier")` to initialize it manually.
+- `Show Debug Logs`: Whether to show egiftcard sdk debug logs.
+- `Egiftcard Config`: SciptableObject for additional Egiftcard configuration. Generated automatically. Mainly used to set custom schemes for google login.
 
 ### App Metadata
 
@@ -48,10 +48,10 @@ Here, you can specify the URL for your IPFS gateway, which stores your assets in
 
 ### Gasless Relayer Options
 
-In this section, configure settings for your thirdweb [Engine Relayer](https://portal.thirdweb.com/engine/features/relayers), a service that handles gasless transactions for your users.
+In this section, configure settings for your egiftcard [Engine Relayer](https://portal.egiftcard.cc/engine/features/relayers), a service that handles gasless transactions for your users.
 
-- `Relayer Url`: The URL for your engine relayer, can be found on the thirdweb dashboard.
-- `Forwarder Address`: Override the default thirdweb forwarder contract address. (Optional)
+- `Relayer Url`: The URL for your engine relayer, can be found on the egiftcard dashboard.
+- `Forwarder Address`: Override the default egiftcard forwarder contract address. (Optional)
 - `Forwarder Domain Override` and `Forwarder Version Override`: Overrides for the forwarder domain and version. (Optional)
 
 ### Wallet Connect Options
@@ -71,7 +71,7 @@ Here, provide your project ID for WalletConnect:
 These settings are required to set up a smart account.
 
 - `Factory Contract Address`: The address of your account factory contract.
-- `Thirdweb API Key`: Your API key for Thirdweb.
+- `Egiftcard API Key`: Your API key for Egiftcard.
 - `Gasless`: Whether or not you want to use gasless transactions. Note that deployment and approval step when using ERC20Paymasters will be gasless as well if this is on.
 - `ERC20 Paymaster Address`: If you want to use an ERC20 Paymaster, you must provide the paymaster contract address here.
 - `ERC20 Token Address`: If using an ERC20 Paymaster, you must provide the associated ERC20 Token Address here.
@@ -87,8 +87,8 @@ This section allows you to provide GameObject prefabs for native wallet provider
 
 ## Accessing the SDK
 
-Once `ThirdwebManager` is set up and the game starts, it will instantiate the Thirdweb SDK based on your settings. You can access the instantiated SDK from other scripts using:
+Once `EgiftcardManager` is set up and the game starts, it will instantiate the Egiftcard SDK based on your settings. You can access the instantiated SDK from other scripts using:
 
 ```csharp
-var sdk = ThirdwebManager.Instance.SDK;
+var sdk = EgiftcardManager.Instance.SDK;
 ```

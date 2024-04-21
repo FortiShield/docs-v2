@@ -7,7 +7,7 @@ export const metadata = createMetadata({
 		title: "ERC20Burnable contract",
 		icon: "solidity",
 	},
-	title: "ERC20Burnable | thirdweb contract",
+	title: "ERC20Burnable | egiftcard contract",
 	description:
 		"Support burning tokens by implementing the IBurnableERC20 interface",
 });
@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 # ERC20Burnable
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/interface/IBurnableERC20.sol";
+import "@egiftcard/contracts/extension/interface/IBurnableERC20.sol";
 ```
 
 Support burning tokens by implementing the `IBurnableERC20` interface.
@@ -27,7 +27,7 @@ Support burning tokens by implementing the `IBurnableERC20` interface.
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/interface/IBurnableERC20.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/interface/IBurnableERC20.sol" />
 
 ## Usage
 
@@ -37,8 +37,8 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
-import "@thirdweb-dev/contracts/extension/interface/IBurnableERC20.sol";
+import "@egiftcard/contracts/openzeppelin-presets/token/ERC20/ERC20.sol";
+import "@egiftcard/contracts/extension/interface/IBurnableERC20.sol";
 
 contract Contract is ERC20, IBurnableERC20 {
     constructor(

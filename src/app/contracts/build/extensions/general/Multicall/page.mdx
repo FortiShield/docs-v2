@@ -5,7 +5,7 @@ export const metadata = createMetadata({
 		title: "Multicall contract",
 		icon: "solidity",
 	},
-	title: "Multicall | thirdweb contract",
+	title: "Multicall | egiftcard contract",
 	description:
 		"The Multicall smart contract is an extension usable with any base smart contract. It provides a function multicall to batch together multiple calls in a single external call",
 });
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 # Multicall
 
 ```solidity
-import "@thirdweb-dev/contracts/extension/Multicall.sol";
+import "@egiftcard/contracts/extension/Multicall.sol";
 ```
 
 The `Multicall` smart contract is an extension usable with any base smart contract. It provides a function `multicall` to batch together multiple calls in a single external call.
@@ -27,7 +27,7 @@ extension to unlock the [`ERC721BatchMintable`](/contracts/build/extensions/erc-
 
 <br />
 
-<GithubButtonLink href="https://github.com/thirdweb-dev/contracts/blob/main/contracts/extension/Multicall.sol" />
+<GithubButtonLink href="https://github.com/egiftcard/contracts/blob/main/contracts/extension/Multicall.sol" />
 
 ## Usage
 
@@ -37,7 +37,7 @@ This is an example smart contract demonstrating how to inherit from this extensi
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/extension/Multicall.sol";
+import "@egiftcard/contracts/extension/Multicall.sol";
 
 contract MyContract is Multicall { ... }
 ```

@@ -3,7 +3,7 @@ Override any of the default values for the SDK.
 Gas settings, gasless transactions, RPC configuration, and more.
 
 ```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { EgiftcardProvider } from "@egiftcard/react";
 
 const sdkOptions = {
 	readonlySettings: {
@@ -32,9 +32,9 @@ const sdkOptions = {
 
 function Example() {
 	return (
-		<ThirdwebProvider sdkOptions={sdkOptions}>
+		<EgiftcardProvider sdkOptions={sdkOptions}>
 			<App />
-		</ThirdwebProvider>
+		</EgiftcardProvider>
 	);
 }
 ```

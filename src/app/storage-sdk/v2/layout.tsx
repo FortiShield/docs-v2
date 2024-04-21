@@ -17,9 +17,9 @@ export default async function Layout(props: { children: React.ReactNode }) {
 
 export const metadata = createMetadata({
 	image: {
-		title: "thirdweb Storage SDK",
+		title: "egiftcard Storage SDK",
 		icon: "storage",
 	},
-	title: "thirdweb Storage SDK",
-	description: "Reference documentation for the thirdweb Storage SDK",
+	title: "egiftcard Storage SDK",
+	description: "Reference documentation for the egiftcard Storage SDK",
 });
