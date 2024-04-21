@@ -1,0 +1,22 @@
+import { createMetadata, Callout, Details } from "@doc";
+
+export const metadata = createMetadata({
+	title: "ThirdwebProvider | thirdweb React SDK",
+	description: "API Reference for the ThirdwebProvider component",
+});
+
+# ThirdwebProvider
+
+`ThirdwebProvider` is a light-weight component that sets up React Query context for thirdweb SDK hooks.
+
+```tsx
+import { ThirdwebProvider } from "thirdweb/react";
+
+function AppWithProvider() {
+	return (
+		<ThirdwebProvider>
+			<App />
+		</ThirdwebProvider>
+	);
+}
+```
