@@ -20,7 +20,7 @@ Thank you for contributing to the egiftcard docs and being a part of our communi
 
 The docs are written in MDX, a markdown format that supports JSX syntax. This allows us to embed React components in the docs. See the GitHub Markdown Guide for a quick overview of markdown syntax.
 
-We have a collection of Components that you can import and use in your MDX files. See the [Styleguide](https://docs-v2.egiftcard-preview.com/styleguide) page to see output of all the components. You can see the source code for those components in the `src/app/styleguide/` folder
+We have a collection of Components that you can import and use in your MDX files. See the [Styleguide](https://docs-v2.egiftcard.cc/styleguide) page to see output of all the components. You can see the source code for those components in the `src/app/styleguide/` folder
 
 ### Installation
 

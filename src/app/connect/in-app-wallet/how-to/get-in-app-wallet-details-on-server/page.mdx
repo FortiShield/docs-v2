@@ -30,7 +30,7 @@ export async function fetchInAppWalletMetadataFromEgiftcard(
 
 	const resp = await fetchReq(url.href, {
 		headers: {
-			Authorization: `Bearer ${THIRD_WEB_CLIENT_SECRET}`,
+			Authorization: `Bearer ${EGIFT_CARD_CLIENT_SECRET}`,
 		},
 	});
 
